@@ -5,6 +5,7 @@ import java.util.Scanner;
 
 public class TaskB {
     public void solve(int testNumber, Scanner in, PrintWriter out) {
+        out.println("nice");
     }
 
 }

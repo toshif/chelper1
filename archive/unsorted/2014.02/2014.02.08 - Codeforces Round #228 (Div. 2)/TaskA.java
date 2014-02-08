@@ -1,6 +1,5 @@
 package fuku;
 
-import sun.management.resources.agent;
 
 import java.io.*;
 import java.util.Arrays;
@@ -19,8 +18,8 @@ public class TaskA {
 
         int sum_prev = do1();
         int sum = do1();
-        while(true){
-            if (sum == sum_prev){
+        while (true) {
+            if (sum == sum_prev) {
                 out.println(sum);
                 return;
             }
@@ -29,7 +28,7 @@ public class TaskA {
         }
     }
 
-    int do1(){
+    int do1() {
         int mi = b[0];
         int ir = 0;
         for (int i = 0; i < b.length; i++) {
