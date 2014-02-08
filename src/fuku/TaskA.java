@@ -1,8 +1,6 @@
 package fuku;
 
 
-import sun.management.resources.agent;
-
 import java.io.*;
 import java.util.Arrays;
 import java.util.Scanner;
