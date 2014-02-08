@@ -1,0 +1,56 @@
+21 C - George and Number
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+7
+0
+5 9555
+
+1 4
+1
+1
+12 10000000005
+
+1 2
+1
+2
+7 800101
+
+1 3
+1
+3
+3 45
+
+1 1
+1
+4
+38 1000000000000001223300003342220044555
+
+2 17
+1
+5
+9 19992000
+
+1 1
+1
+6
+7 310200
+
+1 2
+1
+14 src/fuku/cf227
+8 -Xmx256M
+4 Main
+16 fuku.cf227.TaskC
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2014.02.08
+30 Codeforces Round #227 (Div. 2)
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
