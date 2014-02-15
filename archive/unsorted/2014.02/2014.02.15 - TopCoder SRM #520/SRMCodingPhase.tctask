@@ -1,0 +1,82 @@
+14 SRMCodingPhase
+10 countScore
+3 int
+3
+5 int[]
+6 points
+5 int[]
+6 skills
+3 int
+4 luck
+5
+0
+3
+int[] 3
+250
+500
+1000
+int[] 3
+10
+25
+40
+int 0
+int 1310
+1
+1
+3
+int[] 3
+300
+600
+900
+int[] 3
+30
+65
+90
+int 25
+int 680
+1
+2
+3
+int[] 3
+250
+550
+950
+int[] 3
+10
+25
+40
+int 75
+int 1736
+1
+3
+3
+int[] 3
+256
+512
+1024
+int[] 3
+35
+30
+25
+int 0
+int 1216
+1
+4
+3
+int[] 3
+300
+600
+1100
+int[] 3
+80
+90
+100
+int 4
+int 0
+1
+10 2014.02.15
+17 TopCoder SRM #520
+0
+19 fuku.SRMCodingPhase
+0
+3 64M
