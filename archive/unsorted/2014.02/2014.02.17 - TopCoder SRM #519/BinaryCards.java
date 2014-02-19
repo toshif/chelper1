@@ -3,6 +3,9 @@ package fuku;
 import java.util.Arrays;
 
 // System Test Passed
+//
+// http://apps.topcoder.com/wiki/display/tc/SRM+519
+//
 public class BinaryCards {
     public long largestNumber(long A, long B) {
         int[] a = new int[65];
@@ -37,4 +40,12 @@ public class BinaryCards {
         
         return ret;
     }
+
+    public long largestNumber_Editorial(long A, long B) {
+        for (int i=60; i>=0; --i)
+            if ( (A^B) & (1LL<<i) )
+        return A | ((1LL<<(i+1))-1);
+        return A;
+    }
+
 }
