@@ -4,6 +4,9 @@ import java.util.ArrayList;
 import java.util.List;
 
 // System Test Passed
+//
+// Petr http://community.topcoder.com/stat?c=problem_solution&cr=10574855&rd=14542&pm=11535
+//
 public class CompositeSmash {
     public String thePossible(int N, int target) {
         if (target > N){
