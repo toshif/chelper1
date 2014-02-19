@@ -3,6 +3,10 @@ package fuku;
 import java.util.*;
 
 // seems this passed but doesn't pass test5
+//
+// this is a DP problem.
+// http://apps.topcoder.com/wiki/display/tc/SRM+517
+//
 public class CuttingGrass {
 
     class P{
