@@ -1,0 +1,35 @@
+26 E - Lightbulb for Minister
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+1
+0
+36 4
+3 2
+3 4
+5 4
+5 2
+4
+3 3
+4 4
+5 3
+4 2
+
+10 8.00000000
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskE
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2014.02.21
+30 Codeforces Round #231 (Div. 2)
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
