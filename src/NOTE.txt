@@ -9,3 +9,6 @@ git config --global user.email "me@here.com"
 # Verify the setting
 git config --global user.email
 -------------------------------------
+
+
+
