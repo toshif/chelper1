@@ -1,0 +1,11 @@
+
+-------------------------------------
+Git Email Setting
+https://help.github.com/articles/setting-your-email-in-git
+
+# Set a new email
+git config --global user.email "me@here.com"
+
+# Verify the setting
+git config --global user.email
+-------------------------------------
