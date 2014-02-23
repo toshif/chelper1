@@ -24,6 +24,8 @@ public class NetworkXMessageRecovery {
                 if (messages[i].length() == 0) continue;
 
                 char c = messages[i].charAt(0);
+
+                // Confirm no requirement preceedes it.
                 for (int j = 0; j < messages.length; j++) {
                     for (int k = 1; k < messages[j].length(); k++) {
                         if (messages[j].charAt(k) == c) continue A;
