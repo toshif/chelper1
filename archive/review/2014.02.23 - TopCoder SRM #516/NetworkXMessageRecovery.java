@@ -18,7 +18,7 @@ public class NetworkXMessageRecovery {
         String ret = "";
 
         while (true) {
-            char best = '{';
+            char best = '{'; //A value higher than any the valid input
             A:
             for (int i = 0; i < messages.length; i++) {
                 if (messages[i].length() == 0) continue;
