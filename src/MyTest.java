@@ -16,5 +16,7 @@ public class MyTest {
 
         x = -1;
         System.out.println("x % 2 = " + x % 2);
+
+        System.out.println("System.getProperties() = " + System.getProperties());
     }
 }
