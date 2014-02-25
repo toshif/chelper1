@@ -16,7 +16,7 @@ public class MagicalGirlLevelThreeDivTwo {
     int find(P p, long lo, long hi){
         if (p.ps.size() == 0) {
             int tot = 0;
-            for (int i = (int)lo; i < p.val.length() && i < hi; i++) {
+            for (int i = (int)lo; i < p.val.length() && i <= hi; i++) {
                 if (p.val.charAt(i) == '1') tot++;
             }
             return tot;
@@ -27,10 +27,14 @@ public class MagicalGirlLevelThreeDivTwo {
 
         for (P p1 : p.ps) {
             if (off <= lo && lo < off + p1.len) {
-                tot += find(p1, lo - off, Math.min(hi - off, off + p1.len -1));
+                if (hi < off + p1.len){
+                    tot += find(p1, lo - off, hi -off);
+                } else {
+                    tot += find(p1, lo - off, p1.len -1);
+                }
             }
-            if (lo < off && off <= hi) {
-                tot += find(p1, off, Math.min(hi - off, off + p1.len - 1));
+            if (lo < off && off <= hi){
+                tot += find(p1, off, Math.min(hi - off, p1.len - 1));
             }
             off += p1.len;
         }
