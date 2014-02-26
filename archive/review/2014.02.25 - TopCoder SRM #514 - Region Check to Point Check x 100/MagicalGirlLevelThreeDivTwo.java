@@ -3,6 +3,13 @@ package fuku;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Not passed yet
+ *
+ * A good problem to learn - Region check -> Point check x 100
+ *
+ * 発想の転換
+ */
 public class MagicalGirlLevelThreeDivTwo {
 
     class P {
