@@ -1,5 +1,7 @@
 package fuku;
 
+// System Test Passed
+// http://apps.topcoder.com/wiki/display/tc/SRM+510
 public class TheLuckyBasesDivTwo {
     public long find(long n) {
         if (n == 4 || n == 7) return -1;
@@ -11,7 +13,6 @@ public class TheLuckyBasesDivTwo {
             sqrt = Math.sqrt(n);
 
             int[] v = new int[]{4, 7};
-
 
             for (int i = 0; i < v.length; i++) {
                 for (int j = 0; j < v.length; j++) {
@@ -25,13 +26,13 @@ public class TheLuckyBasesDivTwo {
 
         A:
         for (long b = 5; b < sqrt; b++) {
-            long ba = b;
-            while (ba < n) {
-                long r = n % ba;
+            long na = n;
+            while (na != 0) {
+                long r = na % b;
                 if ( !(r == 4 || r == 7)) {
                     continue A;
                 }
-                ba *= b;
+                na /= b;
             }
             System.err.printf("%s\n", b);
             tot++;
