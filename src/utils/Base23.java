@@ -21,12 +21,12 @@ public class Base23 {
         }
 
         // convert to int[]
-        int[] retArr = new int[ret.size()];
+        int[] arr = new int[ret.size()];
         for (int i = 0; i < ret.size(); i++) {
-            retArr[i] = ret.get(i);
+            arr[i] = ret.get(i);
         }
 
-        return retArr;
+        return arr;
     }
 
     public static void main(String[] args) {
