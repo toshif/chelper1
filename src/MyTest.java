@@ -20,5 +20,7 @@ public class MyTest {
 
         x = -1;
         System.out.println("x % 2 = " + x % 2);
+
+        System.out.println("Long == Long -> " + (new Long(3) == new Long(3))); // false
     }
 }
