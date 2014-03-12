@@ -13,7 +13,7 @@ public class Base23 {
      * Returns the base-23 int array for the given number n
      */
     static int[] getBase23(int n){
-        int radix = 23;
+        final int radix = 23;
         List<Integer> ret = new ArrayList<>();
         while(n != 0) {
             ret.add(n % radix);
@@ -32,9 +32,9 @@ public class Base23 {
     public static void main(String[] args) {
         System.out.println("base23");
 
-        System.out.println("10 (base23) = " + Arrays.toString(getBase23(10)));
-        System.out.println("100 (base23) = " + Arrays.toString(getBase23(100)) + " : 8 + 4 x 23 ");
-        System.out.println("23 (base23) = " + Arrays.toString(getBase23(23)) + " : 0 + 1 x 23");
+        System.out.println("10 (base23) = " + Arrays.toString(getBase23(10))); // [10]
+        System.out.println("100 (base23) = " + Arrays.toString(getBase23(100)) + " : 8 + 4 x 23 "); // [8, 4]
+        System.out.println("23 (base23) = " + Arrays.toString(getBase23(23)) + " : 0 + 1 x 23"); // [0, 1]
     }
 
 }
