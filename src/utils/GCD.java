@@ -1,7 +1,7 @@
 package utils;
 
 /**
- * Created by vaiouser on 3/14/14.
+ * Created by toshif on 3/14/14.
  */
 public class GCD {
 
