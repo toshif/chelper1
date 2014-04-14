@@ -1,0 +1,45 @@
+12 C - Triangle
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+3
+0
+4 1 1
+
+3 NO
+
+1
+1
+4 5 5
+
+17 YES
+2 1
+5 5
+-2 4
+
+1
+2
+5 5 10
+
+20 YES
+-10 4
+-2 -2
+1 2
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskC
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2014.03.30
+30 Codeforces Round #239 (Div. 2)
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
