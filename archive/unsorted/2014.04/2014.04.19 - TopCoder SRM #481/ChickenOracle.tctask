@@ -1,0 +1,64 @@
+13 ChickenOracle
+8 theTruth
+16 java.lang.String
+4
+3 int
+1 n
+3 int
+8 eggCount
+3 int
+8 lieCount
+3 int
+9 liarCount
+5
+0
+4
+int 10
+int 10
+int 0
+int 0
+String
+7 The egg
+1
+1
+4
+int 60
+int 40
+int 0
+int 30
+String
+19 The oracle is a lie
+1
+2
+4
+int 60
+int 20
+int 5
+int 25
+String
+11 The chicken
+1
+3
+4
+int 1000
+int 500
+int 250
+int 250
+String
+9 Ambiguous
+1
+4
+4
+int 762085
+int 174382
+int 591906
+int 731022
+String
+11 The chicken
+1
+10 2014.04.19
+17 TopCoder SRM #481
+0
+18 fuku.ChickenOracle
+0
+3 64M
