@@ -1,7 +1,14 @@
 package fuku;
 
 /**
+ * 良門。
  *
+ * 解説を読んでから実装した。
+ *
+ * * 同じものを一緒に考える。ABBAB と CAACA　は一緒。
+ * * 順列を全て計算するのではなく、パターンの順列を計算する。
+ *
+ * http://apps.topcoder.com/wiki/display/tc/SRM+496
  */
 public class PalindromfulString {
     private int N;
