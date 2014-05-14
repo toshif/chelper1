@@ -22,13 +22,13 @@ public class nCk {
             k = n - k;
         }
 
-        if (!nCkCache.containsKey(n)) {
+        if (!nCkCache.containsKey(Integer.valueOf(n))) {
             List<Long> nList = new ArrayList<>();
             nList.add(Long.valueOf(1));
             nList.add(Long.valueOf(n));
             nCkCache.put(Integer.valueOf(n), nList);
         }
-        List<Long> nList = nCkCache.get(n);
+        List<Long> nList = nCkCache.get(Integer.valueOf(n));
         if (nList.size() > k) {
             return nList.get(k);
         }
