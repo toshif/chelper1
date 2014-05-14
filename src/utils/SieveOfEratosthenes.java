@@ -23,7 +23,7 @@ public class SieveOfEratosthenes {
 
         ret[0] = false;
         ret[1] = false;
-        for (int i = 2; i * i < N; i++) {
+        for (int i = 2; i * i <= N; i++) {
             if (!ret[i]) continue;
 
             for (int j = 2; i * j < N; j++) {
