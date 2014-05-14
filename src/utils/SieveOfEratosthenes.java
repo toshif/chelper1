@@ -41,6 +41,9 @@ public class SieveOfEratosthenes {
             System.out.printf("%s is prime num ? = %s\n", i, isPrime[i]
                     );
         }
+
+        isPrime = getPrimeCheckArray(1_000_000);
+        System.out.println("123457 isPrime ? = " + isPrime[123457]);
     }
 
 }
