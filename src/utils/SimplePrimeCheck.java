@@ -25,5 +25,8 @@ public class SimplePrimeCheck {
         for (int i = 0; i < 100; i++) {
             System.out.printf("%s isPrime ? = %s\n", i, isPrime(i));
         }
+
+
+        System.out.printf("%s isPrime ? = %s\n", 123457, isPrime(123457));
     }
 }
