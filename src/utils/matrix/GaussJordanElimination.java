@@ -34,7 +34,7 @@ public class GaussJordanElimination {
         for (int i = 0; i < N; i++) {
             printB();
 
-            // 絶対値の大きい
+            // 誤差を小さくするため、絶対値の大きいものを選ぶ
             int pivot = i;
             for (int j = i; j < N; j++) {
                 if (Math.abs(B[j][i]) > Math.abs(B[pivot][i])) pivot = j;
