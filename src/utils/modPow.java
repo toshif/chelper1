@@ -26,6 +26,7 @@ public class modPow {
         System.out.println("3^100 mod = " + modPow(3, 100));
         System.out.println("3^1000 mod = " + modPow(3, 1000));
         System.out.println("3^10000 mod = " + modPow(3, 10000));
+        System.out.println("2^0 mod = " + modPow(2, 0));
     }
 
 }
