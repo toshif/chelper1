@@ -42,6 +42,7 @@ public class Permutation {
 
     /**
      * @return the next permutation in lexicographical order.
+     *         return null if already run out all the permutations.
      */
     public int[] nextPermutation() {
         if (pStack == -1) {
@@ -52,7 +53,7 @@ public class Permutation {
         next();
 
         if (pStack == -1) {
-            // ran out all the permutations
+            // just ran out all the permutations
             return null;
         }
 
