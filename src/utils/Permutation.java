@@ -42,7 +42,7 @@ public class Permutation {
 
     /**
      * @return the next permutation in lexicographical order.
-     *         return null if already run out all the permutations.
+     * return null if already run out all the permutations.
      */
     public int[] nextPermutation() {
         if (pStack == -1) {
@@ -100,6 +100,29 @@ public class Permutation {
         }
     }
 
+    /**
+     * number of permutations
+     * <p/>
+     * <code>
+     * 0	1
+     * 1	1
+     * 2	2
+     * 3	6
+     * 4	24
+     * 5	120
+     * 6	720
+     * 7	5,040
+     * 8	40,320
+     * 9	362,880
+     * 10	3,628,800
+     * 11	39,916,800
+     * 12	479,001,600
+     * 13	6,227,020,800
+     * 14	87,178,291,200
+     * </code>
+     *
+     * @param args
+     */
     public static void main(String[] args) {
         Permutation p = new Permutation(4);
         //Permutation p = new Permutation(new int[]{3, 10, 22, 26});
