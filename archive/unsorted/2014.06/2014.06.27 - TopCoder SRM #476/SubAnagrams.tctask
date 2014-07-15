@@ -1,0 +1,47 @@
+11 SubAnagrams
+12 maximumParts
+3 int
+1
+18 java.lang.String[]
+12 suppliedWord
+5
+0
+1
+String[] 1
+6 ABABAB
+int 3
+1
+1
+1
+String[] 1
+9 AAXAAAABX
+int 4
+1
+2
+1
+String[] 1
+12 ABCDEFGHIJKL
+int 1
+1
+3
+1
+String[] 4
+5 ABBAB
+1 B
+3 BBX
+1 Z
+int 2
+1
+4
+1
+String[] 2
+50 NNNPGNGPPNNGPNNNNNPGPPGPPNNNNNNNNPNGNNGNPNPGGGPNNN
+50 NPPGNNNPNNNNGPNNPNNNNGNNGNNNNNPNGNNGNNPNGGNGPNNPNG
+int 11
+1
+10 2014.06.27
+17 TopCoder SRM #476
+0
+16 fuku.SubAnagrams
+0
+3 64M
