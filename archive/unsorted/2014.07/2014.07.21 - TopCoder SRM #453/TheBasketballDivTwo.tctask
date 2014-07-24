@@ -1,0 +1,43 @@
+19 TheBasketballDivTwo
+4 find
+3 int
+1
+18 java.lang.String[]
+5 table
+4
+0
+1
+String[] 2
+2 X?
+2 ?X
+int 1
+1
+1
+1
+String[] 2
+2 XW
+2 LX
+int 2
+1
+2
+1
+String[] 3
+3 XWL
+3 ?XW
+3 WLX
+int 2
+1
+3
+1
+String[] 3
+3 XW?
+3 LX?
+3 ??X
+int 2
+1
+10 2014.07.21
+17 TopCoder SRM #453
+0
+24 fuku.TheBasketballDivTwo
+0
+3 64M
