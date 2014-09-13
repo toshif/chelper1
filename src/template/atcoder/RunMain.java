@@ -46,7 +46,7 @@ public class RunMain {
             // Run the test
             origSysOut.printf("-------------------\n");
             origSysOut.printf("Test# %d\n", i);
-            origSysOut.printf("Input: %s\n", input);
+            origSysOut.printf("Input: \n======\n%s=====\n\n", input);
             new Main().main(null);
 
             // capture the output
