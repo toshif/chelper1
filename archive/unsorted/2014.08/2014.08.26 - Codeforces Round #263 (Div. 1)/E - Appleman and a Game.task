@@ -1,0 +1,35 @@
+23 E - Appleman and a Game
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+2
+0
+9 5
+ABCCAD
+
+2 5
+
+1
+1
+34 5
+AAABACADBABBBCBDCACBCCCDDDBDCDD
+
+2 4
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskE
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2014.08.26
+30 Codeforces Round #263 (Div. 1)
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
