@@ -1,0 +1,38 @@
+body {
+   font-size: 1.5em;
+   font-family: Segoe UI, Verdana, Lucida Grande;
+}
+
+c {
+  font-family: Consolas, Monaco, Courier;
+}
+
+em {
+  font-family: Segoe UI, Verdana, Lucida Grande;
+  font-weight:bold;
+  font-style:italic;
+}
+
+code {
+  font-family: Consolas, Monaco, Courier;
+}
+
+
+/* iphone 5, 5s */
+@media only screen
+    and (min-device-width:320px)
+    and (max-device-width:568px) {
+
+  /* landscape */
+  body {
+    font-size: 1.2em;
+  }
+
+  /* portrait */
+  @media (orientation:portrait) {
+    body {
+      font-size: 3em;
+    }
+  }
+
+}
