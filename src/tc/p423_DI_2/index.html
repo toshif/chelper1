@@ -1,0 +1,88 @@
+<html>
+<head>
+    <title>TheEasyChase</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13514&amp;pm=9977">TheEasyChase</a></h1>
+
+<p><em>Single Round Match 423 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>Two players play a simple game on a <em>n</em> x <em>n</em> board.  The first player has a single white checker which is initially located at (<em>rowWhite</em>, <em>colWhite</em>).  The second player has a single black checker which is initially located at (<em>rowBlack</em>, <em>colBlack</em>).  All coordinates are 1-based.  The two players alternate turns, and the first player moves first.</p>
+
+<p>When it is the first player's turn, he chooses one of four directions (up, down, left or right) and moves his checker one cell in the chosen direction.  When it is the second player's turn, he also chooses one of those four directions and moves his checker one or two cells in the chosen direction.  A player wins the game when his move puts his checker in the cell occupied by his opponent's checker.</p>
+
+<p>Both players use an optimal game strategy.  If the player can win, he will follow the strategy that minimizes the number of moves in the game.  If the player cannot win, he will follow the strategy that maximizes the number of moves in the game.</p>
+
+<p>If the first player will win, return "WHITE x", and if the second player will win, return "BLACK x", where x is the number of moves in the game (all quotes for clarity).</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>TheEasyChase</code></li>
+<li><em>Method</em>: <code>winner</code></li>
+<li><em>Parameters</em>: <code>int, int, int, int, int</code></li>
+<li><em>Returns</em>: <code>String</code></li>
+<li><em>Method signature</em>: <code>String winner(int n, int rowWhite, int colWhite, int rowBlack, int colBlack)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>n</em> will be between 2 and 20, inclusive.</li>
+<li><em>rowWhite</em> will be between 1 and <em>n</em>, inclusive.</li>
+<li><em>colWhite</em> will be between 1 and <em>n</em>, inclusive.</li>
+<li><em>rowBlack</em> will be between 1 and <em>n</em>, inclusive.</li>
+<li><em>colBlack</em> will be between 1 and <em>n</em>, inclusive.</li>
+<li>(<em>rowWhite</em>, <em>colWhite</em>) and (<em>rowBlack</em>, <em>colBlack</em>) will represent different cells.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>2,<br />1,<br />1,<br />2,<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>"BLACK 2"</c></p>
+
+<h4>Reason</h4>
+
+<p>There are two possible moves for the first player. But he will lose the game anyway.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>2,<br />2,<br />2,<br />1,<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>"WHITE 1"</c></p>
+
+<h4>Reason</h4>
+
+<p>Just one move in this game.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />1,<br />1,<br />3,<br />3</c></p>
+
+<h4>Output</h4>
+
+<p><c>"BLACK 6"</c></p>
+
+</body>
+</html>

@@ -1,0 +1,114 @@
+<html>
+<head>
+    <title>CakesEqualization</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13512&amp;pm=10074">CakesEqualization</a></h1>
+
+<p><em>Single Round Match 421 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>You are organizing a party and have bought several pieces of cake for it. The weights of these pieces are given in the int[] <em>weights</em>, where each element corresponds to the weight of a single piece.</p>
+
+<p>After looking at the pieces more carefully, you became worried that they have different weights and decided to make these differences smaller. In order to do this, you can make at most <em>maxCuts</em> cuts. With each cut you can choose one of the pieces you currently have and divide it into two distinct pieces. Note that each of these two pieces can be chosen again when making subsequent cuts.</p>
+
+<p>Your goal is to produce cuts in such way that the difference between the maximal and the minimal pieces' weights becomes as small as possible. Find the best way of making cuts and return the optimal difference.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>CakesEqualization</code></li>
+<li><em>Method</em>: <code>fairDivision</code></li>
+<li><em>Parameters</em>: <code>int[], int</code></li>
+<li><em>Returns</em>: <code>double</code></li>
+<li><em>Method signature</em>: <code>double fairDivision(int[] weights, int maxCuts)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>Your return value must have an absolute or relative error less than 1e-9.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>weights</em> will contain between 1 and 50 elements, inclusive.</li>
+<li>Each element of <em>weights</em> will be between 1 and 1,000,000,000, inclusive.</li>
+<li><em>maxCuts</em> will be between 1 and 100,000, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>[1, 3],<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>0.0</c></p>
+
+<h4>Reason</h4>
+
+<p>First, choose the piece with weight 3 and cut it into pieces with weights 1 and 2. Then, choose the piece with weight 2 and cut it into two pieces with weight 1. Now all pieces have the same weight, so the answer is 0.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>[1, 1, 1, 1, 1],<br />4</c></p>
+
+<h4>Output</h4>
+
+<p><c>0.0</c></p>
+
+<h4>Reason</h4>
+
+<p>Even though you are allowed to make 4 cuts, there is no sense in making any of them.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>[1, 3],<br />1</c></p>
+
+<h4>Output</h4>
+
+<p><c>0.5</c></p>
+
+<h4>Reason</h4>
+
+<p>The same case as in example 0, but now you are allowed to make only one cut. The best thing to do is to cut the piece with weight 3 into two pieces with weights 1.5.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>[7, 11, 13],<br />10</c></p>
+
+<h4>Output</h4>
+
+<p><c>0.3999999999999999</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>[13, 69, 41, 37, 80],<br />27</c></p>
+
+<h4>Output</h4>
+
+<p><c>1.4666666666666668</c></p>
+
+</body>
+</html>

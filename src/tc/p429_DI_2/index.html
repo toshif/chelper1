@@ -1,0 +1,99 @@
+<html>
+<head>
+    <title>IngredientProportions</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13520&amp;pm=8729">IngredientProportions</a></h1>
+
+<p><em>Single Round Match 429 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>Your friend has invented a splendid cocktail consisting of N ingredients.  However, she has forgotten the amount of each ingredient that goes into the recipe.</p>
+
+<p>For N-1 pairs of ingredients, she remembers the proportion in which the ingredients within each pair should be added to the cocktail. Fortunately, these N-1 proportions are sufficient to restore the recipe of the entire cocktail.</p>
+
+<p>You are given a String[] <em>proportions</em> containing the N-1 proportions. Each element is formatted "#<a> and #<b> as <p>:<q>" (quotes for clarity), which means that the mass of ingredient <a> divided by the mass of ingredient <b> in the cocktail must be equal to <p>/<q> (all ingredients are 0-indexed). Return a int[] containing exactly N elements, where the i-th element is the mass of ingredient i, such that all the given proportions are satisfied and the total mass is as small as possible.  The total mass must be greater than 0.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>IngredientProportions</code></li>
+<li><em>Method</em>: <code>getMasses</code></li>
+<li><em>Parameters</em>: <code>String[]</code></li>
+<li><em>Returns</em>: <code>int[]</code></li>
+<li><em>Method signature</em>: <code>int[] getMasses(String[] proportions)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>proportions</em> will contain between 1 and 9 elements, inclusive.</li>
+<li><em>proportions</em> will contain exactly N-1 elements, where N is the number of ingredients in the cocktail.</li>
+<li>Each element of <em>proportions</em> will contain exactly 16 characters.</li>
+<li>Each element of <em>proportions</em> will be formatted as described in the statement.</li>
+<li>Each <a> will be between 0 and N-1, inclusive.</li>
+<li>Each <b> will be between 0 and N-1, inclusive.</li>
+<li>Each <p> will be between 1 and 9, inclusive.</li>
+<li>Each <q> will be between 1 and 9, inclusive.</li>
+<li>The information given in <em>proportions</em> will be sufficient to restore the recipe of the cocktail uniquely up to a constant factor.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>["#0 and #1 as 6:4"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>[3, 2 ]</c></p>
+
+<h4>Reason</h4>
+
+<p>Taking 6 units of ingredient #0 and 4 units of ingredient #1 would satisfy the proportion, but it wouldn't give the smallest possible total mass. To minimize the total mass, divide the masses by 2.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>["#0 and #1 as 9:8","#1 and #2 as 9:8"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>[81, 72, 64 ]</c></p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>["#4 and #0 as 1:1", "#4 and #1 as 3:1", "#4 and #2 as 5:1", "#4 and #3 as 7:1"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>[105, 35, 21, 15, 105 ]</c></p>
+
+<h4>Reason</h4>
+
+<p>The mass of ingredient #4 should be divisible by 3, 5 and 7. The smallest such number is 105.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>["#2 and #3 as 6:8", "#0 and #1 as 9:3", "#3 and #0 as 7:5"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>[60, 20, 63, 84 ]</c></p>
+
+</body>
+</html>

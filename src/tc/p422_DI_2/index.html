@@ -1,0 +1,103 @@
+<html>
+<head>
+    <title>CavePassage</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13513&amp;pm=10123">CavePassage</a></h1>
+
+<p><em>Single Round Match 422 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>Several travelers are standing at the entrance of a dark cave.  The travelers must all pass through the cave and stand together at the exit.  Unfortunately, a variety of circumstances can make it impossible for them to all pass through the cave together at the same time.  Therefore, they may have to take turns going through the cave in smaller groups.  There is only one map though, and it is impossible to navigate the cave without it, so whenever a group of travelers is inside the cave, one member of that group must be holding the map.</p>
+
+<p>When a group of travelers walks through the cave, either from the entrance or the exit, they must traverse an old bridge to get to the other side of the cave.  The entire group inside the cave must cross the bridge together at the same time.  The bridge cannot hold more than <em>bridgeStrength</em> kilograms, or it will collapse.  You are given a int[] <em>travelersWeights</em>, where the i-th element is the weight of the i-th traveler in kilograms.</p>
+
+<p>Travelers may walk through the cave alone. Although, when travelers walk through the cave in a group of two or more, each traveler must trust at least one of the other travelers in the group. You are given a String[] <em>trustTable</em>, where the j-th character of the i-th element is 'Y' if traveler i trusts traveler j, and 'N' otherwise.  Note that the trust relation is not necessarily symmetric.</p>
+
+<p>Travelers walk at different speeds, but when they go through the cave, they must stick together and walk at the same speed.  Therefore, when a group of travelers walks through the cave, they must walk at the speed of the slowest traveler in the group.  You are given a int[] <em>travelersTimes</em>, where the i-th element is the amount of time it takes the i-th traveler to walk through the cave in any direction.</p>
+
+<p>Return the minimal total time required for all the travelers to end up together at the exit of the cave.  If it is impossible, return -1 instead.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>CavePassage</code></li>
+<li><em>Method</em>: <code>minimalTime</code></li>
+<li><em>Parameters</em>: <code>int[], int[], String[], int</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int minimalTime(int[] travelersWeights, int[] travelersTimes, String[] trustTable, int bridgeStrength)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>travelersWeights</em> will contain between 1 and 13 elements, inclusive.</li>
+<li>Each element of <em>travelersWeights</em> will be between 1 and 1000, inclusive.</li>
+<li><em>travelersTimes</em> will contain the same number of elements as <em>travelersWeights</em>.</li>
+<li>Each element of <em>travelersTimes</em> will be between 1 and 1000, inclusive.</li>
+<li><em>trustTable</em> will contain the same number of elements as <em>travelersWeights</em>.</li>
+<li>Each element of <em>trustTable</em> will contain exactly n characters, where n is the number of elements in <em>trustTable</em>.</li>
+<li>Each element of <em>trustTable</em> will contain only uppercase letters 'Y' and 'N'.</li>
+<li>The i-th character of the i-th element of <em>trustTable</em> will always be 'Y'.</li>
+<li><em>bridgeStrength</em> will be between 1 and 5000, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>[ 1, 1, 1 ],<br />[ 2, 3, 4 ],<br />[ "YYY", "YYY", "YYY" ],<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>9</c></p>
+
+<h4>Reason</h4>
+
+<p>The travelers can achieve the goal as follows.  First, traveler 0 and traveler 2 go through the cave together.  It normally takes 2 time units for traveler 0 to go through the cave, and it takes 4 time units for traveler 2.  Since they are traveling together in a group, they must walk at the speed of the slower traveler.  So, after 4 time units, both travelers are at the exit.  Then, traveler 0 takes the map and goes back through the cave to the entrance.  This time, it only takes 2 time units because he is alone.  Finally, traveler 0 and traveler 1 go through the cave together in 3 time units and all the travelers end up together at the exit.  The total time is 4 + 2 + 3 = 9.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>[ 1, 1, 1 ],<br />[ 2, 3, 4 ],<br />[ "YYY", "YYY", "NYY" ],<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>10</c></p>
+
+<h4>Reason</h4>
+
+<p>Here things become a little bit more complicated, because traveler 2 doesn't trust traveler 0.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>[ 1, 1, 1 ],<br />[ 7, 13, 19 ],<br />[ "YYN", "NYY", "YNY" ],<br />3</c></p>
+
+<h4>Output</h4>
+
+<p><c>19</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>[ 43 ],<br />[ 23 ],<br />[ "Y" ],<br />42</c></p>
+
+<h4>Output</h4>
+
+<p><c>-1</c></p>
+
+</body>
+</html>

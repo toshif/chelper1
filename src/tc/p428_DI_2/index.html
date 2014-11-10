@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>TheLongPalindrome</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13519&amp;pm=10184">TheLongPalindrome</a></h1>
+
+<p><em>Single Round Match 428 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>John and Brus are studying string theory at the university.  Their task is to create a list of all the palindromes that contain between 1 and <em>n</em> lowercase letters ('a'-'z'), inclusive.  A palindrome is a string that reads the same forward and backward.  Additionally, each palindrome in their list must contain no more than <em>k</em> distinct letters.  Return the number of palindromes in the list modulo 1234567891.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>TheLongPalindrome</code></li>
+<li><em>Method</em>: <code>count</code></li>
+<li><em>Parameters</em>: <code>int, int</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int count(int n, int k)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>n</em> will be between 1 and 1,000,000,000, inclusive.</li>
+<li><em>k</em> will be between 1 and 26, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>1,<br />1</c></p>
+
+<h4>Output</h4>
+
+<p><c>26</c></p>
+
+<h4>Reason</h4>
+
+<p>All palindromes in the list are single character strings.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>2,<br />10</c></p>
+
+<h4>Output</h4>
+
+<p><c>52</c></p>
+
+<h4>Reason</h4>
+
+<p>Now we have single and double character palindromes.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>728</c></p>
+
+<h4>Reason</h4>
+
+<p>A slightly longer list.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>44,<br />7</c></p>
+
+<h4>Output</h4>
+
+<p><c>240249781</c></p>
+
+</body>
+</html>

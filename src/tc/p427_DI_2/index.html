@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>LocateTreasure</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13518&amp;pm=9984">LocateTreasure</a></h1>
+
+<p><em>Single Round Match 427 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>First of all we define a function dig for all nonnegative integers:</p>
+
+<p>dig(x) := x                          if 0 &lt;= x &lt;= 9
+dig(x) := dig(sum of digits of x)    if x >= 10
+For example: dig(49) = dig(13) = dig(4) = 4.</p>
+
+<p>Your crew of treasure hunters have recently found a very old map with instructions on how to find the treasure of an old civilization.  There is a variable named Gold number, and it is initially assigned a value of 1.  You are currently standing at position (0, 0), facing north.</p>
+
+<p>Repeat the following instructions <em>K</em> times:</p>
+
+<ol>
+<li><p>Take dig(Gold number) steps forward, and then turn 90 degrees right.</p></li>
+<li><p>Multiply Gold number by <em>multi</em>.</p></li>
+</ol>
+
+
+<p>Each step forward moves you one unit in your current direction.  Moving north changes your location by (0, 1), south changes your location by (0, -1), west changes your location by (-1, 0) and east changes your location by (1, 0). After you perform all the instructions, you can start digging.  Return the coordinates (X, Y) of your final location as a String in the form "X Y" (quotes for clarity), where X and Y contain no extra leading zeroes.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>LocateTreasure</code></li>
+<li><em>Method</em>: <code>location</code></li>
+<li><em>Parameters</em>: <code>int, int</code></li>
+<li><em>Returns</em>: <code>String</code></li>
+<li><em>Method signature</em>: <code>String location(int K, int multi)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>K</em> will be between 1 and 10<sup>9</sup>, inclusive.</li>
+<li><em>multi</em> will be between 1 and 1000, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>5,<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>"-6 4"</c></p>
+
+<h4>Reason</h4>
+
+<p>You will go 1 step north, 2 steps east, 4 steps south, 8 steps west and 7 steps north.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>99,<br />1</c></p>
+
+<h4>Output</h4>
+
+<p><c>"1 0"</c></p>
+
+<h4>Reason</h4>
+
+<p>You will do exactly 1 step in every iteration.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>6,<br />9</c></p>
+
+<h4>Output</h4>
+
+<p><c>"9 1"</c></p>
+
+</body>
+</html>

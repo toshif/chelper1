@@ -1,0 +1,140 @@
+<html>
+<head>
+    <title>RedIsGood</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13511&amp;pm=9915">RedIsGood</a></h1>
+
+<p><em>Single Round Match 420 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>You have a deck that contains <em>R</em> red and <em>B</em> black cards.</p>
+
+<p>You are playing the following game: You shuffle the deck, and then begin dealing the cards one by one.
+For each red card you flip you get a dollar, and for each black card you flip you have to pay a dollar.
+At any moment (including the beginning of the game) you are allowed to stop and keep the money you have.</p>
+
+<p>Write a method that will take the ints <em>R</em> and <em>B</em>, and return the expected amount you will
+gain if you play this game optimally.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>RedIsGood</code></li>
+<li><em>Method</em>: <code>getProfit</code></li>
+<li><em>Parameters</em>: <code>int, int</code></li>
+<li><em>Returns</em>: <code>double</code></li>
+<li><em>Method signature</em>: <code>double getProfit(int R, int B)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>During the game, your balance may be negative.</li>
+<li>We assume that each permutation of the cards in the deck is equally likely.</li>
+<li>Your return value must have a relative or absolute error less than 1e-9.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>R</em> will be between 0 and 5,000, inclusive.</li>
+<li><em>B</em> will be between 0 and 5,000, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>0,<br />7</c></p>
+
+<h4>Output</h4>
+
+<p><c>0.0</c></p>
+
+<h4>Reason</h4>
+
+<p>If all cards are black, the best strategy is not to play at all.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>4,<br />0</c></p>
+
+<h4>Output</h4>
+
+<p><c>4.0</c></p>
+
+<h4>Reason</h4>
+
+<p>If all cards are red, the best strategy is to flip them all.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>5,<br />1</c></p>
+
+<h4>Output</h4>
+
+<p><c>4.166666666666667</c></p>
+
+<h4>Reason</h4>
+
+<p>The strategy "flip all cards" is guaranteed to earn $4. However, we can do better. If we flipped 5 cards and all of them are red, it makes no sense to flip the final, black card. Therefore if we play optimally the expected gain is more than $4.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>2,<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>0.6666666666666666</c></p>
+
+<h4>Reason</h4>
+
+<p>An optimal strategy for this case: Flip the first card. If it is red, stop. If it is black, flip the second and the third card. If both are red, stop, otherwise flip the fourth card.</p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>12,<br />4</c></p>
+
+<h4>Output</h4>
+
+<p><c>8.324175824175823</c></p>
+
+<h4>Reason</h4>
+
+<p>This is a game I would surely like to play often.</p>
+
+<h3>Example 6</h3>
+
+<h4>Input</h4>
+
+<p><c>11,<br />12</c></p>
+
+<h4>Output</h4>
+
+<p><c>1.075642825339958</c></p>
+
+<h4>Reason</h4>
+
+<p>Surprisingly, sometimes there is a good strategy even if the number of red cards is smaller than the number of black cards.</p>
+
+</body>
+</html>

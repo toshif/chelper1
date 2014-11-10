@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>PiecesMover</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13516&amp;pm=10117">PiecesMover</a></h1>
+
+<p><em>Single Round Match 425 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>You are given a 5x5 board containing at most 5 pieces.  Your task is to move the pieces so that the cells occupied by them form a connected component.  A connected component is a set of cells where each pair of cells is connected by at least one path.  Consecutive cells in a path must all be adjacent.  Two cells are called adjacent if they share a common edge.</p>
+
+<p>You are given a String[] <em>board</em>, where the j-th character of the i-th element is '*' if cell (i, j) is occupied by a piece and '.' otherwise.  Return the minimum number of moves required to achieve your goal.  Each move consists of moving one piece to an adjacent empty cell.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>PiecesMover</code></li>
+<li><em>Method</em>: <code>getMinimumMoves</code></li>
+<li><em>Parameters</em>: <code>String[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int getMinimumMoves(String[] board)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>board</em> will contain exactly 5 elements.</li>
+<li>Each element of <em>board</em> will contain exactly 5 characters.</li>
+<li>Each character in <em>board</em> will be either '.' or '*'.</li>
+<li><em>board</em> will contain between 1 and 5 '*' characters, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>[".....",<br /> "..<em>*.",<br /> ".....",<br /> "...</em>.",<br /> "....."]</c></p>
+
+<h4>Output</h4>
+
+<p><c>1</c></p>
+
+<h4>Reason</h4>
+
+<ul>
+<li><ul>
+<li><ul>
+<li><ul>
+<li>+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li>O O +</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>O +
+|</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li>. +</li>
+</ul>
+</li>
+</ul>
+</li>
+<li><ul>
+<li><ul>
+<li><ul>
+<li>+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>[".....",<br /> ".....",<br /> ".<strong>..",<br /> ".*...",<br /> "</strong>..."]</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+<h4>Reason</h4>
+
+<p>The cells occupied by pieces have already formed a connected component.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>["<em>...</em>",<br /> ".....",<br /> ".....",<br /> ".....",<br /> "<em>...</em>"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>12</c></p>
+
+<h4>Reason</h4>
+
+<p>. + +-+-.
+ |   |  <br/>
+ + + + + +
+ |   |  <br/>
+ +-O O O-+
+         |
+ + O + + +
+   |     |
+ .-+ + + .</p>
+
+</body>
+</html>
