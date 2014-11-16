@@ -1,7 +1,7 @@
 
 package tc.p423_DI_2;
 
-public class TheEasyChase {
+public class TheEasyChase_mine_didnt_pass_systest {
 
     private int n;
     private int rowWhite;
