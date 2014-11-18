@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.List;
 
 /**
+ * http://en.wikipedia.org/wiki/Kruskal's_algorithm
+ *
  * Created by toshi on 2014/11/18.
  */
 public class MinimumSpanningTree_Kruskal {
