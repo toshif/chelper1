@@ -7,7 +7,9 @@ import java.util.List;
 /**
  * http://en.wikipedia.org/wiki/Kruskal's_algorithm
  *
- * Created by toshi on 2014/11/18.
+ * weight の和を最小にする (minimum)、 全ての vertex を含む tree (spanning tree : 全域木) を探す。
+ *
+ * Created by toshif on 2014/11/18.
  */
 public class MinimumSpanningTree_Kruskal {
 
