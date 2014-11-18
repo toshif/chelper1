@@ -1,0 +1,113 @@
+<html>
+<head>
+    <title>BestRoads</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13515&amp;pm=10172">BestRoads</a></h1>
+
+<p><em>Single Round Match 424 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>There are N cities numbered 0 to N-1.  The j-th character of the i-th element of <em>roads</em> is 'Y' if there is a bidirectional road between cities i and j, and 'N' otherwise.</p>
+
+<p>The road connecting cities A and B, where A &lt; B, has a higher priority than the road connecting cities C and D, where C &lt; D, if either A &lt; C or (A = C and B &lt; D).  A set of roads is a list of one or more roads sorted from highest to lowest priority.  A set S1 has a higher priority than set S2 if road S1[i] has a higher priority than road S2[i], where i is the earliest index at which the two sets differ. A set of roads is called connected if there's a path between any pair of cities containing only the roads from this set.</p>
+
+<p>Your task is to find the connected set with the highest priority containing exactly <em>M</em> roads.  Return a int[] where the i-th element is the number of roads in that set containing city i as an endpoint.  Return an empty int[] if there is no such set.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>BestRoads</code></li>
+<li><em>Method</em>: <code>numberOfRoads</code></li>
+<li><em>Parameters</em>: <code>String[], int</code></li>
+<li><em>Returns</em>: <code>int[]</code></li>
+<li><em>Method signature</em>: <code>int[] numberOfRoads(String[] roads, int M)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>roads</em> will contain between 1 and 50 elements, inclusive.</li>
+<li><em>M</em> will be between N-1 and 1,000, inclusive, where N is the number of elements in <em>roads</em>.</li>
+<li>Each element of <em>roads</em> will contain exactly N characters 'Y' or 'N', where N is the number of elements in <em>roads</em>.</li>
+<li>For each i and j <em>roads</em>[i][j] will be equal to <em>roads</em>[j][i].</li>
+<li>For each i <em>roads</em>[i][i] will be equal to 'N'.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>["NYYYY","YNYYY","YYNYY","YYYNY","YYYYN"],<br />10</c></p>
+
+<h4>Output</h4>
+
+<p><c>[4, 4, 4, 4, 4 ]</c></p>
+
+<h4>Reason</h4>
+
+<p>All roads should be selected.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>["NYY","YNY","YYN"],<br />2</c></p>
+
+<h4>Output</h4>
+
+<p><c>[2, 1, 1 ]</c></p>
+
+<h4>Reason</h4>
+
+<p>The set must contain roads 0-1 and 0-2.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>["NYNNY","YNNNY","NNNNN","NNNNY","YYNYN"],<br />4</c></p>
+
+<h4>Output</h4>
+
+<p><c>[ ]</c></p>
+
+<h4>Reason</h4>
+
+<p>City 2 can not be connected to others.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>["NYYNYYYN","YNNNNYYN","YNNNYNNN","NNNNNNYY","YNYNNNNN","YYNNNNYY","YYNYNYNY","NNNYNYYN"],<br />10</c></p>
+
+<h4>Output</h4>
+
+<p><c>[5, 3, 2, 2, 2, 2, 3, 1 ]</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>["NNYY","NNYY","YYNN","YYNN"],<br />5</c></p>
+
+<h4>Output</h4>
+
+<p><c>[ ]</c></p>
+
+<h4>Reason</h4>
+
+<p>There are totally 4 roads, so we can't choose 5 of them.</p>
+
+</body>
+</html>
