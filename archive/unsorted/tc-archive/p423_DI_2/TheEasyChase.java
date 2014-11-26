@@ -1,6 +1,17 @@
 
 package tc.p423_DI_2;
 
+// sys test passed
+// impl after read the editorial
+/*
+(position, next player) という state が WIN するか、LOSE するかを再帰的に決定する.
+
+ // the position's outcome is WIN if there's a move from it that leads to a position with outcome LOSE;
+ // the position's outcome is LOSE if all moves from it lead to positions with outcome WIN;
+
+という WIN-LOSE の関係を見つけられるかが鍵。
+
+ */
 public class TheEasyChase {
 
     private int n;
@@ -12,7 +23,7 @@ public class TheEasyChase {
     int[] dx = {1, 0, -1, 0, 2, 0, -2, 0};
     int[] dy = {0, 1, 0, -1, 0, 2, 0, -2};
 
-    String winner(int n, int rowWhite, int colWhite, int rowBlack, int colBlack){
+    String winner(int n, int rowWhite, int colWhite, int rowBlack, int colBlack) {
         this.n = n;
         this.rowWhite = rowWhite;
         this.colWhite = colWhite;
@@ -33,15 +44,6 @@ public class TheEasyChase {
                         for (int m = 0; m < 2; m++) {
                             int d1 = Math.abs(i - k);
                             int d2 = Math.abs(j - l);
-                            if ((d1 == 1 && d2 == 0) || (d1 == 0 && d2 == 1)) {
-                                states[i][j][k][l][m] = 1;
-                                moves[i][j][k][l][m] = 1;
-
-                            }
-                            if (m == 1 && ((d1 == 2 && d2 == 0) || (d1 == 0 && d2 == 2))) {
-                                states[i][j][k][l][m] = 1;
-                                moves[i][j][k][l][m] = 1;
-                            }
 
                             if (d1 == 0 && d2 == 0) {
                                 states[i][j][k][l][m] = 2;
@@ -57,19 +59,22 @@ public class TheEasyChase {
         // the position's outcome is LOSE if all moves from it lead to positions with outcome WIN;
         // outcome for all other positions is DRAW.
 
-        while(true){
+        int currentmove = 0;
+
+        while (true) {
             boolean updates = false;
 
-            for (int i = 0; i < n; i++) {
-                for (int j = 0; j < n; j++) {
+            // white move, then black move
+            for (int m = 0; m < 2; m++) {
 
-                    for (int k = 0; k < n; k++) {
-                        for (int l = 0; l < n; l++) {
+                for (int i = 0; i < n; i++) {
+                    for (int j = 0; j < n; j++) {
 
-                            A:
-                            for (int m = 0; m < 2; m++) {
+                        for (int k = 0; k < n; k++) {
+                            for (int l = 0; l < n; l++) {
+
                                 // already known, skip
-                                if ( states[i][j][k][l][m] != 0) continue A;
+                                if (states[i][j][k][l][m] != 0) continue;
 
                                 int nextp = (m + 1) % 2;
 
@@ -79,7 +84,7 @@ public class TheEasyChase {
                                 int maMove = 0;
                                 int miMove = 987654321;
 
-                                int mm = ( m == 0 ) ? 4 : 8;
+                                int mm = (m == 0) ? 4 : 8;
                                 B:
                                 for (int o = 0; o < mm; o++) {
                                     int ni = i, nj = j, nk = k, nl = l;
@@ -92,7 +97,7 @@ public class TheEasyChase {
                                         nl += dy[o];
                                     }
 
-                                    if ( !(within(ni) && within(nj) && within(nk) && within(nl)) ){
+                                    if (!(within(ni) && within(nj) && within(nk) && within(nl))) {
                                         continue B;
                                     }
 
@@ -132,11 +137,11 @@ public class TheEasyChase {
                 }
             }
 
-            if(!updates) break;
+            if (!updates) break;
         }
 
-        int res = states[rowWhite-1][colWhite-1][rowBlack-1][colBlack-1][0];
-        int move = moves[rowWhite-1][colWhite-1][rowBlack-1][colBlack-1][0];
+        int res = states[rowWhite - 1][colWhite - 1][rowBlack - 1][colBlack - 1][0];
+        int move = moves[rowWhite - 1][colWhite - 1][rowBlack - 1][colBlack - 1][0];
 
         if (res == 1) {
             return "WHITE " + move;
@@ -145,7 +150,7 @@ public class TheEasyChase {
         }
     }
 
-    boolean within(int x){
+    boolean within(int x) {
         if (x < 0) return false;
         if (n <= x) return false;
 
