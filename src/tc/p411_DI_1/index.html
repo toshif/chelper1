@@ -1,0 +1,131 @@
+<html>
+<head>
+    <title>SentenceDecomposition</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=12183&amp;pm=8692">SentenceDecomposition</a></h1>
+
+<p><em>Single Round Match 411 Round 1 - Division I, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>Little Bonnie and her friends were dismayed to learn that their parents were reading all of their private communications.  They decided to invent a new language that would allow them to talk freely.  What they finally came up with was a language where sentences are built using a special method.</p>
+
+<p>All the valid words that can be used in the new language are given in the String[] <em>validWords</em>.  A sentence is a concatenation (with no spaces) of a sequence of valid words.  Each valid word can appear 0 or more times in the sentence.  What makes the language special is that each word can be transformed by rearranging its letters before being used.  The cost to transform a word is defined as the number of character positions where the original word and the transformed word differ.  For example, "abc" can be transformed to "abc" with a cost of 0, to "acb", "cba" or "bac" with a cost of 2, and to "bca" or "cab" with a cost of 3.</p>
+
+<p>Although several different sequences of valid words can produce the same sentence in this language, only the sequence with the least total transformation cost carries the meaning of the sentence.  The advantage of the new language is that the parents can no longer understand what the kids are saying.  The disadvantage is that the kids themselves also do not understand.  They need your help.</p>
+
+<p>Given a String <em>sentence</em>, return the total cost of transformation of the sequence of valid words which carries the meaning of the sentence, or -1 if no such sequence exists.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>SentenceDecomposition</code></li>
+<li><em>Method</em>: <code>decompose</code></li>
+<li><em>Parameters</em>: <code>String, String[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int decompose(String sentence, String[] validWords)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>If a word is used multiple times in a sentence, each occurrence can be transformed differently.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>sentence</em> will contain between 1 and 50 lowercase letters ('a'-'z'), inclusive.</li>
+<li><em>validWords</em> will contain between 1 and 50 elements, inclusive.</li>
+<li>Each element of <em>validWords</em> will contain between 1 and 50 lowercase letters ('a'-'z'), inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>"neotowheret",<br />["one", "two", "three", "there"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>8</c></p>
+
+<h4>Reason</h4>
+
+<p>The following transformations can be made:
+"one" -> "neo" with a cost of 3
+"two" -> "tow" with a cost of 2
+"three" -> "heret" with a cost of 3
+"there" -> "heret" with a cost of 5
+So the sequence {"one", "two", "three"} is the one carrying the meaning of "neotowheret". Its total transformation cost is 3 + 2 + 3 = 8.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>"abba",<br />["ab", "ac", "ad"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+<h4>Reason</h4>
+
+<p>The word "ab" is used twice, and each time, it is transformed differently.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>"thisismeaningless",<br />["this", "is", "meaningful"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>-1</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>"ommwreehisymkiml",<br />["we", "were", "here", "my", "is", "mom", "here", "si", "milk", "where", "si"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>10</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>"ogodtsneeencs",<br />["go", "good", "do", "sentences", "tense", "scen"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>8</c></p>
+
+<h3>Example 6</h3>
+
+<h4>Input</h4>
+
+<p><c>"sepawaterords",<br />["separate","words"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>-1</c></p>
+
+<h4>Reason</h4>
+
+<p>You are only allowed to rearrange letters within words, and not in the entire sentence.</p>
+
+</body>
+</html>

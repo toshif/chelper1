@@ -1,0 +1,92 @@
+<html>
+<head>
+    <title>CardsCheating</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13506&amp;pm=9934">CardsCheating</a></h1>
+
+<p><em>Single Round Match 415 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>You are a dealer in some card game for 3 players (numbered 0, 1, 2). The game uses a deck of N cards, numbered 0 to N-1. First you perform a few shuffles of the deck and then give cards to the players. The card at position 0 goes to player 0, the card at position 1 goes to player 1, the card at position 2 goes to player 2, the card at position 3 goes to player 0, and so on. But you want to cheat. You know the initial order of the cards in the deck, and you want each card to go to a specific player.  You want to know the minimal number of shuffles required to give the cards to the desired players. You can only perform the shuffle given in the int[] <em>shuffle</em>.  After performing one shuffle, the card that was at position i in the deck will be at position <em>shuffle</em>[i].  You want the card that's initially at position i in the deck to go to player <em>cards</em>[i]. Return the minimal number of shuffles needed to achieve the goal or -1 if it is impossible.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>CardsCheating</code></li>
+<li><em>Method</em>: <code>numberOfShuffles</code></li>
+<li><em>Parameters</em>: <code>int[], int[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int numberOfShuffles(int[] cards, int[] shuffle)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>cards</em> will contain between 3 and 48 elements, inclusive.</li>
+<li>Each element of <em>cards</em> will be 0, 1 or 2.</li>
+<li>The number of elements in <em>cards</em> will be a multiple of 3.</li>
+<li><em>shuffle</em> and <em>cards</em> will contain the same number of elements.</li>
+<li>All elements in <em>shuffle</em> will be distinct.</li>
+<li>Each element of <em>shuffle</em> will be between 0 and N-1, inclusive, where N is the number of elements in  shuffle..</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>[0,1,2,0,1,2],<br />[1,4,0,3,2,5]</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+<h4>Reason</h4>
+
+<p>No shuffles are needed.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>[2,0,1],<br />[1,2,0]</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+<h4>Reason</h4>
+
+<p>Shuffle the deck two times.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>[1,1,2,0,2,0,1,0,2,2,1,0],<br />[5,0,9,7,1,8,3,10,4,11,6,2]</c></p>
+
+<h4>Output</h4>
+
+<p><c>59</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>[1,0,2],<br />[0,2,1]</c></p>
+
+<h4>Output</h4>
+
+<p><c>-1</c></p>
+
+</body>
+</html>

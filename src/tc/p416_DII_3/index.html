@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>DancingCouples</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13507&amp;pm=9902">DancingCouples</a></h1>
+
+<p><em>Single Round Match 416 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>There are N boys and M girls in a dance school. The teachers are organizing a performance and they need exactly <em>K</em> boy-girl couples for their show.  Unfortunately, this is not a straightforward task since some children cannot be paired with each other (due to differences in height, skill, etc.). One of the teachers is a computer science graduate, and has decided to count the number of ways to select <em>K</em> couples.</p>
+
+<p>You are given a String[] <em>canDance</em> containing exactly N elements, each with exactly M characters. The j-th character of the i-th element of <em>canDance</em> is 'Y' if boy i can be paired with girl j, and 'N' otherwise. Return the number of distinct valid ways to select exactly <em>K</em> boy-girl pairs.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>DancingCouples</code></li>
+<li><em>Method</em>: <code>countPairs</code></li>
+<li><em>Parameters</em>: <code>String[], int</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int countPairs(String[] canDance, int K)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>canDance</em> will contain between 1 and 10 elements, inclusive.</li>
+<li>Each element of <em>canDance</em> will contain between 1 and 10 characters, inclusive.</li>
+<li>Each element of <em>canDance</em> will contain the same number of characters.</li>
+<li>Each character in <em>canDance</em> will be either 'Y' or 'N'.</li>
+<li><em>K</em> will be between 1 and 10, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>["YYYY", <br /> "YYYY",<br /> "YYYY"],<br />3</c></p>
+
+<h4>Output</h4>
+
+<p><c>24</c></p>
+
+<h4>Reason</h4>
+
+<p>There are three boys and four girls. Every boy can dance with every girl. The first boy selects one of the four girls, the second boy selects one of the three remaining girls, and the third boy selects one of the two remaining girls. Thus, there are 4<em>3</em>2=24 ways to create three couples.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>["YYNN", <br /> "NYYN", <br /> "NNYY"],<br />3</c></p>
+
+<h4>Output</h4>
+
+<p><c>4</c></p>
+
+<h4>Reason</h4>
+
+<p>There are 4 possible pairings:</p>
+
+<p>{boy1-girl1, boy2-girl2, boy3-girl3},</p>
+
+<p>{boy1-girl1, boy2-girl2, boy3-girl4},</p>
+
+<p>{boy1-girl1, boy2-girl3, boy3-girl4},</p>
+
+<p>{boy1-girl2, boy2-girl3, boy3-girl4}</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>["YY", <br /> "YY", <br /> "YY"],<br />3</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+<h4>Reason</h4>
+
+<p>There are 3 boys but only 2 girls, so it is impossible to select 3 pairs.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>["YYNNNN",<br /> "NYYNNN",<br /> "NNYYNN",<br /> "NNNYYN",<br /> "NNNNYY",<br /> "YNNNNY"],<br />3</c></p>
+
+<h4>Output</h4>
+
+<p><c>112</c></p>
+
+</body>
+</html>

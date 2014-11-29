@@ -1,0 +1,79 @@
+<html>
+<head>
+    <title>ForbiddenStrings</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13503&amp;pm=8480">ForbiddenStrings</a></h1>
+
+<p><em>Single Round Match 412 Round 1 - Division I, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>A string of letters A, B, C is forbidden if there are three consecutive letters from which one is A, one is B, and one is C. For example, BAACAAC<em>CBA</em>AA is forbidden, while AABBCCAABB is not.</p>
+
+<p>Your task is to calculate how many such strings of length <em>n</em> are not forbidden.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>ForbiddenStrings</code></li>
+<li><em>Method</em>: <code>countNotForbidden</code></li>
+<li><em>Parameters</em>: <code>int</code></li>
+<li><em>Returns</em>: <code>long</code></li>
+<li><em>Method signature</em>: <code>long countNotForbidden(int n)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>n</em> will be between 1 and 30, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>2</c></p>
+
+<h4>Output</h4>
+
+<p><c>9</c></p>
+
+<h4>Reason</h4>
+
+<p>All 9 strings of length 2 are not forbidden.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>3</c></p>
+
+<h4>Output</h4>
+
+<p><c>21</c></p>
+
+<h4>Reason</h4>
+
+<p>There are 27 strings of length 3. Of these, 6 contain one occurrence of each letter. Those 6 strings are forbidden, so you should return 21.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>4</c></p>
+
+<h4>Output</h4>
+
+<p><c>51</c></p>
+
+</body>
+</html>

@@ -1,0 +1,107 @@
+<html>
+<head>
+    <title>ShipLoading</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13506&amp;pm=9933">ShipLoading</a></h1>
+
+<p><em>Single Round Match 415 Round 1 - Division I, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>You have to load a ship with some cargo. All the cargo is put in boxes. There are some cranes and each of them can put one box in the ship per minute. All cranes can work simultaneously. Each crane has a weight limit - it cannot move a box whose weight is greater than that limit. Return the minimal time (measured in minutes) needed to load the ship with all cargo or -1 if it is impossible.
+You are given a int[] <em>cranes</em>, the i-th element of which is the weight limit of the i-th crane.  You are also given a String[] <em>boxes</em>.  Concatenate the elements of <em>boxes</em> to get a space-separated list of the boxes' weights.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>ShipLoading</code></li>
+<li><em>Method</em>: <code>minimumTime</code></li>
+<li><em>Parameters</em>: <code>int[], String[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int minimumTime(int[] cranes, String[] boxes)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>cranes</em> will contain between 1 and 50 elements, inclusive.</li>
+<li><em>boxes</em> will contain between 1 and 50 elements, inclusive.</li>
+<li>Each element of <em>boxes</em> will contain between 0 and 50 characters, inclusive.</li>
+<li>The concatenation of all elements of <em>boxes</em> will be a non-empty space-separated list of integers with no leading zeroes. It will contain no leading, trailing, or consecutive spaces.</li>
+<li>Each element of <em>cranes</em> will be between 1 and 1,000,000, inclusive.</li>
+<li>Each box weight will be between 1 and 1,000,000, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>[6,8,9],<br />["2 5 2 4 7"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+<h4>Reason</h4>
+
+<p>Everything can be done in 2 minutes.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>[19,20],<br />["14 12 16 19 16 1 5"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>4</c></p>
+
+<h4>Reason</h4>
+
+<p>Only two cranes, but each of them can move any of the boxes.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>[23,32,25,28],<br />["5 27 10 16 24 20 2 32 18 7"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>3</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>[11,17,5,2,20,7,5,5,20,7],<br />["18 18 15 15 17"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>[56,114,979,120,120,87,480],<br />["221 882 504 358 642 674 212 679 203 279 632 799 79","6 502 275 823 372 594 482 343"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>12</c></p>
+
+<h4>Reason</h4>
+
+<p>Note that you should not add spaces between elements of <em>boxes</em> during their concatenation.</p>
+
+</body>
+</html>

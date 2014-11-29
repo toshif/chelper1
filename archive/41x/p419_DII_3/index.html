@@ -1,0 +1,113 @@
+<html>
+<head>
+    <title>CactusCount</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13510&amp;pm=10077">CactusCount</a></h1>
+
+<p><em>Single Round Match 419 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>A vertex cactus is a connected undirected graph such that each vertex belongs to at most one simple cycle.  A simple cycle is a cycle that doesn't pass through any vertex more than once.  For example, the graph pictured below is a vertex cactus:</p>
+
+<p><img src="images/Cactus.png" alt="image" /></p>
+
+<p>You are given an int <em>n</em>, the number of vertices in a graph G.  The vertices are numbered from 1 to <em>n</em>.  The edges in G are given in the String[] <em>edges</em>.  Concatenate the elements of <em>edges</em> to get a comma-separated list of integer pairs.  The integers in each pair are separated by a space.  The pair "i j" (quotes for clarity) means that there is an edge between vertices i and j.  Return the number of connected components of G that are vertex cacti.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>CactusCount</code></li>
+<li><em>Method</em>: <code>countCacti</code></li>
+<li><em>Parameters</em>: <code>int, String[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int countCacti(int n, String[] edges)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>A connected component of a graph G is a set of vertices such that each pair of vertices in the set is connected by a path, and no vertex outside the set is connected to any vertex within the set.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>n</em> will be between 1 and 200, inclusive.</li>
+<li><em>edges</em> will contain between 0 and 50 elements, inclusive.</li>
+<li>Each element of <em>edges</em> will contain between 1 and 50 characters, inclusive.</li>
+<li>When concatenated, <em>edges</em> will contain a comma separated list of integer pairs.</li>
+<li>The integers within each pair will be separated by a space.</li>
+<li>The integers within each pair will be distinct.</li>
+<li>Each integer will be between 1 and <em>n</em>, inclusive, with no leading zeroes.</li>
+<li>Every pair of vertices will be connected by at most one edge.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />["1 2,1 3,2 3"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>1</c></p>
+
+<h4>Reason</h4>
+
+<p>One cycle is a vertex cactus.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>10,<br />[]</c></p>
+
+<h4>Output</h4>
+
+<p><c>10</c></p>
+
+<h4>Reason</h4>
+
+<p>Here each vertex is a component by itself. A graph with one vertex is a vertex cactus.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>5,<br />["1 2,3 4,4 5"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+<h4>Reason</h4>
+
+<p>Both components are trees. A tree is a vertex cactus.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>17,<br />["1 2,2 3,3 4,4 5,5 3,1 3,6 7,7 8,6 8,8 9,9 1",<br /> "0,10 11,11 9,12 13,14 15,15 16,16 17,14 17,14 16"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+<h4>Reason</h4>
+
+<p>Here are two cacti and two non-cacti. The component with vertices 1, 2, 3, 4 and 5 is not a vertex cactus because vertex 3 belongs to two cycles: 1-2-3 and 3-4-5.  The component with vertices 14, 15, 16 and 17 is not a vertex cactus either.  Vertex 14, for example, belongs to more than one cycle.</p>
+
+</body>
+</html>

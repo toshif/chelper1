@@ -1,0 +1,102 @@
+<html>
+<head>
+    <title>TripleJump</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13508&amp;pm=9944">TripleJump</a></h1>
+
+<p><em>Single Round Match 417 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>The triple jump works as follows.  The athlete runs down a runway until he reaches a designated mark.  He then makes three consecutive jumps and lands in a sand-filled box.  The length of the triple jump is the sum of the lengths of the three consecutive jumps.  The winner of the competition is the athlete with the longest triple jump.</p>
+
+<p>You are taking part in the competition and jumping after all your opponents.  Since you are the last to jump, you already know all your opponents' results.  They are given in the int[] <em>opponents</em>, where <em>opponents</em>[i] is the length of the i-th opponent's triple jump in centimeters.</p>
+
+<p>You have already made the first of your three jumps, and it was <em>first</em> centimeters long.  You ask yourself a question: "What is the probability that I will take first place?  Second place?  And all the other places?".  You know that each of your two remaining jumps will be between <em>lower</em> and <em>upper</em> centimeters, inclusive, in length.  The lengths will not necessarily be integers, and all possible lengths between <em>lower</em> and <em>upper</em> will be equally likely.  Return a double[] containing exactly N + 1 elements (N is the number of opponents you have) such that the i-th element (0-indexed) is the probability of you taking (i+1)-th place.  Note that your place number is equal to one plus the number of opponents who had longer triple jumps than you.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>TripleJump</code></li>
+<li><em>Method</em>: <code>getProbabilities</code></li>
+<li><em>Parameters</em>: <code>int, int, int, int[]</code></li>
+<li><em>Returns</em>: <code>double[]</code></li>
+<li><em>Method signature</em>: <code>double[] getProbabilities(int lower, int upper, int first, int[] opponents)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>Each element of your return value must have an absolute or relative error less than 1e-9.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>lower</em> will be between 1 and 1000, inclusive.</li>
+<li><em>upper</em> will be between <em>lower</em> and 1000, inclusive.</li>
+<li><em>first</em> will be between <em>lower</em> and <em>upper</em>, inclusive.</li>
+<li><em>opponents</em> will contain between 1 and 50 elements, inclusive.</li>
+<li>Each element of <em>opponents</em> will be between 1 and 3000, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>1,<br />2,<br />1,<br />[1,2,3,4]</c></p>
+
+<h4>Output</h4>
+
+<p><c>[0.5, 0.5, 0.0, 0.0, 0.0 ]</c></p>
+
+<h4>Reason</h4>
+
+<p>Your first jump has length 1, and the two subsequent jumps - any lengths between 1 and 2. So your triple jump will have a total length between 3 and 5. This guarantees you at least the second place with an equal chance of getting the first one.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />7,<br />5,<br />[9,9,19,19,19]</c></p>
+
+<h4>Output</h4>
+
+<p><c>[0.0, 0.0, 0.0, 1.0, 0.0, 0.0 ]</c></p>
+
+<h4>Reason</h4>
+
+<p>Now the length of your triple jump will be between 11 and 19, and thus you are inevitably fourth. Note that the probability to have a triple jump with length exactly 19 in this case is zero.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>1,<br />10,<br />1,<br />[5]</c></p>
+
+<h4>Output</h4>
+
+<p><c>[0.9753086419753086, 0.024691358024691357 ]</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>1,<br />10,<br />5,<br />[1,2,3,5,10,11,12,19]</c></p>
+
+<h4>Output</h4>
+
+<p><c>[0.22222222222222227, 0.6234567901234567, 0.05555555555555558, 0.043209876543209846, 0.05555555555555558, 0.0, 0.0, 0.0, 0.0 ]</c></p>
+
+</body>
+</html>

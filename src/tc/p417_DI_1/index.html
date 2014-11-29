@@ -1,0 +1,123 @@
+<html>
+<head>
+    <title>TemplateMatching</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13508&amp;pm=9943">TemplateMatching</a></h1>
+
+<p><em>Single Round Match 417 Round 1 - Division I, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>In this problem you will be given a  String <em>text</em> and you will need to find the substring of the <em>text</em> that matches a given template in the best way.
+The template will be represented by two Strings: <em>prefix</em> and <em>suffix</em>.
+Consider a string S. The prefix match score of S with respect to a given template is the maximal n >= 0 such that the first n characters of S are equal to the last n characters of <em>prefix</em> and occur in the same exact order. Analogously, the suffix match score of S is the maximal m >= 0 such that the last m characters of S are equal to the first m characters of <em>suffix</em> and occur in the same exact order.</p>
+
+<p>For example, if S = "something", <em>prefix</em> = "awesome", and <em>suffix</em> = "ingenious", than the prefix score of S is 4 (the matched characters are "some") and the suffix score is 3 (the matched characters are "ing").</p>
+
+<p>The match score of a string S with respect to a given template is the sum of its prefix and suffix match scores. Find the non-empty substring of <em>text</em> with the maximal match score according to the template (<em>prefix</em>, <em>suffix</em>). In case of a tie, return the substring with the maximal prefix score. If there are still several candidates, return one that comes first lexicographically.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>TemplateMatching</code></li>
+<li><em>Method</em>: <code>bestMatch</code></li>
+<li><em>Parameters</em>: <code>String, String, String</code></li>
+<li><em>Returns</em>: <code>String</code></li>
+<li><em>Method signature</em>: <code>String bestMatch(String text, String prefix, String suffix)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>String A comes before string B lexicographically if A is a proper prefix of B, or if A has a smaller character at the first position where the strings differ. When comparing the characters, refer to the following list of characters in ascending order: ' ', 'a', 'b', ..., 'z'.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>text</em> will contain between 1 and 50 characters, inclusive.</li>
+<li><em>prefix</em> will contain between 1 and 50 characters, inclusive.</li>
+<li><em>suffix</em> will contain between 1 and 50 characters, inclusive.</li>
+<li><em>text</em>, <em>prefix</em> and <em>suffix</em> will contain only lowercase letters ('a'-'z') and spaces (' ').</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>"something",<br />"awesome",<br />"ingenious"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"something"</c></p>
+
+<h4>Reason</h4>
+
+<p>The example from the problem statement.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>"havka",<br />"eto",<br />"papstvo"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"a"</c></p>
+
+<h4>Reason</h4>
+
+<p>The return value must be non-empty string, so the correct answer is "a".</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>"abracadabra",<br />"habrahabr",<br />"bracket"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"abrac"</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>"mississippi",<br />"promise",<br />"piccolo"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"ippi"</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>"a a a a a a",<br />"a a",<br />"a"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"a a"</c></p>
+
+<h3>Example 6</h3>
+
+<h4>Input</h4>
+
+<p><c>"ab",<br />"b",<br />"a"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"b"</c></p>
+
+</body>
+</html>

@@ -1,0 +1,130 @@
+<html>
+<head>
+    <title>Undo</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13510&amp;pm=10054">Undo</a></h1>
+
+<p><em>Single Round Match 419 Round 1 - Division I, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>You are writing a simple text editor that supports only the following two commands:</p>
+
+<p>"type c" where c is a character: Append character c to the end of the current text.
+"undo t" where t is an integer: Undo all operations that were performed in the previous t seconds in reverse order.</p>
+
+<p>All quotes are for clarity only.  The text in the editor is initially empty.</p>
+
+<p>For example, consider the following sequence of commands:</p>
+
+<p>Second 1: type a
+Second 2: type b
+Second 3: type c
+Second 5: undo 3</p>
+
+<p>At the end of second 3, the text is "abc".  At second 5, all commands performed in the previous 3 seconds are undone in reverse order.  This means 'c' is removed, and then 'b' is removed.  The text becomes just "a".</p>
+
+<p>Note that "undo" commands can also be undone.  For example:</p>
+
+<p>Second 1: type a
+Second 2: type b
+Second 3: undo 2
+Second 4: undo 2</p>
+
+<p>After second 2, the text is "ab".  After second 3, everything is undone, and the text becomes empty.  At second 4, the previous "undo" is undone, so the text becomes "ab" again.  Then, the "type b" is also undone and the text becomes just "a".</p>
+
+<p>You are given a String[] <em>commands</em> and a int[] <em>time</em>.  Each element of <em>commands</em> is a single command, and <em>commands</em>[i] is performed at <em>time</em>[i].  The commands are given in chronological order.  Return the text after all the commands are executed.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>Undo</code></li>
+<li><em>Method</em>: <code>getText</code></li>
+<li><em>Parameters</em>: <code>String[], int[]</code></li>
+<li><em>Returns</em>: <code>String</code></li>
+<li><em>Method signature</em>: <code>String getText(String[] commands, int[] time)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>commands</em> will contain between 1 and 50 elements, inclusive.</li>
+<li>Each element of <em>commands</em> will be either "type c" where c is a lowercase letter ('a'-'z') or "undo t" where t is an integer between 1 and 10<sup>9</sup>, inclusive, with no leading zeroes (quotes for clarity only).</li>
+<li><em>time</em> will contain the same number of elements as <em>commands</em>.</li>
+<li>Each element of <em>time</em> will be between 1 and 10<sup>9</sup>, inclusive.</li>
+<li>The elements of <em>time</em> will be in strictly ascending order.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>["type a", "type b", "type c", "undo 3"],<br />[1, 2, 3, 5]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"a"</c></p>
+
+<h4>Reason</h4>
+
+<p>The first example from the problem statement.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>["type a", "type b", "undo 2", "undo 2"],<br />[1,2,3,4]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"a"</c></p>
+
+<h4>Reason</h4>
+
+<p>The second example from the problem statement.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>["type a", "undo 1", "undo 1"],<br />[1,2,3]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"a"</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>["type a", "type b", "type c", "undo 10"],<br />[1, 2, 3, 1000]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"abc"</c></p>
+
+<h4>Reason</h4>
+
+<p>Note that "undo" can undo nothing if it is too late.</p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>["undo 1"],<br />[1]</c></p>
+
+<h4>Output</h4>
+
+<p><c>""</c></p>
+
+</body>
+</html>

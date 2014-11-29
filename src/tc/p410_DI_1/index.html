@@ -1,0 +1,115 @@
+<html>
+<head>
+    <title>AddElectricalWires</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=12182&amp;pm=8817">AddElectricalWires</a></h1>
+
+<p><em>Single Round Match 410 Round 1 - Division I, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>You are given an electrical circuit for a home, with a number of nodes possibly connected by wires.  Any pair of nodes may be connected by at most one wire, and a node can't be connected to itself.  Each node on the circuit is either an electrical outlet for the house or a connection to the main electrical grid.  The String[] <em>wires</em> tells you the wires that are already in place; the xth character of the yth element is '1' (one) if nodes x and y have a wire between them, '0' (zero) otherwise.  The int[] <em>gridConnections</em> lists the indices of the nodes that are connections to the main electrical grid.</p>
+
+<p>You'd like to make the circuit safer and more redundant by adding as many extra wires to it as possible.  The one complication is that no two main grid connections are currently wired together (directly or indirectly), and you must preserve this, or else disaster will result.  Determine the maximum number of new wires you can add to the circuit.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>AddElectricalWires</code></li>
+<li><em>Method</em>: <code>maxNewWires</code></li>
+<li><em>Parameters</em>: <code>String[], int[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int maxNewWires(String[] wires, int[] gridConnections)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>wires</em> will contain between 1 and 50 elements, inclusive.</li>
+<li>Each element of <em>wires</em> will have the same length as <em>wires</em>.</li>
+<li>Each element of <em>wires</em> will contain only the characters '0' and '1'.</li>
+<li>Character i of element i of <em>wires</em> will be a '0'.</li>
+<li>Character i of element j of <em>wires</em> will be the same as character j of element i.</li>
+<li><em>gridConnections</em> will contain between 1 and 50 elements, inclusive.</li>
+<li>Each element of <em>gridConnections</em> will be an integer between 0 and length(<em>wires</em>)-1, inclusive.</li>
+<li>Each element of <em>gridConnections</em> will be distinct.</li>
+<li>Each pair of elements of <em>gridConnections</em> will not index nodes connected by a path of '1's in <em>wires</em>.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>["000","000","000"],<br />[0]</c></p>
+
+<h4>Output</h4>
+
+<p><c>3</c></p>
+
+<h4>Reason</h4>
+
+<p>Every valid wire can be added.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>["000","000","000"],<br />[0,1]</c></p>
+
+<h4>Output</h4>
+
+<p><c>1</c></p>
+
+<h4>Reason</h4>
+
+<p>0 and 1 can't be connected, but 0 and 2 (or 1 and 2) still can be.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>["01","10"],<br />[0]</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+<h4>Reason</h4>
+
+<p>This circuit is already complete.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>["00000","00000","00000","00000","00000"],<br />[0,1,2,3,4]</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+<h4>Reason</h4>
+
+<p>Any connections would be disastrous.</p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>["01000","10100","01010","00100","00000"],<br />[2,4]</c></p>
+
+<h4>Output</h4>
+
+<p><c>3</c></p>
+
+</body>
+</html>

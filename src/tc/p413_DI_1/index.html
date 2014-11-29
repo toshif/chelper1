@@ -1,0 +1,117 @@
+<html>
+<head>
+    <title>ArithmeticProgression</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13504&amp;pm=9839">ArithmeticProgression</a></h1>
+
+<p><em>Single Round Match 413 Round 1 - Division I, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>NOTE: This problem statement contains subscripts that may not display properly if viewed outside of the applet.</p>
+
+<p>In mathematics, an arithmetic progression or arithmetic sequence is a sequence of numbers such that the difference of any two successive members of the sequence is a constant. For instance, the sequence 3, 5, 7, 9, 11, 13... is an arithmetic progression with common difference 2. An arithmetic sequence can always be represented as an=a0+n*d.</p>
+
+<p>You will be given a sequence <em>seq</em>, where <em>seq</em>i = [ai+1] for some nondecreasing arithmetic sequence a (both indices are 0-based). [x] denotes the floor function (see Notes). The sequence a is defined as <em>a0</em>+i*d. Return the minimal possible value for d. If no possible value exists for d, return -1 instead.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>ArithmeticProgression</code></li>
+<li><em>Method</em>: <code>minCommonDifference</code></li>
+<li><em>Parameters</em>: <code>int, int[]</code></li>
+<li><em>Returns</em>: <code>double</code></li>
+<li><em>Method signature</em>: <code>double minCommonDifference(int a0, int[] seq)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>[x] denotes the floor function of x which returns the highest integer less than or equal to x. For example, [3.4] = 3, [0.6] = 0, [-1.2] = -2 and [-0.6] = -1.</li>
+<li>Your return value must be accurate to within an absolute or relative tolerance of 1E-9.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>seq</em> will contain between 0 and 50 elements, inclusive.</li>
+<li>Each element of <em>seq</em> will be between -10<sup>6</sup> and 10<sup>6</sup>, inclusive.</li>
+<li><em>a0</em> will be between -10<sup>6</sup> and 10<sup>6</sup>, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>0,<br />[6, 13, 20, 27]</c></p>
+
+<h4>Output</h4>
+
+<p><c>6.75</c></p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>1,<br />[2, 3, 4, 5, 6]</c></p>
+
+<h4>Output</h4>
+
+<p><c>1.0</c></p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />[]</c></p>
+
+<h4>Output</h4>
+
+<p><c>0.0</c></p>
+
+<h4>Reason</h4>
+
+<p>Since the sequence a is nondecreasing, d must be at least 0.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />[3, 3, 3, 3, 4]</c></p>
+
+<h4>Output</h4>
+
+<p><c>0.2</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>1,<br />[-3]</c></p>
+
+<h4>Output</h4>
+
+<p><c>-1.0</c></p>
+
+<h3>Example 6</h3>
+
+<h4>Input</h4>
+
+<p><c>0,<br />[6, 14]</c></p>
+
+<h4>Output</h4>
+
+<p><c>-1.0</c></p>
+
+</body>
+</html>

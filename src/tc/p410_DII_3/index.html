@@ -1,0 +1,133 @@
+<html>
+<head>
+    <title>ClosestRegex</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=12182&amp;pm=9727">ClosestRegex</a></h1>
+
+<p><em>Single Round Match 410 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>A regular expression is a pattern describing how a particular string
+should be formed. For the purposes of this problem, a regular expression consists
+of atoms. Each atom is either a single lowercase letter (which matches
+exactly one of that letter), or a single lowercase letter followed by an
+asterisk ('<em>'), which matches zero or more of that letter. A string matches a
+regular expression if it can be partitioned into substrings which match the
+atoms of the regular expression in the same order. For example, the regular
+expression ab</em>c*b is matched by the strings ab, abb,
+acb and abbbcccb, but not by ba, accbb or
+babcb.</p>
+
+<p>You have a string <em>text</em> which ought to match the regular expression
+<em>regex</em>. However, it may have been corrupted. Return the string S that
+satisfies the following conditions.</p>
+
+<p>S has the same number of characters as <em>text</em>.
+S matches <em>regex</em>.
+The number of positions in which S differs from <em>text</em> is
+minimal.
+S is lexicographically smallest amongst strings that satisfy the other
+conditions.</p>
+
+<p>If there is no string that satisfies the above conditions, return the empty
+string.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>ClosestRegex</code></li>
+<li><em>Method</em>: <code>closestString</code></li>
+<li><em>Parameters</em>: <code>String, String</code></li>
+<li><em>Returns</em>: <code>String</code></li>
+<li><em>Method signature</em>: <code>String closestString(String text, String regex)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>text</em> will contain between 1 and 50 characters, inclusive.</li>
+<li><em>text</em> will contain only lowercase letters ('a' - 'z').</li>
+<li><em>regex</em> will contain between 1 and 50 characters, inclusive.</li>
+<li><em>regex</em> will contain only lowercase letters and '*'s.</li>
+<li>The first character of <em>regex</em> will not be a '*'.</li>
+<li><em>regex</em> will not contain two consecutive '*'s.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>"abcd",<br />"bcdd"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"bcdd"</c></p>
+
+<h4>Reason</h4>
+
+<p>Here there are no asterisks, so only one string can match. 'a' must be changed to 'b', 'b' to 'c' and 'c' to 'd'.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>"topcoder",<br />"t<em>px</em>coa<em>de</em>"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"ttpcodee"</c></p>
+
+<h4>Reason</h4>
+
+<p>Changing the string to ttpcodee requires two changes.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>"cmu",<br />"c<em>m</em>fm<em>u</em>"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"cfu"</c></p>
+
+<h4>Reason</h4>
+
+<p>Any of fmu, cfu and cmf would require one change, but cfu is first lexicographically.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>"aaaaacccc",<br />"a<em>abc</em>"</c></p>
+
+<h4>Output</h4>
+
+<p><c>"aaaaabccc"</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>"short",<br />"lo<em>ts</em>of<em>let</em>ter*s"</c></p>
+
+<h4>Output</h4>
+
+<p><c>""</c></p>
+
+<h4>Reason</h4>
+
+<p>No 5-letter string matches the regex.</p>
+
+</body>
+</html>

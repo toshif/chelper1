@@ -1,0 +1,132 @@
+<html>
+<head>
+    <title>BarracksEasy</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13509&amp;pm=10073">BarracksEasy</a></h1>
+
+<p><em>Single Round Match 418 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>As a serious strategy-games player, you decided to solve one of the most common problems - attacking your
+opponent's building (barracks), which constantly produces new soldiers.</p>
+
+<p>Before the attack, you've got <em>myUnits</em> soldiers. In a single round, each soldier can either kill one of your opponent's soldiers or inflict 1 hit point of damage to the barracks.</p>
+
+<p>Your opponent doesn't have any soldiers initially.  However, his barracks has <em>barHp</em> hit points and produces <em>unitsPerRound</em> soldiers per round.</p>
+
+<p>The course of one round:</p>
+
+<ol>
+<li><p>Each solider from your army either kills one of your opponent's soldiers or inflicts 1 hit point of damage to the barracks.  Each soldier can choose to do something different.  When the barracks loses all of its hit points, it is destroyed.</p></li>
+<li><p>Your opponent attacks. He will kill k of your soldiers, where k is the number of remaining soldiers he has.</p></li>
+<li><p>If the barracks are not yet destroyed, your opponent will produce <em>unitsPerRound</em> new soldiers.</p></li>
+</ol>
+
+
+<p>Your task is to destroy the barracks and kill all your opponent's soldiers. If it is possible, return the minimum number of rounds you need to do this.
+Otherwise return -1.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>BarracksEasy</code></li>
+<li><em>Method</em>: <code>attack</code></li>
+<li><em>Parameters</em>: <code>int, int, int</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int attack(int myUnits, int barHp, int unitsPerRound)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>myUnits</em>, <em>barHp</em>, <em>unitsPerRound</em> will each be between 1 and 50, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>10,<br />11,<br />15</c></p>
+
+<h4>Output</h4>
+
+<p><c>4</c></p>
+
+<h4>Reason</h4>
+
+<p>Round 1:</p>
+
+<ul>
+<li><p>All your soldiers attack the barracks, leaving it with 1 hit point.</p></li>
+<li><p>Your opponent has no soldiers, so he cannot kill any of your soldiers.</p></li>
+<li><p>Your opponent's army increases from 0 soldiers to 15 soldiers.</p></li>
+</ul>
+
+
+<p>Round 2:</p>
+
+<ul>
+<li><p>One of your soldiers destroys the barracks. The other nine kill 9 of your opponent's soldiers.</p></li>
+<li><p>Your opponent has 6 soldiers, so he kills 6 of your soldiers.</p></li>
+<li><p>The barracks have been destroyed, so no new soldiers are produced.</p></li>
+</ul>
+
+
+<p>Round 3:</p>
+
+<ul>
+<li><p>You have got 4 soldiers, so you decrease your opponent's army to 2 soldiers.</p></li>
+<li><p>Your opponent kills 2 of your soldiers.</p></li>
+<li><p>The barracks have been destroyed, so no new soldiers are produced.</p></li>
+</ul>
+
+
+<p>Round 4:</p>
+
+<ul>
+<li>You kill 2 remaining soldiers.</li>
+</ul>
+
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />10,<br />4</c></p>
+
+<h4>Output</h4>
+
+<p><c>-1</c></p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>2,<br />10,<br />1</c></p>
+
+<h4>Output</h4>
+
+<p><c>9</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>11,<br />12,<br />9</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+</body>
+</html>
