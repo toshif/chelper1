@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>ContiguousCache</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=12182&amp;pm=9728">ContiguousCache</a></h1>
+
+<p><em>Single Round Match 410 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>You are writing a program for a very simple processor. It is attached to a
+slow memory system that contains <em>n</em> bytes, numbered 0 to <em>n</em> - 1. The processor has a cache which holds a copy of <em>k</em> of these bytes at a time, for fast access. It has a base address (referred to as base below), and it holds a copy of the bytes numbered base, base+1, ..., base+<em>k</em>-1.</p>
+
+<p>In order to keep the processor as simple as possible, the programmer must
+directly control the cache. To access some byte in memory, the program must
+first set the cache base address. Any
+bytes that are in the new range that were not in the old range are read from
+the memory store, but bytes that were in both the old and new ranges are simply
+kept in the cache and do not require a read from the memory store.</p>
+
+<p>You wish to optimize a program to use as few memory reads as possible. The
+bytes that the program accesses, in the order it accesses them, are given in
+<em>addresses</em>. Determine the minimum
+number of bytes that must be read from the memory store. Note that when the
+program starts, the cache is in a special empty state, so the first cache
+update always requires <em>k</em> bytes to be read.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>ContiguousCache</code></li>
+<li><em>Method</em>: <code>minimumReads</code></li>
+<li><em>Parameters</em>: <code>int, int, int[]</code></li>
+<li><em>Returns</em>: <code>long</code></li>
+<li><em>Method signature</em>: <code>long minimumReads(int n, int k, int[] addresses)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>n</em> will be between 1 and 1,000,000,000, inclusive.</li>
+<li><em>k</em> will be between 1 and <em>n</em>, inclusive.</li>
+<li><em>addresses</em> will contain between 1 and 50 elements, inclusive.</li>
+<li>Each element of <em>addresses</em> will be between 0 and <em>n</em>-1, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>100,<br />3,<br />[0, 2, 16, 13]</c></p>
+
+<h4>Output</h4>
+
+<p><c>7</c></p>
+
+<h4>Reason</h4>
+
+<p>The first access must read bytes 0 to 2, inclusive. For the second access, no reads are needed, since 2 is already cached. For the third access, the base address should be set to 14. Then for the final access, the base address is set to 13, and only one additional byte must be read.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>100,<br />10,<br />[1,10,19,28,30,37]</c></p>
+
+<h4>Output</h4>
+
+<p><c>29</c></p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>1000000000,<br />500000000,<br />[0, 999999999, 1, 500000000, 500000001, 987654321]</c></p>
+
+<h4>Output</h4>
+
+<p><c>1987654320</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>8,<br />2,<br />[7]</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+</body>
+</html>

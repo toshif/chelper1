@@ -1,0 +1,101 @@
+<html>
+<head>
+    <title>CollectingPostmarks</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13506&amp;pm=9958">CollectingPostmarks</a></h1>
+
+<p><em>Single Round Match 415 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>Your hobby is collecting postmarks.  There is a total of N distinct postmarks, numbered from 0 to N-1.  Their prices are given in the int[] <em>prices</em>, where the i-th element (0-indexed) is the price of postmark i.  The price of a postmark is the amount of money you would get for selling it, and the amount of money it would cost you to buy it.  The values of the postmarks are given in the int[] <em>values</em>, where the i-th element (0-indexed) is the value of postmark i.  Only one of each postmark exists.</p>
+
+<p>The postmarks you currently have are given in the int[] <em>have</em>.  Your goal is to have a postmark collection with a total value of at least <em>K</em>.  You can sell postmarks to get money to buy different postmarks.  Initially, you have no money.  Return the minimum additional amount of money you need to achieve your goal, or -1 if it is impossible.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>CollectingPostmarks</code></li>
+<li><em>Method</em>: <code>amountOfMoney</code></li>
+<li><em>Parameters</em>: <code>int[], int[], int[], int</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int amountOfMoney(int[] prices, int[] have, int[] values, int K)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li>N will be between 1 and 32, inclusive.</li>
+<li><em>K</em> will be between 0 and 1,000,000,000, inclusive.</li>
+<li><em>prices</em> will contain exactly N elements.</li>
+<li>Each element of <em>prices</em> will be between 1 and 30,000,000, inclusive.</li>
+<li><em>values</em> will contain exactly N elements.</li>
+<li>Each element of <em>values</em> will be between 1 and 30,000,000, inclusive.</li>
+<li><em>have</em> will contain between 0 and N elements, inclusive.</li>
+<li>All elements of <em>have</em> will be distinct.</li>
+<li>Each element of <em>have</em> will be between 0 and N-1, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>[2,15],<br />[],<br />[2,21],<br />13</c></p>
+
+<h4>Output</h4>
+
+<p><c>15</c></p>
+
+<h4>Reason</h4>
+
+<p>You initially have no postmarks.  You need 15 units of money to buy postmark 1, which has a value of 21.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>[9,18,7,6,18],<br />[4,0],<br />[12,27,10,10,25],<br />67</c></p>
+
+<h4>Output</h4>
+
+<p><c>22</c></p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>[14,14,12,6],<br />[3,2,1],<br />[19,23,20,7],<br />10</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+<h4>Reason</h4>
+
+<p>You already have enough postmarks.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>[43,33,14,31,42,37,17,42,40,20],<br />[6],<br />[116,71,38,77,87,106,48,107,91,41],<br />811</c></p>
+
+<h4>Output</h4>
+
+<p><c>-1</c></p>
+
+<h4>Reason</h4>
+
+<p>The total value of all available postmarks is less than 811.</p>
+
+</body>
+</html>

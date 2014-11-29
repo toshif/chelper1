@@ -1,0 +1,120 @@
+<html>
+<head>
+    <title>StampsCollection</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13509&amp;pm=9886">StampsCollection</a></h1>
+
+<p><em>Single Round Match 418 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>You have decided to sell your stamp collection, which consists of <em>n</em> stamps numbered 0 to <em>n</em>-1.  You have already found some buyers.  The i-th buyer wants to buy the stamps listed in demand[i].  This will be a space-separated list containing either one or two stamps.  He is willing to pay a total of price[i].  If he wants to buy two stamps, he will not agree to buy only one of them.</p>
+
+<p>To make this task simpler, for each stamp, there will be no more than two buyers who want to buy it.  Return the maximum amount of money you can get from selling your stamps.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>StampsCollection</code></li>
+<li><em>Method</em>: <code>sell</code></li>
+<li><em>Parameters</em>: <code>int, String[], int[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int sell(int n, String[] demand, int[] price)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>You don't have to sell all of your stamps.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>n</em> will be between 1 and 50, inclusive.</li>
+<li><em>demand</em> will contain between 1 and 50 elements, inclusive.</li>
+<li><em>price</em> will contain the same number of elements as <em>demand</em>.</li>
+<li>Each element of <em>demand</em> will be a space-separated list of one or two distinct integers.</li>
+<li>All numbers in <em>demand</em> will be between 0 and <em>n</em>-1, inclusive, with no leading zeroes.</li>
+<li>All numbers in <em>price</em> will be between 1 and 1000000, inclusive.</li>
+<li>For each stamp, there will be at most 2 buyers who want to buy it.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>10,<br />["0 4"],<br />[3]</c></p>
+
+<h4>Output</h4>
+
+<p><c>3</c></p>
+
+<h4>Reason</h4>
+
+<p>There is only one buyer, so all we can do is to sell two stamps.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>2,<br />["1 0","0"],<br />[3,5]</c></p>
+
+<h4>Output</h4>
+
+<p><c>5</c></p>
+
+<h4>Reason</h4>
+
+<p>There are two buyers, but both want to buy stamp 0.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />["0 1","0 2","1 2"],<br />[10,11,12]</c></p>
+
+<h4>Output</h4>
+
+<p><c>12</c></p>
+
+<h4>Reason</h4>
+
+<p>Only one buyer can get what he wants - we choose the third one, who is willing to pay the most.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>3,<br />["0","1 0","1 2"],<br />[5,9,5]</c></p>
+
+<h4>Output</h4>
+
+<p><c>10</c></p>
+
+<h4>Reason</h4>
+
+<p>Although the second buyer will pay the most, it is better to choose the first and third buyers.</p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>20,<br />["0 1","1 2","2 3","3 0","4 5","5 6","6 4","8","8","9","9 10","10 11","11 12","12"],<br />[3,7,4,1,3,3,1,5,6,5,18,10,1,5]</c></p>
+
+<h4>Output</h4>
+
+<p><c>40</c></p>
+
+</body>
+</html>

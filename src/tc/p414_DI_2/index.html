@@ -1,0 +1,135 @@
+<html>
+<head>
+    <title>StringInterspersal</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13505&amp;pm=8772">StringInterspersal</a></h1>
+
+<p><em>Single Round Match 414 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>A String S is an interspersal of a set of Strings <em>W</em>, if <em>W</em> is a set of disjoint subsequences of S which cover S. Less formally, S can be formed from <em>W</em> by partitioning each member of <em>W</em> into substrings, then concatenating all the substrings, while maintaining the order of the substrings within each element of <em>W</em>. For example, if <em>W</em> contains the strings {"DESIGN", "ALGORITHM", "MARATHON"}, then one possible interspersal would be "ADELGMAORARISIGNTHMTHON", formed as shown below.</p>
+
+<p>DE         SIGN</p>
+
+<p>A  LG  O  RI    THM</p>
+
+<pre><code> MA RA         THON
+</code></pre>
+
+<hr />
+
+<p>ADELGMAORARISIGNTHMTHON</p>
+
+<p>Given a String[] <em>W</em>, return the lexicographically minimum interspersal of the Strings in <em>W</em></p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>StringInterspersal</code></li>
+<li><em>Method</em>: <code>minimum</code></li>
+<li><em>Parameters</em>: <code>String[]</code></li>
+<li><em>Returns</em>: <code>String</code></li>
+<li><em>Method signature</em>: <code>String minimum(String[] W)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>The lexicographically minimum of two Strings is the one with the alphabetically earlier character at the first position at which they differ.</li>
+<li>The return String will contain no more than 1000 characters.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>W</em> will contain between 1 and 20 elements, inclusive.</li>
+<li>Each element of <em>W</em> will contain between 1 and 50 uppercase letters ('A'-'Z'), inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>["DESIGN","ALGORITHM","MARATHON"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"ADELGMAORARISIGNTHMTHON"</c></p>
+
+<h4>Reason</h4>
+
+<p>The example from the problem statement.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>["TOMEK","PETR","ACRUSH","BURUNDUK","KRIJGERTJE"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"ABCKPERIJGERRTJETOMEKTRURUNDUKUSH"</c></p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>["CCCA","CCCB","CCCD","CCCE"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"CCCACCCBCCCCCCDE"</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>["BKSDSOPTDD","DDODEVNKL","XX","PODEEE","LQQWRT"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"BDDKLODEPODEEEQQSDSOPTDDVNKLWRTXX"</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>["TOPCODER","BETFAIR","NSA","BT","LILLY"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"BBELILLNSATFAIRTOPCODERTY"</c></p>
+
+<h3>Example 6</h3>
+
+<h4>Input</h4>
+
+<p><c>["QITHSQARQV","BYLHVGMLRY","LKMAQTJEAM","AQYICVNIKK","HKGZZFFEWC"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"ABHKGLKMAQIQQTHSQARQTJEAMVYICVNIKKYLHVGMLRYZZFFEWC"</c></p>
+
+<h3>Example 7</h3>
+
+<h4>Input</h4>
+
+<p><c>["XHCYBTUQUW","EKBISADSSN","LOOISPOFAK","MIXBDHPJUQ","BNMNDHMOTC"]</c></p>
+
+<h4>Output</h4>
+
+<p><c>"BEKBILMINMNDHMOOIOSADSPOFAKSSNTCXBDHPJUQXHCYBTUQUW"</c></p>
+
+</body>
+</html>

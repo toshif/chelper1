@@ -1,0 +1,105 @@
+<html>
+<head>
+    <title>HoleCakeCuts</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=12183&amp;pm=9752">HoleCakeCuts</a></h1>
+
+<p><em>Single Round Match 411 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>Little Bonnie has been given a special cake as a reward for her good performance in her Math class.  When viewed from above, the cake is a square, with an empty square hole inside.  Both squares are centered at (0, 0) and their sides are parallel to the x- and y-axes.</p>
+
+<p>Bonnie is going to cut the cake using several horizontal and vertical cuts.  These cuts are given in the int[]s <em>horizontalCuts</em> and <em>verticalCuts</em>.  The i-th horizontal cut is a line parallel to the x-axis which goes through the point (0, <em>horizontalCuts</em>[i]).  Likewise, the i-th vertical cut is a line parallel to the y-axis which goes through the point (<em>verticalCuts</em>[i], 0).  All cuts have infinite lengths.</p>
+
+<p>You are given an int <em>cakeLength</em>, half of the side length of the outer square, and an int <em>holeLength</em>, half of the side length of the inner square hole. Note that both of these numbers are halves of the sides of the corresponding squares. Return the number of pieces of cake that will exist after all the cuts are performed.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>HoleCakeCuts</code></li>
+<li><em>Method</em>: <code>cutTheCake</code></li>
+<li><em>Parameters</em>: <code>int, int, int[], int[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int cutTheCake(int cakeLength, int holeLength, int[] horizontalCuts, int[] verticalCuts)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>A piece is a region of the cake with non-zero area.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>cakeLength</em> will be between 2 and 100, inclusive.</li>
+<li><em>holeLength</em> will be between 1 and (<em>cakeLength</em>-1), inclusive.</li>
+<li><em>horizontalCuts</em> and <em>verticalCuts</em> will each contain between 0 and 50 elements, inclusive.</li>
+<li>Each element of <em>horizontalCuts</em> and <em>verticalCuts</em> will be between (-cakeLength+1) and (<em>cakeLength</em>-1), inclusive.</li>
+<li>Elements of <em>horizontalCuts</em> will be distinct.</li>
+<li>Elements of <em>verticalCuts</em> will be distinct.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>5,<br />3,<br />[1, -4],<br />[1]</c></p>
+
+<h4>Output</h4>
+
+<p><c>6</c></p>
+
+<h4>Reason</h4>
+
+<p>The cake has the side length of 10, and the side of the hole is 6. Two horizontal and one vertical cuts divide the cake into 6 pieces. Those pieces are colored differently in the following picture:</p>
+
+<p><img src="images/holecakecuts_example.jpg" alt="image" /></p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>10,<br />5,<br />[],<br />[-2, 2]</c></p>
+
+<h4>Output</h4>
+
+<p><c>4</c></p>
+
+<h4>Reason</h4>
+
+<p>There may be no horizontal cuts.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>10,<br />5,<br />[1],<br />[-5, 5]</c></p>
+
+<h4>Output</h4>
+
+<p><c>6</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>50,<br />5,<br />[40, -40],<br />[20, 0, -20]</c></p>
+
+<h4>Output</h4>
+
+<p><c>12</c></p>
+
+</body>
+</html>

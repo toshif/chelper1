@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>CustomDice</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=13507&amp;pm=9904">CustomDice</a></h1>
+
+<p><em>Single Round Match 416 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>In a Las Vegas casino, a new type of six-sided die is being introduced. These dice may have any positive integers written its sides, but no two sides of the same die can contain the same number. For each die, the casino owner wants the mean value of the numbers written on its sides to not exceed <em>M</em>.</p>
+
+<p>Compute the total number of allowed dice. Two dice are considered different if one can't be obtained from the other using rotations. Since the resulting number may be quite large, return it modulo 1000000007.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>CustomDice</code></li>
+<li><em>Method</em>: <code>countDice</code></li>
+<li><em>Parameters</em>: <code>int</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int countDice(int M)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>M</em> will be between 1 and 1000000, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>3</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+<h4>Reason</h4>
+
+<p>The die with the smallest possible mean is {1,2,3,4,5,6}.  Its mean is 3.5, which is greater than <em>M</em>=3.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>4</c></p>
+
+<h4>Output</h4>
+
+<p><c>210</c></p>
+
+<h4>Reason</h4>
+
+<p>There are 30 different dice with numbers {1,2,3,4,5,6} on their sides, they each have a mean of 3.5.</p>
+
+<p>There are 30 different dice with numbers {1,2,3,4,5,7} on their sides, they each have a mean of 22/6=3.(6).</p>
+
+<p>There are 60 different dice with {1,2,3,4,5,8} or {1,2,3,4,6,7} on their sides, they each have a mean of 23/6=3.8(3).</p>
+
+<p>There are 90 different dice with {1,2,3,4,5,9}, {1,2,3,4,6,8} or {1,2,3,5,6,7} on their sides, they each have a mean of 24/6=4.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>10</c></p>
+
+<h4>Output</h4>
+
+<p><c>863010</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>50</c></p>
+
+<h4>Output</h4>
+
+<p><c>375588112</c></p>
+
+</body>
+</html>
