@@ -1,4 +1,4 @@
-package template.atcoder;
+package template.atcoder.p1;
 
 import java.io.PrintWriter;
 import java.util.Scanner;

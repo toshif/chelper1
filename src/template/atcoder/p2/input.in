@@ -1,0 +1,6 @@
+3
+4 5
+abc
+----EXPECTED----
+18 abc
+-------TEST_END-------

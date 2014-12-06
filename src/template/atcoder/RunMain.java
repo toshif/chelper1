@@ -1,15 +1,19 @@
 package template.atcoder;
 
 import java.io.*;
+import java.lang.reflect.Method;
 import java.net.URL;
 import java.nio.file.Files;
 import java.nio.file.Paths;
-import java.util.Scanner;
 
 /**
  * Actual runner of Main class
  */
 public class RunMain {
+
+    static final Class MAIN_CLASS = template.atcoder.p1.Main.class;
+
+    static final String INPUT_FILE = "./input.in";
 
     public static void main(String[] args) throws Exception {
         InputStream origSysIn = System.in;
@@ -21,10 +25,14 @@ public class RunMain {
         System.setOut(out);
 
         // Parse the inputs and expected from the file
-        URL url = RunMain.class.getResource("./input.in");
+        URL url = MAIN_CLASS.getResource(INPUT_FILE);
+
+        origSysOut.printf("main class = [%s]\n", MAIN_CLASS);
+        origSysOut.printf("input file = [%s]\n", url.getPath());
+
         byte[] inBytes = Files.readAllBytes(Paths.get(url.toURI()));
         String inStr = new String(inBytes);
-        String[] tests = inStr.split("-------TEST_END-------");
+        String[] tests = inStr.split("-------TEST_END-------[\r\n]*");
 
         for (int i = 0; i < tests.length; i++) {
             String test = tests[i];
@@ -46,8 +54,13 @@ public class RunMain {
             // Run the test
             origSysOut.printf("-------------------\n");
             origSysOut.printf("Test# %d\n", i);
-            origSysOut.printf("Input: \n======\n%s=====\n\n", input);
-            new Main().main(null);
+            origSysOut.printf("Input: \n======\n%s======\n\n", input);
+
+            // call the static main method
+            Method mainMethod = MAIN_CLASS.getMethod("main", String[].class);
+            Object instance = null;
+            Object[] params = {null};
+            mainMethod.invoke(instance, params);
 
             // capture the output
             out.flush();
