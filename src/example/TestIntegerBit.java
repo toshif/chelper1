@@ -22,6 +22,15 @@ public class TestIntegerBit {
         // Reference : BIT
         // [1] http://d.hatena.ne.jp/naoya/20090606/1244284915
         // [2] http://hos.ac/slides/20140319_bit.pdf
+        /*
+
+        You can find the lowest bit with this.
+
+          124 = 1111100
+         -124 = 11111111111111111111111110000100
+         124 & -124 = 100
+
+         */
         System.out.println("124 & -124 = " + Integer.toBinaryString(124 & -124));
     }
 
