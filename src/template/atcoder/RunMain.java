@@ -1,5 +1,7 @@
 package template.atcoder;
 
+import template.atcoder.p1.Main;
+
 import java.io.*;
 import java.lang.reflect.Method;
 import java.net.URL;
@@ -11,7 +13,7 @@ import java.nio.file.Paths;
  */
 public class RunMain {
 
-    static final Class MAIN_CLASS = template.atcoder.p1.Main.class;
+    static final Class MAIN_CLASS = Main.class;
 
     static final String INPUT_FILE = "./input.in";
 
