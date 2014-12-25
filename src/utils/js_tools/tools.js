@@ -9,6 +9,14 @@ $(document).ready(function() {
     $( "#fact_x" ).keyup(function(event) {
         update_factorial();
     });
+
+    $( "#combi_x" ).keyup(function(event) {
+        update_combination();
+    });
+    $( "#combi_y" ).keyup(function(event) {
+        update_combination();
+    });
+
 });
 
 function update_power(){
@@ -45,3 +53,33 @@ function factorial(n) {
         return fact_memo[n];
     return fact_memo[n] = factorial(n-1) * n;
 }
+
+function update_combination(){
+    if (combi_memo == null) {
+        binomial_combination();
+    }
+
+     x = parseInt($("#combi_x").val());
+     y = parseInt($("#combi_y").val());
+
+     ans = combi_memo[x][y];
+     $("#combi_ans").text(ans);
+}
+
+var combi_memo = null;
+function binomial_combination(){
+    var N = 100;
+
+    combi_memo = [];
+    for(var i=0; i<N; i++) {
+        combi_memo[i] = new Array(N);
+    }
+
+    for (var k = 1; k < N; k++) combi_memo[0][k] = 0;
+    for (var n = 0; n < N; n++) combi_memo[n][0] = 1;
+
+    for (var n = 1; n < N; n++)
+       for (var k = 1; k < N; k++)
+          combi_memo[n][k] = combi_memo[n-1][k-1] + combi_memo[n-1][k];
+}
+

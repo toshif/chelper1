@@ -3,17 +3,17 @@
 <head lang="en">
     <meta charset="UTF-8">
     <title></title>
-    <script type="text/javascript" src="//code.jquery.com/jquery-2.1.3.min.js"></script>
+    <script type="text/javascript" src="lib/jquery-2.1.3.min.js"></script>
     <script type="text/javascript" src="tools.js"></script>
 
-    <link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.1/css/bootstrap.min.css" rel="stylesheet">
+    <link href="lib/bootstrap-3.3.1.min.css" rel="stylesheet">
     <link href="tools.css" rel="stylesheet">
 </head>
 <body>
 
 <!-- Grid -->
 <div class="container">
-    <h1><span class="glyphicon glyphicon-wrench"></span> JS Tools</h1>
+    <h1>JS Tools</h1>
 
     <h3>Power ( x^y )</h3>
 
@@ -49,12 +49,12 @@
     <div class="row">
         <div class="col-sm-6">
             <form class="form-inline">
-                <input type="text" class="form-control input-sm" value="5">
+                <input type="text" class="form-control input-sm" value="5" id="combi_x">
 
                 <p class="form-control-static"> C </p>
-                <input type="text" class="form-control input-sm" value="2">
+                <input type="text" class="form-control input-sm" value="2" id="combi_y">
 
-                <p class="form-control-static"> = <label class="control-label">149</label></p>
+                <p class="form-control-static"> = <label class="control-label" id="combi_ans">149</label></p>
             </form>
         </div>
     </div>
