@@ -11,8 +11,6 @@
 </head>
 <body>
 
-
-
 <!-- Grid -->
 <div class="container">
     <h1><span class="glyphicon glyphicon-wrench"></span> JS Tools</h1>
@@ -22,12 +20,12 @@
     <div class="row">
         <div class="col-sm-6">
             <form class="form-inline">
-                <input type="text" class="form-control input-sm" value="2">
+                <input type="text" class="form-control input-sm" value="2" id="power_x">
 
                 <p class="form-control-static"> ^ </p>
-                <input type="text" class="form-control input-sm" value="4">
+                <input type="text" class="form-control input-sm" value="10" id="power_y">
 
-                <p class="form-control-static"> = <label class="control-label">123</label> </p>
+                <p class="form-control-static"> = <label class="control-label" id="power_ans">1024</label> </p>
             </form>
         </div>
     </div>
@@ -37,11 +35,11 @@
     <div class="row">
         <div class="col-sm-6">
             <form class="form-inline">
-                <input type="text" class="form-control input-sm" value="5">
+                <input type="text" class="form-control input-sm" value="5" id="fact_x">
 
                 <p class="form-control-static"> ! </p>
 
-                <p class="form-control-static"> = <label class="control-label">120</label></p>
+                <p class="form-control-static"> = <label class="control-label" id="fact_ans">120</label></p>
             </form>
         </div>
     </div>
