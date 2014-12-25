@@ -56,14 +56,22 @@ function factorial(n) {
 
 function update_combination(){
     if (combi_memo == null) {
+        console.log("calc binomial combination ...");
         binomial_combination();
+        console.log("calc binomial combination complete.");
     }
 
-     x = parseInt($("#combi_x").val());
-     y = parseInt($("#combi_y").val());
+    x = parseInt($("#combi_x").val());
+    y = parseInt($("#combi_y").val());
 
-     ans = combi_memo[x][y];
-     $("#combi_ans").text(ans);
+    if (! (0 <= x && x < 105) || ! (0 <= y && y < 105)){
+        // invalid input
+        $("#combi_ans").text("invalid");
+        return;
+    }
+
+    ans = combi_memo[x][y];
+    $("#combi_ans").text(ans);
 }
 
 var combi_memo = null;
