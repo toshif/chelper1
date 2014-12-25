@@ -68,7 +68,7 @@ function update_combination(){
 
 var combi_memo = null;
 function binomial_combination(){
-    var N = 100;
+    var N = 105;
 
     combi_memo = [];
     for(var i=0; i<N; i++) {
