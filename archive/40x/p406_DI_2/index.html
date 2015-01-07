@@ -1,0 +1,112 @@
+<html>
+<head>
+    <title>FoldThePaper</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=12178&amp;pm=8813">FoldThePaper</a></h1>
+
+<p><em>Single Round Match 406 Round 1 - Division I, Level Two</em></p>
+
+<h2>Statement</h2>
+
+<p>You have a rectangular piece of paper that's divided into 1x1 cells, each of which has an integer value.  The paper will be described by a String[] <em>paper</em>.  The ith element of <em>paper</em> will be a space delimited list of integers, where the jth integer of the ith element of <em>paper</em> represents the value of the jth cell of the ith row of the paper.</p>
+
+<p> You want to perform a sequence of folds on the paper, where you may fold anywhere along an axis that is in between two rows or columns of the paper.  After performing a fold, we wish to model the folded paper as a new, flat piece of paper.  We will do this by considering two overlapping cells as a single cell, with a value that is the sum of the individual cells.</p>
+
+<p>You wish to perform a sequence of folds such that the value of some single cell in the resulting piece of paper is as large as possible.  Return this value.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>FoldThePaper</code></li>
+<li><em>Method</em>: <code>getValue</code></li>
+<li><em>Parameters</em>: <code>String[]</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int getValue(String[] paper)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>paper</em> will contain between 1 and 12 elements, inclusive.</li>
+<li>Each element of <em>paper</em> will be a single-space delimited list of integers with no leading or trailing spaces.</li>
+<li>Each element of <em>paper</em> will contain between 1 and 12 integers, inclusive.</li>
+<li>Each element of <em>paper</em> will contain the same number of integers.</li>
+<li>Each element of <em>paper</em> will contain between 1 and 50 characters, inclusive.</li>
+<li>Each integer in <em>paper</em> will be between -100 and 100, inclusive.</li>
+<li>Each integer in <em>paper</em> will have no leading zeros.</li>
+<li>An integer in <em>paper</em> equal to zero will not have a preceding negative sign.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>[<br />"1 1 1",<br />"1 1 1"<br />]</c></p>
+
+<h4>Output</h4>
+
+<p><c>6</c></p>
+
+<h4>Reason</h4>
+
+<p>We can collapse every cell onto the upper-left cell.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>[<br />"1 -1",<br />"1 -1"<br />]</c></p>
+
+<h4>Output</h4>
+
+<p><c>2</c></p>
+
+<h4>Reason</h4>
+
+<p>We should perform only the fold between the two rows, and take the resulting left column.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>[<br />"1 -1 -1 1",<br />"-1 -1 -1 -1",<br />"-1 -1 -1 -1",<br />"1 -1 -1 1"<br />]</c></p>
+
+<h4>Output</h4>
+
+<p><c>4</c></p>
+
+<h4>Reason</h4>
+
+<p>Folding between the middle rows then the middle columns allows us to combine the four corner cells.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>[<br />"20 13 -2 100",<br />"-12 0 4 -3",<br />"4 1 -36 21"<br />]</c></p>
+
+<h4>Output</h4>
+
+<p><c>131</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>[<br />"0"<br />]</c></p>
+
+<h4>Output</h4>
+
+<p><c>0</c></p>
+
+</body>
+</html>
