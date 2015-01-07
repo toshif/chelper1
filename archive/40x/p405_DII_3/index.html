@@ -1,0 +1,116 @@
+<html>
+<head>
+    <title>IdealString</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=12177&amp;pm=9757">IdealString</a></h1>
+
+<p><em>Single Round Match 405 Round 1 - Division II, Level Three</em></p>
+
+<h2>Statement</h2>
+
+<p>An ideal string is a string where the 1-based index of the first occurrence of each letter is equal to the number of occurrences of that letter in the string.  For example, the "BAOOOA" is an ideal string (quotes for clarity only).  The letter 'B' appears 1 time, and its index is 1.  The letter 'A' occurs 2 times and its first index is 2.  The letter 'O' occurs 3 times and its first index is 3.</p>
+
+<p>Given an int <em>length</em>, return the lexicographically smallest ideal string of that length containing only uppercase letters ('A'-'Z').  If there are no such ideal strings of that length, return an empty String instead.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>IdealString</code></li>
+<li><em>Method</em>: <code>construct</code></li>
+<li><em>Parameters</em>: <code>int</code></li>
+<li><em>Returns</em>: <code>String</code></li>
+<li><em>Method signature</em>: <code>String construct(int length)</code></li>
+</ul>
+
+
+<h2>Notes</h2>
+
+<ul>
+<li>String A is lexicographically smaller than string B of the same length if it contains a smaller letter  at the first position they differ. Letter X is smaller than letter Y if it comes earlier in the alphabet.</li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>length</em> will be between 1 and 100, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>1</c></p>
+
+<h4>Output</h4>
+
+<p><c>"A"</c></p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>3</c></p>
+
+<h4>Output</h4>
+
+<p><c>"ABB"</c></p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>2</c></p>
+
+<h4>Output</h4>
+
+<p><c>""</c></p>
+
+<h4>Reason</h4>
+
+<p>There's no way we can construct an ideal string of length 2 - if both its characters are equal, then the number of occurrences (2) and the position of its first occurrence (1) do not match; if they are distinct, then for the second character the number of occurrences (1) and the position of its first occurrence (2) do not match as well.</p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>6</c></p>
+
+<h4>Output</h4>
+
+<p><c>"ABCBCC"</c></p>
+
+<h4>Reason</h4>
+
+<p>We can permute the last 3 characters in any way, but this way gets us the lexicographically smallest answer.</p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>7</c></p>
+
+<h4>Output</h4>
+
+<p><c>"ABBCCCC"</c></p>
+
+<h3>Example 6</h3>
+
+<h4>Input</h4>
+
+<p><c>5</c></p>
+
+<h4>Output</h4>
+
+<p><c>""</c></p>
+
+</body>
+</html>
