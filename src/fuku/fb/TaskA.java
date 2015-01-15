@@ -1,4 +1,4 @@
-package template.gcj;
+package fuku.fb;
 
 import java.io.*;
 import java.net.URL;
@@ -7,11 +7,11 @@ import java.util.Scanner;
 /**
  * @author fuku
  */
-public class TaskX {
+public class TaskA {
     public static void main(String[] args) throws FileNotFoundException {
-        String inFile = "X-small.in";
+        String inFile = "A-small.in";
 
-        URL inFileUrl = TaskX.class.getResource(inFile);
+        URL inFileUrl = TaskA.class.getResource(inFile);
         InputStream inputStream = new FileInputStream(inFileUrl.getFile());
         Scanner in = new Scanner(inputStream);
 
@@ -36,9 +36,30 @@ public class TaskX {
     static class Solver {
 
         public String solve(int testNumber, Scanner in, PrintWriter out) {
-            int first = in.nextInt();
+            long N = in.nextLong();
+            String ns = "" + N;
 
-            String ans = "1";
+            char[] cs = ns.toCharArray();
+            int M = cs.length;
+
+            long mi = N;
+            long ma = N;
+            for (int i = 0; i < M; i++) {
+                for (int j = i+1; j < M; j++) {
+                    if (i == 0 && cs[j] == '0') continue;
+
+                    // swap i j
+                    char[] newCs = cs.clone();
+                    newCs[j] = cs[i];
+                    newCs[i] = cs[j];
+
+                    long v = Long.parseLong(new String(newCs));
+                    mi = Math.min(mi, v);
+                    ma = Math.max(ma, v);
+                }
+            }
+
+            String ans = mi + " " + ma;
             return ans;
         }
     }
