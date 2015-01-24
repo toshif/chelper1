@@ -12,7 +12,7 @@ public class TaskX {
         String inFile = "X-small.in";
 
         URL inFileUrl = TaskX.class.getResource(inFile);
-        InputStream inputStream = new FileInputStream(inFileUrl.getFile());
+        InputStream inputStream = new BufferedInputStream(new FileInputStream(inFileUrl.getFile()));
         Scanner in = new Scanner(inputStream);
 
         String outFile = inFile + ".out";
