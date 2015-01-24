@@ -1,0 +1,41 @@
+19 E - New Year Domino
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+1
+0
+46 6
+1 5
+3 3
+4 4
+9 2
+10 1
+12 1
+4
+1 2
+2 4
+2 5
+2 6
+
+8 0
+1
+1
+2
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskE
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2014.12.31
+13 Good Bye 2014
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
