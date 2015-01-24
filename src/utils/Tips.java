@@ -7,7 +7,9 @@ public class Tips {
 
     public static void main(String[] args) {
         //reversingString();
-        roundUpDivide();
+
+        int rup = roundUpDivide(5, 3);
+        System.err.printf("rup=%s\n", rup);
     }
 
     /**
@@ -22,15 +24,14 @@ public class Tips {
     }
 
     /**
-     * round up the integer diviion
+     * round up the integer division
      *
+     * how to : (a + (b-1)) / b
      *
      * <p/>
      * a = 5, b = 3
      * round down : a/b = 1
      * round up : a/b = 2
-     *
-     * how : (a + (b-1)) / b
      */
     static int roundUpDivide(int a, int b) {
         return (a + b - 1) / b;
