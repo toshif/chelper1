@@ -1,0 +1,126 @@
+12 PeacefulLine
+8 makeLine
+16 java.lang.String
+1
+5 int[]
+1 x
+9
+0
+1
+int[] 4
+1
+2
+3
+4
+String
+8 possible
+1
+1
+1
+int[] 4
+1
+1
+1
+2
+String
+10 impossible
+1
+2
+1
+int[] 8
+1
+1
+2
+2
+3
+3
+4
+4
+String
+8 possible
+1
+3
+1
+int[] 8
+3
+3
+3
+3
+13
+13
+13
+13
+String
+8 possible
+1
+4
+1
+int[] 9
+3
+7
+7
+7
+3
+7
+7
+7
+3
+String
+10 impossible
+1
+5
+1
+int[] 11
+25
+12
+3
+25
+25
+12
+12
+12
+12
+3
+25
+String
+8 possible
+1
+6
+1
+int[] 9
+3
+3
+3
+3
+13
+13
+13
+13
+3
+String
+8 possible
+1
+7
+1
+int[] 5
+1
+1
+1
+2
+2
+String
+8 possible
+1
+8
+1
+int[] 1
+1
+String
+8 possible
+1
+10 2015.01.25
+22 Single Round Match 647
+0
+17 fuku.PeacefulLine
+0
+4 256M
