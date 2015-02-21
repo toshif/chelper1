@@ -1,0 +1,87 @@
+19 DecipherabilityEasy
+5 check
+16 java.lang.String
+2
+16 java.lang.String
+1 s
+16 java.lang.String
+1 t
+8
+0
+2
+String
+6 sunuke
+String
+5 snuke
+String
+8 Possible
+1
+1
+2
+String
+5 snuke
+String
+4 skue
+String
+10 Impossible
+1
+2
+2
+String
+5 snuke
+String
+5 snuke
+String
+10 Impossible
+1
+3
+2
+String
+7 snukent
+String
+5 snuke
+String
+10 Impossible
+1
+4
+2
+String
+5 aaaaa
+String
+4 aaaa
+String
+8 Possible
+1
+5
+2
+String
+5 aaaaa
+String
+3 aaa
+String
+10 Impossible
+1
+6
+2
+String
+8 topcoder
+String
+7 tpcoder
+String
+8 Possible
+1
+7
+2
+String
+16 singleroundmatch
+String
+14 singeroundmatc
+String
+10 Impossible
+1
+10 2015.02.11
+22 Single Round Match 649
+0
+24 fuku.DecipherabilityEasy
+0
+4 256M
