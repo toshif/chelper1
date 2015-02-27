@@ -8,7 +8,7 @@ import java.util.Scanner;
  * @author fuku
  */
 public class TaskX {
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
         String inFile = "X-small.in";
 
         URL inFileUrl = TaskX.class.getResource(inFile);
@@ -16,7 +16,7 @@ public class TaskX {
         Scanner in = new Scanner(inputStream);
 
         String outFile = inFile + ".out";
-        PrintWriter out = new PrintWriter(new FileOutputStream(outFile));
+        PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outFile)));
 
         System.out.printf("Input File = [%s]\n", inFile);
         System.out.printf("Output File = [%s]\n", outFile);
