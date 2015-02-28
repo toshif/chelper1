@@ -65,6 +65,7 @@ public class Permutation {
         return ret;
     }
 
+    @Deprecated
     private void next() {
         pStack--;
 
