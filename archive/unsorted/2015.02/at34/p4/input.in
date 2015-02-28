@@ -1,0 +1,10 @@
+1
+2 3
+test
+----EXPECTED----
+6 test
+-------TEST_END-------
+72
+128 256
+myonmyon
+-------TEST_END-------
