@@ -38,6 +38,11 @@ public class PointXY {
         }
 
         @Override
+        public P clone() {
+            return new P(x, y);
+        }
+
+        @Override
         public int compareTo(P o2) {
             P o1 = this;
 
