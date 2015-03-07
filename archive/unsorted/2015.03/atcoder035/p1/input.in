@@ -1,0 +1,8 @@
+ab*
+----EXPECTED----
+YES
+-------TEST_END-------
+abc
+----EXPECTED----
+NO
+-------TEST_END-------
