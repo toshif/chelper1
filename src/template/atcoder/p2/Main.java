@@ -1,13 +1,15 @@
 package template.atcoder.p2;
 
+import java.io.BufferedInputStream;
+import java.io.BufferedOutputStream;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
-        PrintWriter out = new PrintWriter(System.out);
+        Scanner in = new Scanner(new BufferedInputStream(System.in));
+        PrintWriter out = new PrintWriter(new BufferedOutputStream(System.out));
         new Solver().solve(in, out);
         out.flush();
     }
