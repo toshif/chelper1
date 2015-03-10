@@ -1,0 +1,98 @@
+<html>
+<head>
+    <title>SmoothNumbers</title>
+
+
+<link rel="stylesheet" href="../my_tc.css">
+
+</head>
+<body>
+<h1><a href="http://community.topcoder.com/tc?module=ProblemDetail&amp;rd=11122&amp;pm=8519">SmoothNumbers</a></h1>
+
+<p><em>Single Round Match 388 Round 1 - Division I, Level One</em></p>
+
+<h2>Statement</h2>
+
+<p>A positive integer is said to be <em>k</em>-smooth if its largest prime factor is no greater than <em>k</em>. Compute how many positive integers less than or equal to <em>N</em> are <em>k</em>-smooth.</p>
+
+<h2>Definitions</h2>
+
+<ul>
+<li><em>Class</em>: <code>SmoothNumbers</code></li>
+<li><em>Method</em>: <code>countSmoothNumbers</code></li>
+<li><em>Parameters</em>: <code>int, int</code></li>
+<li><em>Returns</em>: <code>int</code></li>
+<li><em>Method signature</em>: <code>int countSmoothNumbers(int N, int k)</code></li>
+</ul>
+
+
+<h2>Constraints</h2>
+
+<ul>
+<li><em>N</em> will be between 1 and 100,000, inclusive.</li>
+<li><em>k</em> will be between 1 and 100, inclusive.</li>
+</ul>
+
+
+<h2>Examples</h2>
+
+<h3>Example 1</h3>
+
+<h4>Input</h4>
+
+<p><c>10,<br />3</c></p>
+
+<h4>Output</h4>
+
+<p><c>7</c></p>
+
+<h4>Reason</h4>
+
+<p>Of the first ten integers, only 5, 7 and 10 have prime factors greater than 3.</p>
+
+<h3>Example 2</h3>
+
+<h4>Input</h4>
+
+<p><c>10,<br />4</c></p>
+
+<h4>Output</h4>
+
+<p><c>7</c></p>
+
+<h4>Reason</h4>
+
+<p>4 is not prime, so 4-smooth numbers are the same as 3-smooth numbers.</p>
+
+<h3>Example 3</h3>
+
+<h4>Input</h4>
+
+<p><c>15,<br />3</c></p>
+
+<h4>Output</h4>
+
+<p><c>8</c></p>
+
+<h3>Example 4</h3>
+
+<h4>Input</h4>
+
+<p><c>5,<br />20</c></p>
+
+<h4>Output</h4>
+
+<p><c>5</c></p>
+
+<h3>Example 5</h3>
+
+<h4>Input</h4>
+
+<p><c>100000,<br />100</c></p>
+
+<h4>Output</h4>
+
+<p><c>17442</c></p>
+
+</body>
+</html>
