@@ -1,4 +1,4 @@
-1. copy "template.atcoder" dir to src
+1. copy "template.atcoder" dir to src and rename it to abc123
 2. go to the dir in intellij and Ctrl+Shift+R (Replace)
-3. replace all template.atcoder -> atcoder
+3. replace all template.atcoder -> abc123
 
