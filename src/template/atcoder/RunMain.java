@@ -34,6 +34,7 @@ public class RunMain {
         String inStr = new String(inBytes);
         String[] tests = inStr.split("-------TEST_END-------[\r\n]*");
 
+        boolean allTestsPassed = true;
         for (int i = 0; i < tests.length; i++) {
             String test = tests[i];
 
@@ -74,10 +75,16 @@ public class RunMain {
                 String verdict = "OK";
                 if (!expected.equals(ans.trim())) {
                     verdict = "NG";
+                    allTestsPassed = false;
                 }
                 origSysOut.println("Verdict: " + verdict);
             }
             origSysOut.printf("-------------------\n");
+        }
+
+        if (allTestsPassed) {
+            origSysOut.printf("\n");
+            origSysOut.printf("All %s tests passed.\n", tests.length);
         }
     }
 
