@@ -1,0 +1,38 @@
+18 Chef and Notebooks
+12 MULTI_NUMBER
+8 STANDARD
+-1
+8 STANDARD
+-1
+1
+0
+58 3
+3 1 2 2
+3 4
+2 2    
+3 1 2 2
+2 3
+2 3    
+3 1 2 2
+1 1
+1 2
+
+34 LuckyChef
+UnluckyChef
+UnluckyChef
+
+1
+8 src/fuku
+7 -Xmx64M
+4 Main
+21 fuku.ChefAndNotebooks
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2015.03.08
+20 March Challenge 2015
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
