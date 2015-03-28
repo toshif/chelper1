@@ -5,6 +5,11 @@ import java.io.BufferedOutputStream;
 import java.io.PrintWriter;
 import java.util.*;
 
+/**
+ * A* search
+ *
+ *
+ */
 public class Main {
 
     public static void main(String[] args) {
