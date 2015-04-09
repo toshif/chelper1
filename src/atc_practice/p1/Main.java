@@ -6,7 +6,7 @@ import java.io.PrintWriter;
 import java.util.*;
 
 /**
- * A* search
+ * A* search の練習
  *
  *
  */
