@@ -18,7 +18,7 @@ public class TaskX {
         String outFile = inFile + ".out";
         PrintWriter out = new PrintWriter(new BufferedWriter(new FileWriter(outFile)));
 
-        System.out.printf("Input File = [%s]\n", inFile);
+        System.out.printf("Input File = [%s]\n", inFileUrl);
         System.out.printf("Output File = [%s]\n", outFile);
 
         int T = in.nextInt();
