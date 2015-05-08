@@ -1,7 +1,5 @@
 package utils.graph;
 
-import com.sun.javafx.geom.Edge;
-
 import java.util.Arrays;
 
 /**
@@ -16,17 +14,23 @@ import java.util.Arrays;
  */
 public class ShortestPath2_Dijkstra {
 
-    int N = 7;
+    int N;
 
     static int INF = 1_000_000_000;
 
-    int[][] cost = new int[N][N];
+    int[][] cost;
 
     // 各頂点への最短距離
-    int d[] = new int[N];
+    int[] d;
+
+    void init() {
+        N = 7;
+        cost = new int[N][N];
+        d = new int[N];
+        Arrays.fill(d, INF);
+    }
 
     void dijkstra(int s){
-        Arrays.fill(d, INF);
         d[s] = 0;
 
         boolean[] used  = new boolean[N];
@@ -49,6 +53,7 @@ public class ShortestPath2_Dijkstra {
 
     public static void main(String[] args){
         ShortestPath2_Dijkstra dj = new ShortestPath2_Dijkstra();
+        dj.init();
 
         // Undirected Graph
         String costs = "A,B,2 A,C,5 B,C,4 B,D,6 B,E,10 C,D,2 D,F,1 E,F,3 E,G,5 F,G,9";
