@@ -4,69 +4,25 @@ import java.util.Arrays;
 
 /**
  * http://en.wikipedia.org/wiki/Dijkstra's_algorithm
- *
+ * <p/>
  * 1. 最短距離が確定した頂点に隣接する頂点を更新する
  * 2. 1 で確定した「最短距離が確定した頂点」はもう使わない
- *
+ * <p/>
  * O ( V^2 )
- *
+ * <p/>
  * Created by toshif on 5/28/14.
  */
 public class ShortestPath2_Dijkstra {
 
-    int V;
-
-    static int INF = 1_000_000_000;
-
-    int[][] cost;
-
-    // 各頂点への最短距離
-    int[] d;
-
-    void init() {
-        V = 7;
-        cost = new int[V][V];
-        d = new int[V];
-
-        // 存在しない path は INF
-        for (int i = 0; i < cost.length; i++) {
-            Arrays.fill(cost[i], INF);
-        }
-
-        Arrays.fill(d, INF);
-    }
-
-    void dijkstra(int s){
-        d[s] = 0;
-
-        boolean[] used  = new boolean[V];
-        while(true){
-            int v = -1;
-            // まだ使われてない頂点のうち、sからの距離が最小のものを探す
-            for (int i = 0; i < V; i++) {
-                if (!used[i] && (v == -1 || d[i] < d[v])) v = i;
-            }
-
-            if (v == -1) break;
-
-            used[v] = true;
-
-            for (int i = 0; i < V; i++) {
-                d[i] = Math.min(d[i], d[v] + cost[v][i]);
-            }
-        }
-    }
-
-    public static void main(String[] args){
+    public static void main(String[] args) {
         // Input: Undirected graph
         // 上の　Dijkstra　は Directed graph にも対応している
-        String costs = "A,B,2 A,C,5 B,C,4 B,D,6 B,E,10 C,D,2 D,F,1 E,F,3 E,G,5 F,G,9";
+        String input = "A,B,2 A,C,5 B,C,4 B,D,6 B,E,10 C,D,2 D,F,1 E,F,3 E,G,5 F,G,9";
 
-        ShortestPath2_Dijkstra dj = new ShortestPath2_Dijkstra();
-        dj.init();
+        Dijkstra dj = new Dijkstra(7);
 
         // 存在する path の cost 入力
-        String[] costE = costs.split(" ");
+        String[] costE = input.split(" ");
         for (int i = 0; i < costE.length; i++) {
             String[] c = costE[i].split(",");
 
@@ -79,10 +35,53 @@ public class ShortestPath2_Dijkstra {
         }
 
         // solve it. find the minimum cost from node 0.
-        dj.dijkstra(0);
+        dj.solve(0);
 
         // 解 (A->Gの最小コスト) は A -> C -> D -> F -> E -> G で 16
         System.out.printf("             [A, B, C, D, E, F, G]\n");
         System.out.printf("dijkstra d = %s\n", Arrays.toString(dj.d));
+    }
+
+    private static class Dijkstra {
+        static final int INF = 1_000_000_000;
+        int V;
+        int[][] cost;
+
+        // 各頂点への最短距離
+        int[] d;
+
+        Dijkstra(int V) {
+            this.V = V;
+            cost = new int[V][V];
+            d = new int[V];
+
+            // 存在しない path は INF
+            for (int i = 0; i < cost.length; i++) {
+                Arrays.fill(cost[i], INF);
+            }
+
+            Arrays.fill(d, INF);
+        }
+
+        void solve(int s) {
+            d[s] = 0;
+
+            boolean[] used = new boolean[V];
+            while (true) {
+                int v = -1;
+                // まだ使われてない頂点のうち、sからの距離が最小のものを探す
+                for (int i = 0; i < V; i++) {
+                    if (!used[i] && (v == -1 || d[i] < d[v])) v = i;
+                }
+
+                if (v == -1) break;
+
+                used[v] = true;
+
+                for (int i = 0; i < V; i++) {
+                    d[i] = Math.min(d[i], d[v] + cost[v][i]);
+                }
+            }
+        }
     }
 }
