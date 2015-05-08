@@ -27,6 +27,12 @@ public class ShortestPath2_Dijkstra {
         N = 7;
         cost = new int[N][N];
         d = new int[N];
+
+        // 存在しない path は INF
+        for (int i = 0; i < cost.length; i++) {
+            Arrays.fill(cost[i], INF);
+        }
+
         Arrays.fill(d, INF);
     }
 
@@ -52,19 +58,14 @@ public class ShortestPath2_Dijkstra {
     }
 
     public static void main(String[] args){
+        // Input: Undirected graph
+        // 上の　Dijkstra　は Directed graph にも対応している
+        String costs = "A,B,2 A,C,5 B,C,4 B,D,6 B,E,10 C,D,2 D,F,1 E,F,3 E,G,5 F,G,9";
+
         ShortestPath2_Dijkstra dj = new ShortestPath2_Dijkstra();
         dj.init();
 
-        // Undirected Graph
-        String costs = "A,B,2 A,C,5 B,C,4 B,D,6 B,E,10 C,D,2 D,F,1 E,F,3 E,G,5 F,G,9";
-
-        // 存在しない path は INF
-        int[][] cost = dj.cost;
-        for (int i = 0; i < cost.length; i++) {
-            Arrays.fill(cost[i], INF);
-        }
-
-        // 存在する path は cost を更新する
+        // 存在する path の cost 入力
         String[] costE = costs.split(" ");
         for (int i = 0; i < costE.length; i++) {
             String[] c = costE[i].split(",");
@@ -73,13 +74,15 @@ public class ShortestPath2_Dijkstra {
             int p1 = c[1].charAt(0) - 'A';
             int cs = Integer.parseInt(c[2]);
 
-            cost[p0][p1] = cs;
-            cost[p1][p0] = cs;
+            dj.cost[p0][p1] = cs;
+            dj.cost[p1][p0] = cs;
         }
 
-        // 解は A -> c -> D -> F -> E -> G で 16
+        // solve it. find the minimum cost from node 0.
         dj.dijkstra(0);
 
-        System.out.printf("dijkstra d = %s", Arrays.toString(dj.d));
+        // 解 (A->Gの最小コスト) は A -> C -> D -> F -> E -> G で 16
+        System.out.printf("             [A, B, C, D, E, F, G]\n");
+        System.out.printf("dijkstra d = %s\n", Arrays.toString(dj.d));
     }
 }
