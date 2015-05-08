@@ -14,7 +14,7 @@ import java.util.Arrays;
  */
 public class ShortestPath2_Dijkstra {
 
-    int N;
+    int V;
 
     static int INF = 1_000_000_000;
 
@@ -24,9 +24,9 @@ public class ShortestPath2_Dijkstra {
     int[] d;
 
     void init() {
-        N = 7;
-        cost = new int[N][N];
-        d = new int[N];
+        V = 7;
+        cost = new int[V][V];
+        d = new int[V];
 
         // 存在しない path は INF
         for (int i = 0; i < cost.length; i++) {
@@ -39,11 +39,11 @@ public class ShortestPath2_Dijkstra {
     void dijkstra(int s){
         d[s] = 0;
 
-        boolean[] used  = new boolean[N];
+        boolean[] used  = new boolean[V];
         while(true){
             int v = -1;
             // まだ使われてない頂点のうち、sからの距離が最小のものを探す
-            for (int i = 0; i < N; i++) {
+            for (int i = 0; i < V; i++) {
                 if (!used[i] && (v == -1 || d[i] < d[v])) v = i;
             }
 
@@ -51,7 +51,7 @@ public class ShortestPath2_Dijkstra {
 
             used[v] = true;
 
-            for (int i = 0; i < N; i++) {
+            for (int i = 0; i < V; i++) {
                 d[i] = Math.min(d[i], d[v] + cost[v][i]);
             }
         }
