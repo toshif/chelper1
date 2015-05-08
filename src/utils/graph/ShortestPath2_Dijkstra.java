@@ -3,6 +3,9 @@ package utils.graph;
 import java.util.Arrays;
 
 /**
+ * Time Complexity : O(V^2)
+ * Memory Space Complexity : O(V^2)
+ *
  * http://en.wikipedia.org/wiki/Dijkstra's_algorithm
  * <p/>
  * 1. 最短距離が確定した頂点に隣接する頂点を更新する
