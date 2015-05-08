@@ -4,6 +4,10 @@ import java.util.*;
 
 /**
  * Priority Queue を使った Dijkstra の実装。
+ *
+ * Time Complexity : O(V log2(V)) for most cases. Worst O(V^2)
+ * Memory Space Complexity : O(E + V)
+ *
  * <p/>
  * これも極めて密結合な graph の場合、 worst では O(V^2) かかってしまうが、
  * 疎結合の tree ( sparse tree ) で　O(E) ~ O(V) なら、
