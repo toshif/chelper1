@@ -42,6 +42,7 @@ public class MaxFlow_FordFulkerson {
 
         int V;
         List<Edge>[] capacity;
+        // residual graph. using Map for a bit of efficiency.
         // key: to vertex, value: Edge
         private Map<Integer, Edge>[] residual;
         int maxFlow = 0;
