@@ -1,5 +1,10 @@
 package template.usaco;
 
+/*
+ID: t.fukuz1
+LANG: JAVA
+TASK: test
+*/
 import java.io.*;
 import java.net.URL;
 import java.util.Scanner;
@@ -28,9 +33,10 @@ public class TaskX {
     static class Solver {
 
         public void solve(Scanner in, PrintWriter out) {
-            int N = in.nextInt();
+            int a = in.nextInt();
+            int b = in.nextInt();
 
-            String ans = "1";
+            out.println(a + b);
         }
     }
 }
