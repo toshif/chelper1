@@ -8,7 +8,7 @@ import java.util.*;
  * Time Complexity : O(E maxflow) -> だが、通常は O(E) 程度。
  * Memory Space Complexity : O(E + V)
  * <p>
- * Created by delluser on 2015/05/10.
+ * Created by toshif on 2015/05/10.
  */
 public class MaxFlow_FordFulkerson {
 
