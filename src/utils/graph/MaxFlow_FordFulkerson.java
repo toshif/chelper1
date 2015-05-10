@@ -41,7 +41,7 @@ public class MaxFlow_FordFulkerson {
         System.out.printf("flows = %s\n", ff.getFlowResult());
     }
 
-    private static class FordFulkerson {
+    static class FordFulkerson {
 
         int V;
         List<Edge>[] capacity;
