@@ -148,7 +148,7 @@ public class MaxFlow_FordFulkerson {
                 List<Edge> edges = capacity[i];
                 for (Edge capE : edges) {
                     Edge resE = residual[i].get(Integer.valueOf(capE.to));
-                    if (resE.val != capE.val) {
+                    if (resE.val < capE.val) {
                         ret.add(new Edge(capE.from, capE.to, capE.val - resE.val));
                     }
                 }
