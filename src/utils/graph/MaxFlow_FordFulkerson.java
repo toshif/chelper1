@@ -4,10 +4,10 @@ import java.util.*;
 
 /**
  * http://en.wikipedia.org/wiki/Ford%E2%80%93Fulkerson_algorithm
- *
+ * <p>
  * Time Complexity : O(E maxflow) -> だが、通常は O(E) 程度。
  * Memory Space Complexity : O(E + V)
- *
+ * <p>
  * Created by delluser on 2015/05/10.
  */
 public class MaxFlow_FordFulkerson {
@@ -36,6 +36,9 @@ public class MaxFlow_FordFulkerson {
 
         // 解 (A->Eの maximum flow) は 11
         System.out.printf("max flow = %s\n", ff.maxFlow);
+
+        // max flow 時の flow のリスト
+        System.out.printf("flows = %s\n", ff.getFlowResult());
     }
 
     private static class FordFulkerson {
@@ -47,7 +50,7 @@ public class MaxFlow_FordFulkerson {
         private Map<Integer, Edge>[] residual;
         int maxFlow = 0;
 
-        FordFulkerson(int V){
+        FordFulkerson(int V) {
             this.V = V;
             capacity = new List[V];
             residual = new Map[V];
@@ -60,10 +63,10 @@ public class MaxFlow_FordFulkerson {
         }
 
         // s -> t への max flow を探す
-        void solve(int s, int t){
+        void solve(int s, int t) {
             initBeforeSolve();
 
-            while(true) {
+            while (true) {
                 initDfs();
                 boolean reachable = dfs(s, t);
 
@@ -73,7 +76,7 @@ public class MaxFlow_FordFulkerson {
             }
         }
 
-        private void initBeforeSolve(){
+        private void initBeforeSolve() {
             for (int i = 0; i < V; i++) {
                 for (Edge e : capacity[i]) {
                     residual[i].put(Integer.valueOf(e.to), new Edge(e.from, e.to, e.val));
@@ -84,7 +87,7 @@ public class MaxFlow_FordFulkerson {
         private boolean[] dfsUsed;
         private LinkedList<Edge> augPath = new LinkedList<>();
 
-        private void initDfs(){
+        private void initDfs() {
             Arrays.fill(dfsUsed, false);
             augPath.clear();
         }
@@ -113,7 +116,7 @@ public class MaxFlow_FordFulkerson {
         }
 
         // updating the residual graph
-        private void updateResidual(){
+        private void updateResidual() {
             int minVal = augPath.get(0).val;
             for (Edge e : augPath) {
                 minVal = Math.min(minVal, e.val);
@@ -138,6 +141,22 @@ public class MaxFlow_FordFulkerson {
             }
         }
 
+        // max flow のとき(一意でない)、flow がある辺のリストを返す. val は flow の量.
+        List<Edge> getFlowResult() {
+            List<Edge> ret = new ArrayList<>();
+            for (int i = 0; i < V; i++) {
+                List<Edge> edges = capacity[i];
+                for (Edge capE : edges) {
+                    Edge resE = residual[i].get(Integer.valueOf(capE.to));
+                    if (resE.val != capE.val) {
+                        ret.add(new Edge(capE.from, capE.to, capE.val - resE.val));
+                    }
+                }
+            }
+
+            return ret;
+        }
+
         static class Edge {
             int from;
             int to;
@@ -151,11 +170,7 @@ public class MaxFlow_FordFulkerson {
 
             @Override
             public String toString() {
-                return "Edge{" +
-                        from +
-                        "->" + to +
-                        ", val=" + val +
-                        '}';
+                return "Edge{" + from + "->" + to + ", val=" + val + '}';
             }
         }
 
