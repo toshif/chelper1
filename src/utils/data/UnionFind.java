@@ -3,6 +3,13 @@ package utils.data;
 import java.util.Arrays;
 
 /**
+ * <pre>
+ *  Time Complexity :
+ *    Union: O(log n)
+ *    Find: O(log n)
+ *  Memory Space Complexity : O(n)
+ * </pre>
+ * <p/>
  * http://en.wikipedia.org/wiki/Disjoint-set_data_structure
  * <p/>
  * http://algs4.cs.princeton.edu/15uf/
@@ -65,10 +72,6 @@ public class UnionFind {
             return p;
         }
 
-        public boolean connected(int p, int q) {
-            return find(p) == find(q);
-        }
-
         public void union(int p, int q) {
             int i = find(p);
             int j = find(q);
@@ -85,6 +88,10 @@ public class UnionFind {
             }
 
             count--;
+        }
+
+        public boolean connected(int p, int q) {
+            return find(p) == find(q);
         }
     }
 
