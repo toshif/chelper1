@@ -50,7 +50,7 @@ public class BipartiteMatching {
 
         int V;
 
-        private MaxFlow_FordFulkerson.FordFulkerson ff;
+        MaxFlow_FordFulkerson.FordFulkerson ff;
 
         // 0: source, 1: target (sink), 2: other vertexes
         BiMatching(int V) {
