@@ -21,7 +21,20 @@ import java.util.Arrays;
  */
 public class AES_Example {
 
-    // AES/CBC/PKCS5Padding (128 bits = 16 bytes)
+    /*
+    * AES/CBC/PKCS5Padding (128 bits = 16 bytes)
+    *
+    * AES - Advanced Encryption Standard (Algorith Name)
+    * https://en.wikipedia.org/wiki/Advanced_Encryption_Standard
+    *
+    * CBC - Cipher Block Chaining
+    * https://en.wikipedia.org/wiki/Block_cipher_mode_of_operation
+    *
+    * PKCS5Padding - Padding Scheme
+    * https://docs.oracle.com/javase/8/docs/technotes/guides/security/StandardNames.html#Cipher
+    * http://www.emc.com/emc-plus/rsa-labs/standards-initiatives/pkcs-5-password-based-cryptography-standard.htm
+    *
+     */
     private static final String CIPHER_ALGORITHM = "AES/CBC/PKCS5Padding";
 
     // Initialization Vector - must be 128 bits (16 bytes) long
@@ -34,11 +47,11 @@ public class AES_Example {
         final String plaintext = "text 123";
         System.out.println("plain: [" + plaintext + "]");
 
-        byte[] cipher = encrypt(plaintext, ENCRYPTION_KEY);
-        System.out.println("cipher: " + Arrays.toString(cipher));
-        System.out.println("length: " + cipher.length);
+        byte[] encrypted = encrypt(plaintext, ENCRYPTION_KEY);
+        System.out.println("encrypted: " + Arrays.toString(encrypted));
+        System.out.println("length: " + encrypted.length);
 
-        String decrypted = decrypt(cipher, ENCRYPTION_KEY);
+        String decrypted = decrypt(encrypted, ENCRYPTION_KEY);
         System.out.println("decrypt: [" + decrypted + "]");
     }
 
