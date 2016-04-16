@@ -1,0 +1,42 @@
+27 C - Famil Door and Brackets
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+3
+0
+6 4 1
+(
+
+2 4
+
+1
+1
+9 4 4
+(())
+
+2 1
+
+1
+2
+8 4 3
+(((
+
+2 0
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskC
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.02.20
+30 Codeforces Round #343 (Div. 2)
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0

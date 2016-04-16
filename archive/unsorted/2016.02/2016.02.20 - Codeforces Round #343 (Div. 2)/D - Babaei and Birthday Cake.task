@@ -1,0 +1,39 @@
+28 D - Babaei and Birthday Cake
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+2
+0
+15 2
+100 30
+40 10
+
+17 942477.796077000
+
+1
+1
+19 4
+1 1
+9 7
+1 4
+10 7
+
+15 3983.539484752
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskD
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.02.20
+30 Codeforces Round #343 (Div. 2)
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
