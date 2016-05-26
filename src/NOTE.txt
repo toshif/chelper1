@@ -10,3 +10,14 @@ git config --global user.email "me@here.com"
 git config --global user.email
 -------------------------------------
 
+===== Mac 記号
+https://support.apple.com/ja-jp/HT201236
+
+^ : Ctrl
+⇧ : Shift
+⌥ : Alt ( Option )
+
+===== IntelliJ Shortcuts
+
+Ctrl+R Run
+Ctrl+D Debug
