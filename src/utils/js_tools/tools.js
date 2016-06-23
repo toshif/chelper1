@@ -17,6 +17,16 @@ $(document).ready(function() {
         update_combination();
     });
 
+    $( "#base_value" ).keyup(function(event) {
+        update_base();
+    });
+    $( "#base_from" ).keyup(function(event) {
+        update_base();
+    });
+    $( "#base_to" ).keyup(function(event) {
+        update_base();
+    });
+
 });
 
 function update_power(){
@@ -91,3 +101,7 @@ function binomial_combination(){
           combi_memo[n][k] = combi_memo[n-1][k-1] + combi_memo[n-1][k];
 }
 
+function update_base(){
+    var x = parseInt($("#base_value").val(), $("#base_from").val());
+    $("#base_ans").text(x.toString($("#base_to").val()));
+}
