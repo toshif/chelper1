@@ -1,0 +1,33 @@
+22 B - Pyramid of Glasses
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+2
+0
+4 3 5
+
+2 4
+
+1
+1
+4 4 8
+
+2 6
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskB
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2016.06.01
+30 Codeforces Round #354 (Div. 2)
+1
+17 java.util.Scanner
+19 java.io.PrintWriter
+0
+0
