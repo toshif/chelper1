@@ -17,10 +17,10 @@ https://support.apple.com/ja-jp/HT201236
 ⇧ : Shift
 ⌥ : Alt ( Option )
 
-===== IntelliJ Shortcuts
+===== IntelliJ Mac Shortcuts
 
-Ctrl+R Run
-Ctrl+D Debug
+Ctrl+R : Run
+Ctrl+D : Debug
 
 Cmd+X : 行切り取り
 F1 : Javadoc Lookup
@@ -32,4 +32,21 @@ https://resources.jetbrains.com/assets/products/intellij-idea/IntelliJIDEA_Refer
 
 http://qiita.com/yoppe/items/f7cbeb825c071691d3f2
 
+
+===== IntelliJ Windows Shortcuts
+
+Shift+F10 : Run
+Shift+F9 : Debug
+
+Cmd+X : 行切り取り
+
+Alt+Ctrl+V : Extract as a local variable
+Alt+Ctrl+F : Extract as a field
+
+Ctrl+Shift+V : コピー履歴から貼り付け
+
+
+https://resources.jetbrains.com/assets/products/intellij-idea/IntelliJIDEA_ReferenceCard.pdf
+
+http://qiita.com/yoppe/items/f7cbeb825c071691d3f2
 
