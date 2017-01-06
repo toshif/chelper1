@@ -38,6 +38,32 @@ public class BinarySearchHelperTest {
     }
 
     @Test
+    public void testHigher2() {
+        ArrayList<Long> a = new ArrayList<>();
+        a.add(10L);
+        a.add(20L);
+        a.add(20L);
+        a.add(30L);
+
+        Assert.assertEquals(0, BinarySearchHelper.higher(a, 0L));
+        Assert.assertEquals(10L, a.get(BinarySearchHelper.higher(a, 0L)).longValue());
+
+        Assert.assertEquals(1, BinarySearchHelper.higher(a, 19L));
+        Assert.assertEquals(20L, a.get(BinarySearchHelper.higher(a, 19L)).longValue());
+
+        Assert.assertEquals(3, BinarySearchHelper.higher(a, 20L));
+        Assert.assertEquals(30L, a.get(BinarySearchHelper.higher(a, 20L)).longValue());
+
+        Assert.assertEquals(3, BinarySearchHelper.higher(a, 29L));
+        Assert.assertEquals(30L, a.get(BinarySearchHelper.higher(a, 29L)).longValue());
+
+        Assert.assertEquals(-1, BinarySearchHelper.higher(a, 30L));
+
+        Assert.assertEquals(-1, BinarySearchHelper.higher(a, 50L));
+    }
+
+
+    @Test
     public void testLower() {
         ArrayList<Long> a = new ArrayList<>();
         a.add(10L);
