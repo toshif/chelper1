@@ -1,0 +1,18 @@
+1
+2 3
+test
+----EXPECTED----
+6 test
+-------TEST_END-------
+1
+2 3
+test
+----EXPECTED----
+6 test
+-------TEST_END-------
+1
+2 3
+test
+----EXPECTED----
+6 test
+-------TEST_END-------
