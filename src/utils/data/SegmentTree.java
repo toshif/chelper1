@@ -40,11 +40,9 @@ public class SegmentTree {
             }
         }
 
-        int N;
+        private int N;
 
-        Node[] tree;
-
-        int treeSize;
+        private Node[] tree;
 
         /*
          * Initialize : O(N * Log2 N)
