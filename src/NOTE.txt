@@ -32,6 +32,8 @@ https://resources.jetbrains.com/assets/products/intellij-idea/IntelliJIDEA_Refer
 
 http://qiita.com/yoppe/items/f7cbeb825c071691d3f2
 
+http://qiita.com/deco/items/f9b3aa90bf39ec4421ad
+
 
 ===== IntelliJ Windows Shortcuts
 
