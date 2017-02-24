@@ -17,7 +17,7 @@ import java.util.Arrays;
  */
 public class SieveOfEratosthenes {
 
-    static boolean[] getPrimeCheckArray(int N){
+    public static boolean[] getPrimeCheckArray(int N){
         boolean[] ret = new boolean[N];
         Arrays.fill(ret, true);
 
