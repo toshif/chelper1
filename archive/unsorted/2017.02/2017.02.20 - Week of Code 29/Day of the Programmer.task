@@ -1,0 +1,29 @@
+21 Day of the Programmer
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+2
+0
+4 2017
+10 13.09.2017
+1
+1
+4 2016
+10 12.09.2016
+1
+8 src/fuku
+8 -Xmx256M
+8 Solution
+23 fuku.DayOfTheProgrammer
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.02.20
+15 Week of Code 29
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0

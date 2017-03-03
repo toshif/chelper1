@@ -1,58 +1,59 @@
-package utils.graph;
+package fuku;
 
-import java.util.*;
+import utils.graph.ShortestPath2_Dijkstra_w_PriorityQueue;
+import utils.io.MyReader;
 
-/**
- * Priority Queue を使った Dijkstra の実装。
- *
- * Time Complexity : O(V log2(V)) for most cases. Worst O(V^2)
- * Memory Space Complexity : O(E + V)
- *
- * <p/>
- * これも極めて密結合な graph の場合、 worst では O(V^2) かかってしまうが、
- * 疎結合の tree ( sparse tree ) で　O(E) ~ O(V) なら、
- * 各 node からの遷移は O(1) なので
- * <p/>
- * O ( V ( 1 + log2(V) ) )　= O (V log2 V) で動く。
- * <p/>
- * http://en.wikipedia.org/wiki/Dijkstra's_algorithm
- * <p/>
- * 1. 最短距離が確定した頂点に隣接する頂点を更新する
- * 2. 1 で確定した「最短距離が確定した頂点」はもう使わない
- * <p/>
- * 最短距離が確定した頂点を探すときに Priority Queue を使っている。
- * <p/>
- * Created by toshif.
- */
-public class ShortestPath2_Dijkstra_w_PriorityQueue {
+import java.io.PrintWriter;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
 
-    public static void main(String[] args) {
-        // Input: Undirected graph
-        // 下の　Dijkstra　は Directed graph にも対応している
-        String input = "A,B,2 A,C,5 B,C,4 B,D,6 B,E,10 C,D,2 D,F,1 E,F,3 E,G,5 F,G,9";
+public class DiameterMinimization {
+    public void solve(int testNumber, MyReader in, PrintWriter out) {
+        int n = in.nextInt();
+        int m = in.nextInt();
+        int m2 = m - 1;
 
-        Dijkstra dj = new Dijkstra(7);
+        Dijkstra dijkstra = new Dijkstra(n);
 
-        // 存在する path の cost 入力
-        String[] costE = input.split(" ");
-        for (int i = 0; i < costE.length; i++) {
-            String[] c = costE[i].split(",");
+        List<Integer>[] g = new List[n];
+        for (int i = 0; i < n; i++) {
+            g[i] = new ArrayList<>();
 
-            int p0 = c[0].charAt(0) - 'A';
-            int p1 = c[1].charAt(0) - 'A';
-            int cs = Integer.parseInt(c[2]);
+            g[i].add((i + 1) % n);
 
-            dj.edges[p0].add(new Dijkstra.Edge(p0, p1, cs));
-            dj.edges[p1].add(new Dijkstra.Edge(p1, p0, cs));
+            int d = n;
+            for (int j = 0; j < m2; j++) {
+                d /= 2;
+                int sign = j % 2 == 0 ? 1 : -1;
+                g[i].add((i + sign * d + n) % n);
+            }
+
+            for (int j = 0; j < m; j++) {
+                dijkstra.edges[i].add(new Dijkstra.Edge(i, g[i].get(j), 1));
+            }
+
         }
 
-        // solve it. find the minimum cost from node 0.
-        dj.solve(0);
+        dijkstra.solve(0);
+        int ma = 0;
+        for (int i = 0; i < n; i++) {
+            ma = Math.max(ma, dijkstra.d[i]);
+        }
 
-        // 解 (A->Gの最小コスト) は A -> C -> D -> F -> E -> G で 16
-        System.out.printf("               [A, B, C, D, E, F, G]\n");
-        System.out.printf("dk with pq d = %s\n", Arrays.toString(dj.d));
+        out.println(ma);
+        for (int i = 0; i < n; i++) {
+            for (int j = 0; j < m; j++) {
+                out.print(g[i].get(j) + " ");
+            }
+            out.println();
+        }
+
+
     }
+
+
 
     public static class Dijkstra {
         static final int INF = 1_000_000_000;
@@ -137,6 +138,4 @@ public class ShortestPath2_Dijkstra_w_PriorityQueue {
             }
         }
     }
-
-
 }

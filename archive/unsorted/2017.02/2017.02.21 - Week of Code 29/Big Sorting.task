@@ -1,0 +1,36 @@
+11 Big Sorting
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+45 6
+31415926535897932384626433832795
+1
+3
+10
+3
+5
+43 1
+3
+3
+5
+10
+31415926535897932384626433832795
+1
+8 src/fuku
+8 -Xmx256M
+8 Solution
+15 fuku.BigSorting
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.02.21
+15 Week of Code 29
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0
