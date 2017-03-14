@@ -1,4 +1,4 @@
-package utils;
+package utils.prime;
 
 import java.util.Arrays;
 

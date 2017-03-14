@@ -1,4 +1,4 @@
-package utils;
+package utils.prime;
 
 /**
  * 単純な素数判定
