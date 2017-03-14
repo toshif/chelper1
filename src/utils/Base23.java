@@ -9,19 +9,20 @@ import java.util.List;
  */
 public class Base23 {
 
+    public static final long RADIX = 23;
+
     /**
-     * Returns the base-23 int array for the given number n
+     * Returns the base-23 array for the given number n
      */
-    static int[] getBase23(int n){
-        final int radix = 23;
-        List<Integer> ret = new ArrayList<>();
+    public static long[] toBase23(long n){
+        List<Long> ret = new ArrayList<>();
         while(n != 0) {
-            ret.add(n % radix);
-            n /= radix;
+            ret.add(n % RADIX);
+            n /= RADIX;
         }
 
-        // convert to int[]
-        int[] arr = new int[ret.size()];
+        // convert to long[]
+        long[] arr = new long[Math.max(1, ret.size())];
         for (int i = 0; i < ret.size(); i++) {
             arr[i] = ret.get(i);
         }
@@ -29,12 +30,15 @@ public class Base23 {
         return arr;
     }
 
-    public static void main(String[] args) {
-        System.out.println("base23");
-
-        System.out.println("10 (base23) = " + Arrays.toString(getBase23(10))); // [10]
-        System.out.println("100 (base23) = " + Arrays.toString(getBase23(100)) + " : 8 + 4 x 23 "); // [8, 4]
-        System.out.println("23 (base23) = " + Arrays.toString(getBase23(23)) + " : 0 + 1 x 23"); // [0, 1]
+    public static long fromBase23(long[] a) {
+        long ret = a[0];
+        long base = RADIX;
+        for (int i = 1; i < a.length; i++) {
+            ret += (base * a[i]);
+            base *= RADIX;
+        }
+        return ret;
     }
+
 
 }
