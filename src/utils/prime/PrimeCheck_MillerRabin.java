@@ -4,7 +4,11 @@ import java.math.BigInteger;
 
 
 /**
- * O ( k (log2 n)^3  )
+ * This implementation checks if the given long number (64 bits) is a prime with Miller-Rabin.
+ *
+ * This is a deterministic algorithm with 100 % accuracy.
+ *
+ * Time Complexity : O ( k (log2 n)^3  )
  *
  * https://en.wikipedia.org/wiki/Miller%E2%80%93Rabin_primality_test
  *
