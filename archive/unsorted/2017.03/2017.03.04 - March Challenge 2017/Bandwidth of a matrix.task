@@ -1,0 +1,53 @@
+21 Bandwidth of a matrix
+12 MULTI_NUMBER
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+96 6
+2
+0 0
+0 0
+2
+1 0
+0 1
+2
+1 0
+1 0
+2
+1 0
+1 1
+3
+1 0 0
+0 1 1
+1 1 0
+4
+1 1 1 1
+1 1 1 1
+1 1 1 1
+1 1 1 1
+
+12 0
+0
+0
+1
+1
+3
+
+1
+8 src/fuku
+7 -Xmx64M
+4 Main
+23 fuku.BandwidthOfAMatrix
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.03.04
+20 March Challenge 2017
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0

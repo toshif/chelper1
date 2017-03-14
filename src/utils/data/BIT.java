@@ -30,7 +30,7 @@ public class BIT {
      *
      * log2(n)
      */
-    void add(int idx, long val){
+    public void add(int idx, long val){
         while (idx <= n) {
             data[idx] += val;
             idx += (idx & -idx);
@@ -42,7 +42,7 @@ public class BIT {
      *
      * log2(n)
      */
-    long getHeadSum(int idx){
+    public long getHeadSum(int idx){
         long sum = 0;
         while(idx > 0){
             sum += data[idx];

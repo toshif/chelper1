@@ -1,0 +1,38 @@
+21 Bear and Extra Number
+12 MULTI_NUMBER
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+71 4
+5
+45 42 46 48 47
+3
+7 7 8
+8
+12 156 157 158 159 160 161 162
+4
+8 7 10 6
+
+11 42
+7
+12
+10
+
+1
+8 src/fuku
+7 -Xmx64M
+4 Main
+23 fuku.BearAndExtraNumber
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.03.04
+20 March Challenge 2017
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0

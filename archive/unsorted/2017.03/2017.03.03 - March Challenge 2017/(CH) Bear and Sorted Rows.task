@@ -1,0 +1,43 @@
+25 (CH) Bear and Sorted Rows
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+2
+0
+41 4
+2 8 12 14
+5 13 1 10
+16 7 6 4
+3 15 11 9
+
+39 2 8 12 14
+1 5 7 10
+16 13 6 4
+3 9 11 15
+
+0
+1
+41 4
+2 8 14 12
+5 13 10 1
+7 16 6 4
+3 15 11 9
+
+-1
+1
+8 src/fuku
+7 -Xmx64M
+4 Main
+24 fuku.CHBearAndSortedRows
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.03.03
+20 March Challenge 2017
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0
