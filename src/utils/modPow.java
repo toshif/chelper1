@@ -5,10 +5,10 @@ package utils;
  */
 public class modPow {
 
-    static final long MOD = 1_000_000_009;
+    public static final long MOD = 1_000_000_009;
 
     // returns x^y modulo MOD. loops only log2(y) times.
-    static long modPow(int x, int y) {
+    public static long modPow(int x, int y) {
         long res = 1, a = x;
         while (y > 0) {
             if ((y & 1) > 0) {
