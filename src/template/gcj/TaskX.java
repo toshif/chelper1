@@ -24,12 +24,13 @@ public class TaskX {
 
         int T = in.nextInt();
         for (int i = 0; i < T; i++) {
+            int testNumber = i + 1;
             System.err.println("------------------");
-            System.err.println("test " + (i+1));
+            System.err.println("test " + testNumber);
             Solver solver = new Solver();
-            String ans = solver.solve(i, in, out);
-            out.println("Case #" + (i+1) + ": " + ans);
-            System.err.println("Case #" + (i+1) + ": " + ans);
+            String ans = solver.solve(testNumber, in, out);
+            out.println("Case #" + testNumber + ": " + ans);
+            System.err.println("Case #" + testNumber + ": " + ans);
         }
         out.close();
     }
