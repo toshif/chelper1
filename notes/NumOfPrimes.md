@@ -1,12 +1,12 @@
 The number of prime numbers between 1 to i inclusive.
 
-i:10, num of primes:4, percentage:40.0%
-i:100, num of primes:25, percentage:25.0%
-i:1000, num of primes:168, percentage:16.8%
-i:10000, num of primes:1229, percentage:12.29%
-i:100000, num of primes:9592, percentage:9.592%
-i:1000000, num of primes:78498, percentage:7.8498%
-i:10000000, num of primes:664579, percentage:6.64579%
+* i:10, num of primes:4, percentage:40.0%
+* i:100, num of primes:25, percentage:25.0%
+* i:1000, num of primes:168, percentage:16.8%
+* i:10000, num of primes:1229, percentage:12.29%
+* i:100000, num of primes:9592, percentage:9.592%
+* i:1000000, num of primes:78498, percentage:7.8498%
+* i:10000000, num of primes:664579, percentage:6.64579%
 
 ```java
     public static void main(String[] args) {
