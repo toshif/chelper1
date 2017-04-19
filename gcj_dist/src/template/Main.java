@@ -24,7 +24,6 @@ public class Main {
             long lo = message.GetLL(i);
             long hi = message.GetLL(i);
             ma = Math.max(ma, hi - lo);
-            System.err.println("ma for node " + i + " = " + ma);
         }
         System.out.println(ma);
     }
