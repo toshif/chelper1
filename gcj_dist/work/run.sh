@@ -12,7 +12,7 @@ DCJ="${DCJ_DIR}/dcj.sh"
 cd tmp
 
 for in_file in $INPUTS; do
-    rm -f *
+    # rm -f *
 
     echo "----- $in_file -----"
     cat $TARGET_MAIN_JAVA | egrep -v "package gcj.task[0-9];" > Main.java
@@ -22,5 +22,5 @@ for in_file in $INPUTS; do
 
     echo "-----"
 
-    rm -f *
+    # rm -f *
 done
