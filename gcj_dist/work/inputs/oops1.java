@@ -1,5 +1,3 @@
-package task1;
-
 // Sample input 1, in Java.
 public class oops {
   public oops() {
