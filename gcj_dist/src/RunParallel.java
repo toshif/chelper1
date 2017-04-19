@@ -9,6 +9,9 @@ public class RunParallel {
 
     public static void main(String[] args) throws Exception {
         final int numOfNodes = 10;
+        message.init(numOfNodes);
+
+        long startTime = System.currentTimeMillis();
 
         ExecutorService executor = Executors.newFixedThreadPool(numOfNodes);
         for (int i = 0; i < numOfNodes; i++) {
@@ -17,12 +20,15 @@ public class RunParallel {
                 message.__NodeInfo nodeInfo = message.__nodeInfoLocal.get();
                 nodeInfo.nodeId = nodeId;
                 nodeInfo.numOfNodes = numOfNodes;
+                nodeInfo.init();
 
                 Main.main(new String[]{});
             });
         }
         executor.shutdown();
         executor.awaitTermination(Long.MAX_VALUE, TimeUnit.HOURS);
+
+        System.out.printf("Elapsed Time : " + (System.currentTimeMillis() - startTime) + " msec.");
     }
 
 }
