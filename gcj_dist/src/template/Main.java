@@ -12,7 +12,6 @@ public class Main {
     }
 
     void doWork( ) {
-        System.err.println("doing work for node");
         message.PutLL(MASTER_NODE, 1L);
         message.PutLL(MASTER_NODE, 5L);
         message.Send(MASTER_NODE);
