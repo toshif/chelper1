@@ -14,7 +14,7 @@ public class RunParallel {
         for (int i = 0; i < numOfNodes; i++) {
             final int nodeId = i;
             executor.execute(() -> {
-                message.NodeInfo nodeInfo = message.nodeInfoLocal.get();
+                message.__NodeInfo nodeInfo = message.__nodeInfoLocal.get();
                 nodeInfo.nodeId = nodeId;
                 nodeInfo.numOfNodes = numOfNodes;
 

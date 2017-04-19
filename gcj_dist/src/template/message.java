@@ -2,15 +2,15 @@ package template;
 
 public class message {
 
-    public static class NodeInfo {
+    public static class __NodeInfo {
         public int nodeId;
         public int numOfNodes;
     }
 
-    public static ThreadLocal<NodeInfo> nodeInfoLocal = new ThreadLocal<NodeInfo>() {
+    public static ThreadLocal<__NodeInfo> __nodeInfoLocal = new ThreadLocal<__NodeInfo>() {
         @Override
-        protected NodeInfo initialValue() {
-            return new NodeInfo();
+        protected __NodeInfo initialValue() {
+            return new __NodeInfo();
         }
     };
 
@@ -18,7 +18,7 @@ public class message {
      * The number of nodes on which the solution is running
      */
     public static int NumberOfNodes() {
-        return nodeInfoLocal.get().numOfNodes;
+        return __nodeInfoLocal.get().numOfNodes;
     }
 
     /**
@@ -26,7 +26,7 @@ public class message {
      * process is running.
      */
     public static int MyNodeId() {
-        return nodeInfoLocal.get().nodeId;
+        return __nodeInfoLocal.get().nodeId;
     }
 
     public static void PutChar(int target, char value) {
