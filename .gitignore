@@ -2,3 +2,4 @@ main/*
 out/*
 src/Main.java
 CHelperReport.txt
+gcj_dist/work/tmp/*
