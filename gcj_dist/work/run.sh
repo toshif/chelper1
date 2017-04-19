@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_MAIN_JAVA=../../src/gcj/task1/Main.java
+TARGET_MAIN_JAVA=../../src/task1/Main.java
 INPUT_JAVA=oops.java
 INPUTS=$(ls inputs/oops*)
 
@@ -15,7 +15,7 @@ for in_file in $INPUTS; do
     # rm -f *
 
     echo "----- $in_file -----"
-    cat $TARGET_MAIN_JAVA | egrep -v "package gcj.task[0-9];" > Main.java
+    cat $TARGET_MAIN_JAVA | egrep -v "package task[0-9];" > Main.java
     cp ../$in_file $INPUT_JAVA
 
     $DCJ test --source Main.java --library $INPUT_JAVA --nodes $NUM_OF_NODES
