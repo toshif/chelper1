@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_MAIN_JAVA=../../src/task2/Main.java
+TARGET_MAIN_JAVA=../../src/gcj/task1/Main.java
 INPUT_JAVA=oops.java
 INPUTS=$(ls inputs/oops*)
 
