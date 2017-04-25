@@ -84,7 +84,7 @@ public class Main {
         rangeLenPrefixSum = new long[numOfWorkerNodes];
         rangeLenPrefixSum[0] = 0;
         for (int i = 1; i < numOfWorkerNodes; i++) {
-            rangeLenPrefixSum[i] = rangeLenPrefixSum[i-1] + rangeLen[i-1];
+            rangeLenPrefixSum[i] = rangeLenPrefixSum[i - 1] + rangeLen[i - 1];
         }
     }
 
