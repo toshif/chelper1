@@ -22,24 +22,40 @@ public class Main {
         numOfWorkerNodes = numOfNodes - 1;
         masterNodeId = numOfNodes - 1;
 
-//        N = ...
+        N = oops.GetN();
+
+        initRange();
     }
 
     void doWork() {
-        message.PutLL(masterNodeId, 1L);
-        message.PutLL(masterNodeId, 5L);
+        if (rangeLen[nodeId] == 0) return;
+
+        long[] range = getRange();
+
+        long lo = 2000_000_000_000_000_000L;
+        long hi = -2000_000_000_000_000_000L;
+        for (long i = range[0]; i < range[1]; i++) {
+            long num = oops.GetNumber(i);
+            lo = Math.min(lo, num);
+            hi = Math.max(hi, num);
+        }
+
+        message.PutLL(masterNodeId, lo);
+        message.PutLL(masterNodeId, hi);
         message.Send(masterNodeId);
     }
 
     void doMaster() {
-        long ma = 0;
+        long lo = 2000_000_000_000_000_000L;
+        long hi = -2000_000_000_000_000_000L;
         for (int i = 0; i < numOfWorkerNodes; i++) {
+            if (rangeLen[i] == 0) continue;
+
             message.Receive(i);
-            long lo = message.GetLL(i);
-            long hi = message.GetLL(i);
-            ma = Math.max(ma, hi - lo);
+            lo = Math.min(lo, message.GetLL(i));
+            hi = Math.max(hi, message.GetLL(i));
         }
-        System.out.println(ma);
+        System.out.println(hi - lo);
     }
 
     boolean isMaster() {
@@ -53,22 +69,23 @@ public class Main {
     }
 
     long[] getRange(int nodeId) {
-        if (rangeLen == null) {
-            long[] rangeLen = new long[numOfWorkerNodes];
-            for (int i = 0; i < rangeLen.length; i++) {
-                rangeLen[i] = N / numOfWorkerNodes;
-            }
-            for (int i = 0; i < N % numOfWorkerNodes; i++) {
-                rangeLen[i]++;
-            }
-
-            long[] rangesPrefixSum = new long[numOfWorkerNodes];
-            rangesPrefixSum[0] = 0;
-            for (int i = 1; i < numOfWorkerNodes; i++) {
-                rangesPrefixSum[i] = rangesPrefixSum[i-1] + rangeLen[i-1];
-            }
-        }
         return new long[]{rangeLenPrefixSum[nodeId], rangeLenPrefixSum[nodeId] + rangeLen[nodeId]};
+    }
+
+    void initRange() {
+        rangeLen = new long[numOfWorkerNodes];
+        for (int i = 0; i < rangeLen.length; i++) {
+            rangeLen[i] = N / numOfWorkerNodes;
+        }
+        for (int i = 0; i < N % numOfWorkerNodes; i++) {
+            rangeLen[i]++;
+        }
+
+        rangeLenPrefixSum = new long[numOfWorkerNodes];
+        rangeLenPrefixSum[0] = 0;
+        for (int i = 1; i < numOfWorkerNodes; i++) {
+            rangeLenPrefixSum[i] = rangeLenPrefixSum[i-1] + rangeLen[i-1];
+        }
     }
 
     public static void main(String[] args) {
