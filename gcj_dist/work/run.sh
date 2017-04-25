@@ -15,7 +15,7 @@ for in_file in $INPUTS; do
     rm -f ../tmp/*
 
     echo "----- $in_file -----"
-    cat $TARGET_MAIN_JAVA | egrep -v "package template;" > Main.java
+    cat $TARGET_MAIN_JAVA | egrep -v "^package .+;" > Main.java
     cp ../$in_file $INPUT_JAVA
 
     $DCJ test --source Main.java --library $INPUT_JAVA --nodes $NUM_OF_NODES
