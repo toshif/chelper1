@@ -4,6 +4,7 @@ TARGET_MAIN_JAVA=../../src/template/Main.java
 INPUT_JAVA=oops.java
 INPUTS=$(ls inputs/oops*)
 
+ulimit -n 10000
 NUM_OF_NODES=10
 
 DCJ_DIR="/usr/local/opt/dcj_mac_os"
