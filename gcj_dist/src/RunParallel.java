@@ -8,6 +8,8 @@ import java.util.concurrent.TimeUnit;
 public class RunParallel {
 
     public static void main(String[] args) throws Exception {
+        System.out.printf("Main=%s, message=%s\n", Main.class.getCanonicalName(), message.class.getCanonicalName());
+
         final int numOfNodes = 10;
         message.init(numOfNodes);
 

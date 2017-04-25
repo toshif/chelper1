@@ -26,6 +26,9 @@ public class message {
         private __Msg[] inMsgs;
 
         public void init(int nodeId, int numOfNodes) {
+            this.nodeId = nodeId;
+            this.numOfNodes = numOfNodes;
+
             outMsgs = new __Msg[numOfNodes];
             inMsgs = new __Msg[numOfNodes];
             for (int i = 0; i < numOfNodes; i++) {
