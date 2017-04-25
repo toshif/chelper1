@@ -1,6 +1,6 @@
 #!/bin/bash
 
-TARGET_MAIN_JAVA=../../src/task1/Main.java
+TARGET_MAIN_JAVA=../../src/template/Main.java
 INPUT_JAVA=oops.java
 INPUTS=$(ls inputs/oops*)
 
@@ -12,15 +12,15 @@ DCJ="${DCJ_DIR}/dcj.sh"
 cd tmp
 
 for in_file in $INPUTS; do
-    # rm -f *
+    rm -f ../tmp/*
 
     echo "----- $in_file -----"
-    cat $TARGET_MAIN_JAVA | egrep -v "package task[0-9];" > Main.java
+    cat $TARGET_MAIN_JAVA | egrep -v "package template;" > Main.java
     cp ../$in_file $INPUT_JAVA
 
     $DCJ test --source Main.java --library $INPUT_JAVA --nodes $NUM_OF_NODES
 
     echo "-----"
 
-    # rm -f *
+    rm -f ../tmp/*
 done
