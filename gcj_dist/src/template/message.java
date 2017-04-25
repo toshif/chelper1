@@ -5,7 +5,7 @@ import java.util.concurrent.ArrayBlockingQueue;
 
 public class message {
 
-    public static ArrayBlockingQueue<__Msg>[] msgBus;
+    private static ArrayBlockingQueue<__Msg>[] msgBus;
 
     public static void init(int numOfNodes) {
         msgBus = new ArrayBlockingQueue[numOfNodes];
@@ -14,40 +14,46 @@ public class message {
         }
     }
 
-    public static class __NodeInfo {
-        public int nodeId;
-        public int numOfNodes;
+    public static void initNode(int nodeId, int numOfNodes) {
+        __nodeLocal.get().init(nodeId, numOfNodes);
+    }
 
-        private __Msg[] outMsgBuf;
-        private __Msg[] inMsgBuf;
+    private static class __Node {
+        private int nodeId;
+        private int numOfNodes;
 
-        public void init() {
-            outMsgBuf = new __Msg[numOfNodes];
-            inMsgBuf = new __Msg[numOfNodes];
+        private __Msg[] outMsgs;
+        private __Msg[] inMsgs;
+
+        public void init(int nodeId, int numOfNodes) {
+            outMsgs = new __Msg[numOfNodes];
+            inMsgs = new __Msg[numOfNodes];
             for (int i = 0; i < numOfNodes; i++) {
-                outMsgBuf[i] = new __Msg();
-                outMsgBuf[i].sourceNodeId = nodeId;
+                outMsgs[i] = new __Msg();
+                outMsgs[i].sourceNodeId = nodeId;
             }
         }
     }
 
-    public static ThreadLocal<__NodeInfo> __nodeInfoLocal = new ThreadLocal<__NodeInfo>() {
+    private static ThreadLocal<__Node> __nodeLocal = new ThreadLocal<__Node>() {
         @Override
-        protected __NodeInfo initialValue() {
-            return new __NodeInfo();
+        protected __Node initialValue() {
+            return new __Node();
         }
     };
 
     private static class __Msg {
         int sourceNodeId = -1;
-        ArrayDeque<Long> buf = new ArrayDeque<>();
+        ArrayDeque<Long> body = new ArrayDeque<>();
     }
+
+    // ------------ OFFICIAL API below ---------------
 
     /**
      * The number of nodes on which the solution is running
      */
     public static int NumberOfNodes() {
-        return __nodeInfoLocal.get().numOfNodes;
+        return __nodeLocal.get().numOfNodes;
     }
 
     /**
@@ -55,19 +61,19 @@ public class message {
      * process is running.
      */
     public static int MyNodeId() {
-        return __nodeInfoLocal.get().nodeId;
+        return __nodeLocal.get().nodeId;
     }
 
     public static void PutChar(int target, char value) {
-        __nodeInfoLocal.get().outMsgBuf[target].buf.add((long)value);
+        __nodeLocal.get().outMsgs[target].body.add((long)value);
     }
 
     public static void PutInt(int target, int value) {
-        __nodeInfoLocal.get().outMsgBuf[target].buf.add((long)value);
+        __nodeLocal.get().outMsgs[target].body.add((long)value);
     }
 
     public static void PutLL(int target, long value) {
-        __nodeInfoLocal.get().outMsgBuf[target].buf.add((long)value);
+        __nodeLocal.get().outMsgs[target].body.add((long)value);
     }
 
     /**
@@ -77,9 +83,16 @@ public class message {
      * This method is non-blocking
      */
     public static void Send(int target) {
-        __Msg msg = __nodeInfoLocal.get().outMsgBuf[target];
+        __Msg msg = __nodeLocal.get().outMsgs[target];
+        if (msg.body.size() * 8 > 8_000_000) {
+            // this "* 8" assumes the contents are long values
+            // char : 2 bytes
+            // int : 4 bytes
+            // long : 8 bytes
+            throw new IllegalArgumentException("The msg is bigger than 8 MB");
+        }
         msgBus[target].add(msg);
-        __nodeInfoLocal.get().outMsgBuf[target] = new __Msg();
+        __nodeLocal.get().outMsgs[target] = new __Msg();
     }
 
     /**
@@ -93,27 +106,27 @@ public class message {
      * This method is blocking
      */
     public static int Receive(int source) {
-        __NodeInfo nodeInfo = __nodeInfoLocal.get();
+        __Node nodeInfo = __nodeLocal.get();
         __Msg msg = null;
         try {
             msg = msgBus[nodeInfo.nodeId].take();
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
         }
-        nodeInfo.inMsgBuf[source] = msg;
+        nodeInfo.inMsgs[source] = msg;
         return msg.sourceNodeId;
     }
 
 
     public static char GetChar(int source) {
-        return (char)(__nodeInfoLocal.get().inMsgBuf[source].buf.removeFirst().intValue());
+        return (char)(__nodeLocal.get().inMsgs[source].body.removeFirst().intValue());
     }
 
     public static int GetInt(int source) {
-        return __nodeInfoLocal.get().inMsgBuf[source].buf.removeFirst().intValue();
+        return __nodeLocal.get().inMsgs[source].body.removeFirst().intValue();
     }
 
     public static long GetLL(int source) {
-        return __nodeInfoLocal.get().inMsgBuf[source].buf.removeFirst().longValue();
+        return __nodeLocal.get().inMsgs[source].body.removeFirst().longValue();
     }
 }
