@@ -1,5 +1,5 @@
-import template.Main;
-import template.message;
+import rps.Main;
+import rps.message;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
