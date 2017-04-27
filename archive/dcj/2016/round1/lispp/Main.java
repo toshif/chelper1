@@ -1,4 +1,4 @@
-package template;
+package lispp;
 
 import dcj.message;
 
@@ -24,7 +24,7 @@ public class Main {
         numOfWorkerNodes = numOfNodes - 1;
         masterNodeId = numOfNodes - 1;
 
-        N = oops.GetN();
+        N = lisp_plus_plus.GetLength();
 
         initRange();
     }
@@ -32,32 +32,76 @@ public class Main {
     void doWork() {
         if (rangeLen[nodeId] == 0) return;
 
-        long lo = 2000_000_000_000_000_000L;
-        long hi = -2000_000_000_000_000_000L;
-
         long[] range = getRange();
+        char[] cs = new char[(int) rangeLen[nodeId]];
         for (int i = 0; i < rangeLen[nodeId]; i++) {
-            long num = oops.GetNumber(range[0] + i);
-            lo = Math.min(lo, num);
-            hi = Math.max(hi, num);
+            cs[i] = lisp_plus_plus.GetCharacter(range[0] + i);
         }
 
-        message.PutLL(masterNodeId, lo);
-        message.PutLL(masterNodeId, hi);
+        // step 1
+        long state = 0;
+        for (int i = 0; i < cs.length; i++) {
+            if (cs[i] == '(') state++;
+            else state--;
+        }
+
+        message.PutLL(masterNodeId, state);
+        message.Send(masterNodeId);
+
+        // step 2
+        message.Receive(masterNodeId);
+        long offset = message.GetLL(masterNodeId);
+        if (offset < 0) {
+            message.PutLL(masterNodeId, -2);
+            message.Send(masterNodeId);
+            return;
+        }
+
+        long max = range[0];
+        for (int i = 0; i < cs.length; i++) {
+            if (cs[i] == '(') offset++;
+            else offset--;
+
+            if (offset >= 0) {
+                max++;
+            } else {
+                break;
+            }
+        }
+        message.PutLL(masterNodeId, max);
         message.Send(masterNodeId);
     }
 
     void doMaster() {
-        long lo = 2000_000_000_000_000_000L;
-        long hi = -2000_000_000_000_000_000L;
+        // step 1
+        long offset = 0;
         for (int i = 0; i < numOfWorkerNodes; i++) {
             if (rangeLen[i] == 0) continue;
 
+            message.PutLL(i, offset);
+            message.Send(i);
+
             message.Receive(i);
-            lo = Math.min(lo, message.GetLL(i));
-            hi = Math.max(hi, message.GetLL(i));
+            long state = message.GetLL(i);
+            offset += state;
         }
-        System.out.println(hi - lo);
+
+        // step 2
+        long ma = 0;
+        for (int i = 0; i < numOfWorkerNodes; i++) {
+            if (rangeLen[i] == 0) continue;
+
+
+            message.Receive(i);
+            long v = message.GetLL(i);
+            ma = Math.max(ma, v);
+        }
+
+        if (ma == N) {
+            ma = -1;
+        }
+
+        System.out.println(ma);
     }
 
     boolean isMaster() {

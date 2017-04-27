@@ -1,8 +1,8 @@
 #!/bin/bash
 
-TARGET_MAIN_JAVA=../../src/rps/Main.java
-INPUT_JAVA=rps.java
-INPUTS=(inputs/rps*)
+TARGET_MAIN_JAVA=../../src/template/Main.java
+INPUT_JAVA=oops.java
+INPUTS=(inputs/oops*)
 for in_file in "${INPUTS[@]}"; do
     echo "input file = ${in_file} "
 done

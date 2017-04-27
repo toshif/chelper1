@@ -21,7 +21,7 @@ public class RunParallel {
                 message.initNode(nodeId, numOfNodes);
 
                 // ++++++++ choose the target Main here +++++++++
-                rps.Main.main(new String[]{});
+                template.Main.main(new String[]{});
             });
         }
         executor.shutdown();
