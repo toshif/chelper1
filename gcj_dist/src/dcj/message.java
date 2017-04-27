@@ -7,6 +7,8 @@ import java.util.concurrent.LinkedBlockingDeque;
 
 public class message {
 
+    private static final boolean TRACE = true;
+
     private static __MsgBus[] msgBus;
 
     public static void init(int numOfNodes) {
@@ -130,6 +132,10 @@ public class message {
         }
         msgBus[target].add(msg.sourceNodeId, msg);
         node.outMsgs[target] = new __Msg(node.nodeId);
+
+        if ( TRACE ) {
+            System.err.printf("TRACE: node %s sent a msg to node %s\n", node.nodeId, target);
+        }
     }
 
     /**
@@ -147,6 +153,9 @@ public class message {
             __Node node = __nodeLocal.get();
             __Msg msg = msgBus[node.nodeId].take(source);
             node.inMsgs[msg.sourceNodeId] = msg;
+            if ( TRACE ) {
+                System.err.printf("TRACE: node %s received a msg from node %s\n", node.nodeId, msg.sourceNodeId);
+            }
             return msg.sourceNodeId;
         } catch (InterruptedException e) {
             throw new RuntimeException(e);
