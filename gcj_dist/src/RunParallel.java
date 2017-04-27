@@ -1,5 +1,4 @@
 import dcj.message;
-import template.Main;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -8,7 +7,7 @@ import java.util.concurrent.TimeUnit;
 public class RunParallel {
 
     public static void main(String[] args) throws Exception {
-        System.out.printf("Main = %s\n", Main.class.getCanonicalName());
+        System.out.printf("Starting ... \n");
 
         final int numOfNodes = 10;
         message.init(numOfNodes);
@@ -20,12 +19,15 @@ public class RunParallel {
             final int nodeId = i;
             executor.execute(() -> {
                 message.initNode(nodeId, numOfNodes);
-                Main.main(new String[]{});
+
+                // ++++++++ choose the target Main here +++++++++
+                rps.Main.main(new String[]{});
             });
         }
         executor.shutdown();
         executor.awaitTermination(Long.MAX_VALUE, TimeUnit.HOURS);
 
+        System.out.printf("Complete. \n");
         System.out.printf("Elapsed Time : " + (System.currentTimeMillis() - startTime) + " msec.");
     }
 

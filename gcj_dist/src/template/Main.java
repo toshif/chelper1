@@ -1,5 +1,7 @@
 package template;
 
+import dcj.message;
+
 public class Main {
 
     /**
