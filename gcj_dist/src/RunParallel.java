@@ -1,5 +1,5 @@
-import rps.Main;
-import rps.message;
+import dcj.message;
+import template.Main;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -8,7 +8,7 @@ import java.util.concurrent.TimeUnit;
 public class RunParallel {
 
     public static void main(String[] args) throws Exception {
-        System.out.printf("Main=%s, message=%s\n", Main.class.getCanonicalName(), message.class.getCanonicalName());
+        System.out.printf("Main = %s\n", Main.class.getCanonicalName());
 
         final int numOfNodes = 10;
         message.init(numOfNodes);
