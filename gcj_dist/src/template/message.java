@@ -2,15 +2,17 @@ package template;
 
 import java.util.*;
 import java.util.concurrent.ArrayBlockingQueue;
+import java.util.concurrent.BlockingQueue;
+import java.util.concurrent.LinkedBlockingDeque;
 
 public class message {
 
-    private static ArrayBlockingQueue<__Msg>[] msgBus;
+    private static BlockingQueue<__Msg>[] msgBus;
 
     public static void init(int numOfNodes) {
-        msgBus = new ArrayBlockingQueue[numOfNodes];
+        msgBus = new BlockingQueue[numOfNodes];
         for (int i = 0; i < numOfNodes; i++) {
-            msgBus[i] = new ArrayBlockingQueue<>(10000);
+            msgBus[i] = new LinkedBlockingDeque<>();
         }
     }
 
