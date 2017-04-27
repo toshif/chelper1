@@ -58,7 +58,7 @@ public class message {
 
         @Override
         public String toString() {
-            return this.getClass().getSimpleName() + "<" + body + ">";
+            return this.getClass().getSimpleName() + "" + body;
         }
     }
 
