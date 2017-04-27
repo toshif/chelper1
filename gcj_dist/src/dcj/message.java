@@ -55,6 +55,11 @@ public class message {
         __Msg(int sourceNodeId) {
             this.sourceNodeId = sourceNodeId;
         }
+
+        @Override
+        public String toString() {
+            return this.getClass().getSimpleName() + "<" + body + ">";
+        }
     }
 
     private static class __MsgBus {
@@ -134,7 +139,7 @@ public class message {
         node.outMsgs[target] = new __Msg(node.nodeId);
 
         if ( TRACE ) {
-            System.err.printf("TRACE: node %s sent a msg to node %s\n", node.nodeId, target);
+            System.err.printf("TRACE: node %s sent a msg to node %s. %s\n", node.nodeId, target, msg);
         }
     }
 
@@ -154,7 +159,7 @@ public class message {
             __Msg msg = msgBus[node.nodeId].take(source);
             node.inMsgs[msg.sourceNodeId] = msg;
             if ( TRACE ) {
-                System.err.printf("TRACE: node %s received a msg from node %s\n", node.nodeId, msg.sourceNodeId);
+                System.err.printf("TRACE: node %s received a msg from node %s. %s\n", node.nodeId, msg.sourceNodeId, msg);
             }
             return msg.sourceNodeId;
         } catch (InterruptedException e) {
