@@ -1,8 +1,12 @@
 #!/bin/bash
 
 TARGET_MAIN_JAVA=../../src/template/Main.java
-INPUT_JAVA=oops.java
-INPUTS=(inputs/oops*)
+PROBLEM_NAME=oops
+
+#------
+
+INPUT_JAVA=${PROBLEM_NAME}.java
+INPUTS=(inputs/${PROBLEM_NAME}*)
 for in_file in "${INPUTS[@]}"; do
     echo "input file = ${in_file} "
 done

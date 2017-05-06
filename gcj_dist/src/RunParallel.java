@@ -1,5 +1,8 @@
 import dcj.message;
 
+// ++++++++ choose the target Main here +++++++++
+import template.Main;
+
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.TimeUnit;
@@ -20,8 +23,8 @@ public class RunParallel {
             executor.execute(() -> {
                 message.initNode(nodeId, numOfNodes);
 
-                // ++++++++ choose the target Main here +++++++++
-                template.Main.main(new String[]{});
+                Main.TRACE = true;
+                Main.main(new String[]{});
             });
         }
         executor.shutdown();

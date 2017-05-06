@@ -4,6 +4,8 @@ import dcj.message;
 
 public class Main {
 
+    public static boolean TRACE = false;
+
     /**
      * worker nodes  : 0 .. (numOfNodes-2)
      * master node : numOfNodes-1
@@ -30,7 +32,7 @@ public class Main {
     }
 
     void doWork() {
-        if (rangeLen[nodeId] == 0) return;
+        if (isEmptyNode(nodeId)) return;
 
         long lo = 2000_000_000_000_000_000L;
         long hi = -2000_000_000_000_000_000L;
@@ -51,7 +53,7 @@ public class Main {
         long lo = 2000_000_000_000_000_000L;
         long hi = -2000_000_000_000_000_000L;
         for (int i = 0; i < numOfWorkerNodes; i++) {
-            if (rangeLen[i] == 0) continue;
+            if (isEmptyNode(i)) continue;
 
             message.Receive(i);
             lo = Math.min(lo, message.GetLL(i));
@@ -62,6 +64,13 @@ public class Main {
 
     boolean isMaster() {
         return nodeId == masterNodeId;
+    }
+
+    boolean isEmptyNode(int nodeId) {
+        if (nodeId >= numOfWorkerNodes) return true;
+        if (rangeLen[nodeId] == 0) return true;
+
+        return false;
     }
 
     // the input range for this node. from [0] inclusive to [1] exclusive.
@@ -87,6 +96,19 @@ public class Main {
         rangeLenPrefixSum[0] = 0;
         for (int i = 1; i < numOfWorkerNodes; i++) {
             rangeLenPrefixSum[i] = rangeLenPrefixSum[i - 1] + rangeLen[i - 1];
+        }
+
+        if ( TRACE ) {
+            printRanges();
+        }
+    }
+
+    void printRanges() {
+        if (!isMaster()) return;
+
+        for (int i = 0; i < numOfWorkerNodes; i++) {
+            long[] range = getRange(i);
+            System.err.printf("node=%s : range [%s, %s)\n", i, range[0], range[1]);
         }
     }
 
