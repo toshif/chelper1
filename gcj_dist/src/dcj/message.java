@@ -41,12 +41,7 @@ public class message {
         }
     }
 
-    private static ThreadLocal<__Node> __nodeLocal = new ThreadLocal<__Node>() {
-        @Override
-        protected __Node initialValue() {
-            return new __Node();
-        }
-    };
+    private static ThreadLocal<__Node> __nodeLocal = ThreadLocal.withInitial(() -> new __Node());
 
     private static class __Msg {
         final int sourceNodeId;
