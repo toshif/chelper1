@@ -1,0 +1,36 @@
+28 D - Artihmetic Mean Encoding
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+15 5
+1
+2
+10
+22
+32
+
+26 1 0
+1 1
+2 2 4
+3 0 6 0
+1 5
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskD
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.04.30
+13 Qualification
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0

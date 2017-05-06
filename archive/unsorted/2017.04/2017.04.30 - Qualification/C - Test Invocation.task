@@ -1,0 +1,53 @@
+19 C - Test Invocation
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+3
+0
+12 2
+1 1
+1 2
+0
+
+4 2 3
+
+1
+1
+24 4
+1 2 3 4
+3 2 3 4
+0
+0
+0
+
+6 10 19
+
+1
+2
+35 5
+50 40 30 20 10
+2 2 3
+1 4
+0
+1 5
+0
+
+8 150 350
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskC
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.04.30
+13 Qualification
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0
