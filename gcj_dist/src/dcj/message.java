@@ -134,7 +134,7 @@ public class message {
         node.outMsgs[target] = new __Msg(node.nodeId);
 
         if ( TRACE ) {
-            System.err.printf("TRACE: node %s sent a msg to node %s. %s\n", node.nodeId, target, msg);
+            System.err.printf("message: node%s sent a msg to node%s. %s\n", node.nodeId, target, msg);
         }
     }
 
@@ -154,7 +154,7 @@ public class message {
             __Msg msg = msgBus[node.nodeId].take(source);
             node.inMsgs[msg.sourceNodeId] = msg;
             if ( TRACE ) {
-                System.err.printf("TRACE: node %s received a msg from node %s. %s\n", node.nodeId, msg.sourceNodeId, msg);
+                System.err.printf("message: node%s received a msg from node%s. %s\n", node.nodeId, msg.sourceNodeId, msg);
             }
             return msg.sourceNodeId;
         } catch (InterruptedException e) {

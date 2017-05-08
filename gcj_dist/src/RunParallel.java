@@ -1,7 +1,7 @@
 import dcj.message;
 
 // ++++++++ choose the target Main here +++++++++
-import template.Main;
+import lispp.Main;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -23,7 +23,6 @@ public class RunParallel {
             executor.execute(() -> {
                 message.initNode(nodeId, numOfNodes);
 
-                Main.TRACE = true;
                 Main.main(new String[]{});
             });
         }
