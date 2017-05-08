@@ -59,6 +59,7 @@ public class Main {
     }
 
     boolean isEmptyNode(int nodeId) {
+        if (nodeId >= numOfWorkerNodes) return true;
         long[] range = getRange(nodeId);
         return range[0] == range[1];
     }
