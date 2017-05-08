@@ -31,6 +31,8 @@ public class Main {
         long L = range[0];
         long R = range[1];
 
+        System.err.printf("nodeId=%s, L=%s, R=%s\n", nodeId, L, R);
+
         long lo = 2000_000_000_000_000_000L;
         long hi = -2000_000_000_000_000_000L;
 
