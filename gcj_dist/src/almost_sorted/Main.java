@@ -1,10 +1,7 @@
-package johnny;
+package almost_sorted;
 
 import dcj.message;
-
-import java.util.ArrayList;
-import java.util.Collections;
-import java.util.List;
+import template.oops;
 
 public class Main {
 
@@ -25,7 +22,7 @@ public class Main {
         numOfWorkerNodes = numOfNodes - 1;
         masterNodeId = numOfNodes - 1;
 
-        N = johnny.NumberOfCards();
+        N = oops.GetN();
     }
 
     void doWork() {
@@ -37,56 +34,31 @@ public class Main {
 
         System.err.printf("nodeId=%s, L=%s, R=%s\n", nodeId, L, R);
 
+        long lo = 2000_000_000_000_000_000L;
+        long hi = -2000_000_000_000_000_000L;
+
         for (long i = L; i < R; i++) {
-            int degree = 0;
-            for (int j = 0; j < N; j++) {
-                if (johnny.IsBetter(i, j)) {
-                    degree++;
-                }
-            }
-            message.PutLL(masterNodeId, degree);
+            long num = oops.GetNumber(i);
+            lo = Math.min(lo, num);
+            hi = Math.max(hi, num);
         }
 
+        message.PutLL(masterNodeId, lo);
+        message.PutLL(masterNodeId, hi);
         message.Send(masterNodeId);
     }
 
     void doMaster() {
-        List<Integer> deg = new ArrayList<>();
+        long lo = 2000_000_000_000_000_000L;
+        long hi = -2000_000_000_000_000_000L;
         for (int i = 0; i < numOfWorkerNodes; i++) {
             if (isEmptyNode(i)) continue;
 
-            long[] range = getRange(i);
-            long L = range[0];
-            long R = range[1];
-
             message.Receive(i);
-            for (int j = 0; j < (R - L); j++) {
-                deg.add((int)message.GetLL(i));
-            }
+            lo = Math.min(lo, message.GetLL(i));
+            hi = Math.max(hi, message.GetLL(i));
         }
-
-        Collections.sort(deg);
-        Collections.reverse(deg);
-
-//        System.err.printf("deg=%s\n", deg);
-
-        long degSum = 0;
-        int ans = -1;
-        int k = 0;
-        for (int i = 0; i < N - 1; i++) {
-            k++;
-            degSum += deg.get(i);
-
-            if (2 * degSum == k * (k - 1) + 2 * k * (N - k)) {
-                ans = k;
-            }
-        }
-
-        if (ans == -1) {
-            System.out.println("IMPOSSIBLE");
-        } else {
-            System.out.println(ans);
-        }
+        System.out.println(hi - lo);
     }
 
     boolean isEmptyNode(int nodeId) {

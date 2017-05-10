@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TARGET_MAIN_JAVA=../../src/mutexes/Main.java
-PROBLEM_NAME=mutexes
+TARGET_MAIN_JAVA=../../src/task1/Main.java
+PROBLEM_NAME=again
 
 #------
 
