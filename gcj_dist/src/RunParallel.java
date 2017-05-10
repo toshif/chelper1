@@ -1,7 +1,7 @@
 import dcj.message;
 
 // ++++++++ choose the target Main here +++++++++
-import rps.Main;
+import mutexes.Main;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -20,11 +20,15 @@ public class RunParallel {
         ExecutorService executor = Executors.newFixedThreadPool(numOfNodes);
         for (int i = 0; i < numOfNodes; i++) {
             final int nodeId = i;
-            executor.execute(() -> {
-                message.initNode(nodeId, numOfNodes);
-
-                Main.main(new String[]{});
-            });
+            executor.execute(
+                    new Runnable() {
+                        @Override
+                        public void run() {
+                            message.initNode(nodeId, numOfNodes);
+                            Main.main(new String[]{});
+                        }
+                    }
+            );
         }
         executor.shutdown();
         executor.awaitTermination(Long.MAX_VALUE, TimeUnit.HOURS);

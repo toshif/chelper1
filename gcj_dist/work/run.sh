@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TARGET_MAIN_JAVA=../../src/template/Main.java
-PROBLEM_NAME=oops
+TARGET_MAIN_JAVA=../../src/mutexes/Main.java
+PROBLEM_NAME=mutexes
 
 #------
 

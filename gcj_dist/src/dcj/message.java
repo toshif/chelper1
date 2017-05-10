@@ -41,7 +41,12 @@ public class message {
         }
     }
 
-    private static ThreadLocal<__Node> __nodeLocal = ThreadLocal.withInitial(() -> new __Node());
+    volatile private static ThreadLocal<__Node> __nodeLocal = new ThreadLocal<__Node>() {
+        @Override
+        protected __Node initialValue() {
+            return new __Node();
+        }
+    };
 
     private static class __Msg {
         final int sourceNodeId;
@@ -133,7 +138,7 @@ public class message {
         msgBus[target].add(msg.sourceNodeId, msg);
         node.outMsgs[target] = new __Msg(node.nodeId);
 
-        if ( TRACE ) {
+        if (TRACE) {
             System.err.printf("message: node%s sent a msg to node%s. %s\n", node.nodeId, target, msg);
         }
     }
@@ -153,7 +158,7 @@ public class message {
             __Node node = __nodeLocal.get();
             __Msg msg = msgBus[node.nodeId].take(source);
             node.inMsgs[msg.sourceNodeId] = msg;
-            if ( TRACE ) {
+            if (TRACE) {
                 System.err.printf("message: node%s received a msg from node%s. %s\n", node.nodeId, msg.sourceNodeId, msg);
             }
             return msg.sourceNodeId;
