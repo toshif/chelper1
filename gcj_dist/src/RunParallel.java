@@ -1,7 +1,7 @@
 import dcj.message;
 
 // ++++++++ choose the target Main here +++++++++
-import almost_sorted.Main;
+import asteroids.Main;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;

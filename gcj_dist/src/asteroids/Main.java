@@ -1,11 +1,9 @@
-package almost_sorted;
+package asteroids;
 
 import dcj.message;
-
-import java.util.Arrays;
+import template.oops;
 
 public class Main {
-
 
     /**
      * worker nodes  : 0 .. (numOfNodes-2)
@@ -17,9 +15,6 @@ public class Main {
     private int nodeId;
 
     private long N;
-    private final long D;
-
-    long MOD = (long)Math.pow(2, 20);
 
     Main() {
         nodeId = message.MyNodeId();
@@ -27,8 +22,7 @@ public class Main {
         numOfWorkerNodes = numOfNodes - 1;
         masterNodeId = numOfNodes - 1;
 
-        N = almost_sorted.NumberOfFiles();
-        D = almost_sorted.MaxDistance();
+        N = oops.GetN();
     }
 
     void doWork() {
@@ -40,41 +34,31 @@ public class Main {
 
         System.err.printf("nodeId=%s, L=%s, R=%s\n", nodeId, L, R);
 
-        long L2 = Math.max(0, L - D - 5);
-        long R2 = Math.min(N, R + D + 5);
+        long lo = 2000_000_000_000_000_000L;
+        long hi = -2000_000_000_000_000_000L;
 
-        long[] ids = new long[(int)(R2 - L2)];
-        int idx = 0;
-        for (long i = L2; i < R2; i++) {
-            long fid = almost_sorted.Identifier(i);
-            ids[idx] = fid;
-            idx++;
-        }
-        Arrays.sort(ids);
-
-        long checksum = 0;
-
-        int offset = (int)(L - L2);
-        for (int i = 0; i < R - L; i++) {
-            checksum += ids[offset + i] * (L + i);
-            checksum %= MOD;
+        for (long i = L; i < R; i++) {
+            long num = oops.GetNumber(i);
+            lo = Math.min(lo, num);
+            hi = Math.max(hi, num);
         }
 
-        message.PutLL(masterNodeId, checksum);
+        message.PutLL(masterNodeId, lo);
+        message.PutLL(masterNodeId, hi);
         message.Send(masterNodeId);
     }
 
     void doMaster() {
-        long checksum = 0;
+        long lo = 2000_000_000_000_000_000L;
+        long hi = -2000_000_000_000_000_000L;
         for (int i = 0; i < numOfWorkerNodes; i++) {
             if (isEmptyNode(i)) continue;
 
             message.Receive(i);
-            long cs = message.GetLL(i);
-            checksum += cs;
-            checksum %= MOD;
+            lo = Math.min(lo, message.GetLL(i));
+            hi = Math.max(hi, message.GetLL(i));
         }
-        System.out.println(checksum);
+        System.out.println(hi - lo);
     }
 
     boolean isEmptyNode(int nodeId) {

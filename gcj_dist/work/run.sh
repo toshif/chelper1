@@ -1,7 +1,7 @@
 #!/bin/bash
 
-TARGET_MAIN_JAVA=../../src/task1/Main.java
-PROBLEM_NAME=again
+TARGET_MAIN_JAVA=../../src/almost_sorted/Main.java
+PROBLEM_NAME=almost_sorted
 
 #------
 
