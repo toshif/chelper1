@@ -5,6 +5,8 @@ import utils.io.MyReader;
 import java.io.PrintWriter;
 
 /**
+ * Ternary search は 凸関数 の最小値を求めるのに使う。
+ *
  * Integer ternary search は binary search に帰着させて解ける.
  *
  * Example problems:
