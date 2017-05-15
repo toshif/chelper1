@@ -1,7 +1,7 @@
 import dcj.message;
 
 // ++++++++ choose the target Main here +++++++++
-import asteroids.Main;
+import template.Main;
 
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
