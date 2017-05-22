@@ -1,0 +1,29 @@
+15 Balls and Boxes
+6 SINGLE
+8 STANDARD
+9 input.txt
+8 STANDARD
+10 output.txt
+1
+0
+19 2 2
+1 1
+0 2
+1 7
+3 1
+1 9
+1
+8 src/fuku
+8 -Xmx256M
+8 Solution
+18 fuku.BallsAndBoxes
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.05.19
+15 Week of Code 32
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0
