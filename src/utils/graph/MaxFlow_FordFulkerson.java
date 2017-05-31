@@ -39,7 +39,7 @@ public class MaxFlow_FordFulkerson {
     }
 
     // s -> t への max flow を探す
-    void solve(int s, int t) {
+    public void solve(int s, int t) {
         initBeforeSolve();
 
         while (true) {
@@ -118,7 +118,7 @@ public class MaxFlow_FordFulkerson {
     }
 
     // max flow のとき(一意でない)、flow がある辺のリストを返す. val は flow の量.
-    List<Edge> getFlowResult() {
+    public List<Edge> getFlowResult() {
         List<Edge> ret = new ArrayList<>();
         for (int i = 0; i < V; i++) {
             List<Edge> edges = capacity[i];
