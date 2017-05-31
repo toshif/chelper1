@@ -13,7 +13,8 @@ import java.util.Arrays;
  * <p/>
  * O ( V^2 )
  * <p/>
- * Created by toshif on 5/28/14.
+ *
+ * 負の辺がある場合には使えない。
  */
 public class ShortestPath2_Dijkstra {
 
@@ -33,8 +34,8 @@ public class ShortestPath2_Dijkstra {
             int p1 = c[1].charAt(0) - 'A';
             int cs = Integer.parseInt(c[2]);
 
-            dj.cost[p0][p1] = cs;
-            dj.cost[p1][p0] = cs;
+            dj.addEdge(p0, p1, cs);
+            dj.addEdge(p1, p0, cs);
         }
 
         // solve it. find the minimum cost from node 0.
@@ -45,7 +46,7 @@ public class ShortestPath2_Dijkstra {
         System.out.printf("dijkstra d = %s\n", Arrays.toString(dj.d));
     }
 
-    private static final long INF = 1_000_000_000_000_000_000L;
+    public static final long INF = 1_000_000_000_000_000_000L;
 
     private int V;
 
@@ -86,5 +87,9 @@ public class ShortestPath2_Dijkstra {
                 d[i] = Math.min(d[i], d[v] + cost[v][i]);
             }
         }
+    }
+
+    public void addEdge(int from, int to, long costVal) {
+        cost[from][to] = costVal;
     }
 }
