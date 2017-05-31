@@ -884,23 +884,31 @@ public class BipartiteMatchingTestWithTc {
             for (int i = 0; i < N; i++) {
                 for (int j = i + 1; j < N; j++) {
                     int adj = p[j] - p[i];
-                    if (adjs.contains(Integer.valueOf(adj))) continue;
-                    adjs.add(Integer.valueOf(adj));
+                    if (adjs.contains(adj)) continue;
+                    adjs.add(adj);
 
                     // System.err.printf("adj=%s \n", adj);
 
                     Map<Integer, Integer> m = new HashMap<>();
                     for (int k = 0; k < N; k++) {
-                        m.put(Integer.valueOf((p[k] + adj) % 360), k);
+                        m.put((p[k] + adj) % 360, k);
                     }
 
                     BipartiteMatching bi = new BipartiteMatching(N + 2);
+                    edges = new Set[N + 2];
+                    for (int a = 0; a < edges.length; a++) {
+                        edges[a] = new HashSet<>();
+                    }
+
                     for (int k = 0; k < N; k++) {
-                        Integer idx = m.get(Integer.valueOf(p[k]));
+                        Integer idx = m.get(p[k]);
                         if (idx != null) {
                             // k and idx are connected
                             bi.addEdge(k + 2, idx + 2);
                             bi.addEdge(idx + 2, k + 2);
+
+                            edges[k + 2].add(idx + 2);
+                            edges[idx + 2].add(k + 2);
                         }
                     }
 
@@ -941,22 +949,26 @@ public class BipartiteMatchingTestWithTc {
 
         boolean[] used;
 
+        Set<Integer>[] edges;
+
         void dfs(BipartiteMatching bi, int v, int s) {
             used[v] = true;
 
             if (s == 0) {
                 // connect to source
                 bi.addEdge(0, v);
+                edges[0].add(v);
             } else {
                 // conenct to sink
                 bi.addEdge(v, 1);
+                edges[v].add(1);
             }
 
-//            for (MaxFlow_FordFulkerson.Edge e : bi.ff.capacity[v]) {
-//                if (used[e.to]) continue;
-//
-//                dfs(bi, e.to, (s + 1) % 2);
-//            }
+            for (Integer to : edges[v]) {
+                if (used[to]) continue;
+
+                dfs(bi, to, (s + 1) % 2);
+            }
         }
 
     }
