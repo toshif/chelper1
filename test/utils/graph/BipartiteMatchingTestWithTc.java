@@ -6,7 +6,6 @@ import org.junit.Before;
 import org.junit.FixMethodOrder;
 import org.junit.Test;
 import org.junit.runners.MethodSorters;
-import utils.graph.BipartiteMatching.BiMatching;
 
 import java.util.*;
 
@@ -861,7 +860,7 @@ public class BipartiteMatchingTestWithTc {
 
     public class PointsOnACircle {
 
-        int color(String[] points) {
+        long color(String[] points) {
             String s = "";
             for (String p : points) {
                 s += p;
@@ -880,7 +879,7 @@ public class BipartiteMatchingTestWithTc {
 
             used = new boolean[N + 2];
 
-            int ma = 0;
+            long ma = 0;
             Set<Integer> adjs = new HashSet<>();
             for (int i = 0; i < N; i++) {
                 for (int j = i + 1; j < N; j++) {
@@ -895,7 +894,7 @@ public class BipartiteMatchingTestWithTc {
                         m.put(Integer.valueOf((p[k] + adj) % 360), k);
                     }
 
-                    BiMatching bi = new BiMatching(N + 2);
+                    BipartiteMatching bi = new BipartiteMatching(N + 2);
                     for (int k = 0; k < N; k++) {
                         Integer idx = m.get(Integer.valueOf(p[k]));
                         if (idx != null) {
@@ -921,7 +920,7 @@ public class BipartiteMatchingTestWithTc {
                     }
 
 
-                    int matching = bi.sovle();
+                    long matching = bi.sovle();
 
                     if (ma < matching * 2) {
 //                    System.err.printf("cap--\n");
@@ -942,7 +941,7 @@ public class BipartiteMatchingTestWithTc {
 
         boolean[] used;
 
-        void dfs(BiMatching bi, int v, int s) {
+        void dfs(BipartiteMatching bi, int v, int s) {
             used[v] = true;
 
             if (s == 0) {
@@ -953,11 +952,11 @@ public class BipartiteMatchingTestWithTc {
                 bi.addEdge(v, 1);
             }
 
-            for (MaxFlow_FordFulkerson.FordFulkerson.Edge e : bi.ff.capacity[v]) {
-                if (used[e.to]) continue;
-
-                dfs(bi, e.to, (s + 1) % 2);
-            }
+//            for (MaxFlow_FordFulkerson.Edge e : bi.ff.capacity[v]) {
+//                if (used[e.to]) continue;
+//
+//                dfs(bi, e.to, (s + 1) % 2);
+//            }
         }
 
     }

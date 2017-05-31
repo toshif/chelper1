@@ -48,8 +48,8 @@ public class ShortestPath1_Bellman_Ford {
             boolean updated = false;
             for (int j = 0; j < E; j++) {
                 Edge e = es.get(j);
-                if (d[e.from] != INF && d[e.to] > d[e.from] + e.cost) {
-                    d[e.to] = d[e.from] + e.cost;
+                if (d[e.from] != INF && d[e.to] > d[e.from] + e.val) {
+                    d[e.to] = d[e.from] + e.val;
                     updated = true;
                 }
             }

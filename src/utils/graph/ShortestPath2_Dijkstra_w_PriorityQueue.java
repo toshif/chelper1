@@ -63,7 +63,7 @@ public class ShortestPath2_Dijkstra_w_PriorityQueue {
             // loop O(1) times
             for (Edge e : edges[v]) {
                 int to = e.to;
-                long distance = d[v] + e.cost;
+                long distance = d[v] + e.val;
                 if (distance < d[to]) {
                     d[to] = distance;
                     queue.add(new Node(to, distance));
