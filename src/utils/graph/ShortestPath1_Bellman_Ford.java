@@ -6,58 +6,63 @@ import java.util.List;
 
 /**
  * Bellman-Ford method
- *
- * 単一始点最短路　を探す
- *
- * コストは O (V x E)
- *
- * Created by toshif on 5/20/14.
+ * <p>
+ * 単一始点最短路　を探す. 各辺の重みが負でもよい。
+ * <p>
+ * Time Complexity: O (V x E)
+ * <p>
+ * 負の閉路の判定もできる。
  */
 public class ShortestPath1_Bellman_Ford {
 
-    static class Edge {
-        int from;
-        int to;
-        int cost;
-
-        @Override
-        public String toString() {
-            return String.format("Edge<from=%s,to=%s,cost=%s>",from, to, cost);
-        }
-    }
-
     // number of vertexes
-    int N = 7;
-
-    int INF = 1_000_000_000;
-
-    // edges
-    List<Edge> es = new ArrayList<>();
+    private int N;
 
     // 各頂点への最短距離
-    int d[] = new int[N];
+    public long d[];
+
+    // 負の閉路を含むなら true がセットされる
+    public boolean infLoop = false;
+
+    // edges
+    private List<Edge> es = new ArrayList<>();
+
+    public long INF = 1_000_000_000_000_000_000L;
+
+    public ShortestPath1_Bellman_Ford(int N) {
+        this.N = N;
+        this.d = new long[N];
+    }
+
+    public void addEdge(int from, int to, long cost) {
+        es.add(new Edge(from, to, cost));
+    }
 
     // s から各頂点への最短距離を計算
-    void bellmanFord(int s){
+    public void bellmanFord(int s) {
         int E = es.size();
         Arrays.fill(d, INF);
         d[s] = 0;
 
-        while(true){
-            boolean update = false;
-            for (int i = 0; i < E; i++) {
-                Edge e = es.get(i);
-                if(d[e.from] != INF && d[e.to] > d[e.from] + e.cost){
+        for (int i = 0; i < N; i++) {
+            boolean updated = false;
+            for (int j = 0; j < E; j++) {
+                Edge e = es.get(j);
+                if (d[e.from] != INF && d[e.to] > d[e.from] + e.cost) {
                     d[e.to] = d[e.from] + e.cost;
-                    update = true;
+                    updated = true;
                 }
             }
-            if (!update) break;
+            if (!updated) break;
+            if (i == N && updated) {
+                // N 回目にも更新があるなら負の閉路が存在
+                infLoop = true;
+            }
         }
     }
 
-    public static void main(String[] args){
-        ShortestPath1_Bellman_Ford bf = new ShortestPath1_Bellman_Ford();
+    public static void main(String[] args) {
+        ShortestPath1_Bellman_Ford bf = new ShortestPath1_Bellman_Ford(7);
 
         // Undirected Graph
         String costs = "A,B,2 A,C,5 B,C,4 B,D,6 B,E,10 C,D,2 D,F,1 E,F,3 E,G,5 F,G,9";
@@ -66,26 +71,19 @@ public class ShortestPath1_Bellman_Ford {
         for (int i = 0; i < costE.length; i++) {
             String[] c = costE[i].split(",");
 
-            Edge edge = new Edge();
-            edge.from = c[0].charAt(0) - 'A';
-            edge.to = c[1].charAt(0) - 'A';
-            edge.cost = Integer.parseInt(c[2]);
+            int from = c[0].charAt(0) - 'A';
+            int to = c[1].charAt(0) - 'A';
+            int cost = Integer.parseInt(c[2]);
 
-            bf.es.add(edge);
-
-            Edge edge2 = new Edge();
-            edge2.to = c[0].charAt(0) - 'A';
-            edge2.from = c[1].charAt(0) - 'A';
-            edge2.cost = Integer.parseInt(c[2]);
-
-            bf.es.add(edge2);
+            bf.addEdge(from, to, cost);
+            bf.addEdge(to, from, cost);
         }
-        System.out.println("bf.es = " + bf.es);
 
         // 解は A -> c -> D -> F -> E -> G で 16
         bf.bellmanFord(0);
 
-        System.out.printf("d = %s", Arrays.toString(bf.d));
+        System.out.printf("distances = %s \n", Arrays.toString(bf.d));
+        System.out.printf("infLoop exists ? = %s \n", bf.infLoop);
     }
 
 }
