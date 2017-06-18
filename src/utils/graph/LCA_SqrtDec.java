@@ -35,7 +35,6 @@ public class LCA_SqrtDec {
 
     private int root;
 
-    // index 0 must be the root of the tree
     public LCA_SqrtDec(int N) {
         this.N = N;
         T = new int[N];
