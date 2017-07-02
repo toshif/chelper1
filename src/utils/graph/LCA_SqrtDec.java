@@ -20,7 +20,7 @@ public class LCA_SqrtDec {
     private int N;
 
     // the father of node i in the tree
-    private int[] T;
+    public int[] T;
 
     // the level of node i
     private int[] L;
