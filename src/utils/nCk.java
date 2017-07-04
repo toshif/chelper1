@@ -10,11 +10,11 @@ import java.util.Map;
  */
 public class nCk {
 
-    static Map<Integer, List<Long>> nCkCache = new HashMap<>();
+    private static Map<Integer, List<Long>> nCkCache = new HashMap<>();
 
-    static final long MOD = 1_000_000_007;
+    public static long MOD = 1_000_000_007;
 
-    static long nCkMod(int n, int k) {
+    public static long nCkMod(int n, int k) {
         if (k > n) {
             return 0;
         }
@@ -55,7 +55,7 @@ public class nCk {
     }
 
     // returns x^y modulo MOD. loops only log2(y) times.
-    static long modPow(long x, long y) {
+    private static long modPow(long x, long y) {
         long res = 1, a = x;
         while (y > 0) {
             if ((y & 1) > 0) {
