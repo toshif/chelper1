@@ -10,7 +10,7 @@ public class PointXY implements Comparable<PointXY> {
     public long x;
     public long y;
 
-    public P(long x, long y) {
+    public PointXY(long x, long y) {
         this.x = x;
         this.y = y;
     }
