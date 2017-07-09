@@ -1,8 +1,8 @@
-package utils;
+package utils.search;
 
 import org.junit.Assert;
-import org.junit.Before;
 import org.junit.Test;
+import utils.search.BinarySearchHelper;
 
 import java.util.ArrayList;
 

@@ -38,4 +38,12 @@ public class MyReader {
         return Double.parseDouble(next());
     }
 
+    public String nextLine() {
+        try {
+            return reader.readLine();
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
 }

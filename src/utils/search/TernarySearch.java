@@ -1,4 +1,4 @@
-package utils;
+package utils.search;
 
 import java.util.function.Function;
 
