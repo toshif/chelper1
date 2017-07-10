@@ -11,11 +11,11 @@ public class SegmentTreeTest {
 
     long[] A = new long[]{2, 7, 1, 2, 3, 6, 4};
 
-    SegmentTree.SegTree segTree;
+    SegmentTree segTree;
 
     @Before
     public void setUp() {
-        segTree = new SegmentTree.SegTree(A);
+        segTree = new SegmentTree(A);
     }
 
     @Test
