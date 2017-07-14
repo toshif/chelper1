@@ -4,6 +4,11 @@ package utils.data;
  * Segment Tree の 再帰を使わない実装。
  * <p>
  * 再帰より定数倍早い。
+ *
+ * References:
+ * http://d.hatena.ne.jp/komiyam/20131202/1385992406
+ * http://proc-cpuinfo.fixstars.com/2017/07/optimize-segment-tree/
+ *
  */
 public class SegmentTree_NonRec {
 
