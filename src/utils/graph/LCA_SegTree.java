@@ -172,10 +172,10 @@ public class LCA_SegTree {
         lca.addEdge(9, 12);
         lca.preCalc();
 
-        System.out.printf("LCA of node 5 & 6 = %s\n", lca.LCA(5, 6));
-        System.out.printf("LCA of node 7 & 11 = %s\n", lca.LCA(7, 11));
-        System.out.printf("LCA of node 9 & 10 = %s\n", lca.LCA(9, 10));
-        System.out.printf("LCA of node 1 & 11 = %s\n", lca.LCA(1, 11));
+        System.out.printf("LCA of node 5 & 6 = %s\n", lca.LCA(5, 6)); // 2
+        System.out.printf("LCA of node 7 & 11 = %s\n", lca.LCA(7, 11)); // 2
+        System.out.printf("LCA of node 9 & 10 = %s\n", lca.LCA(9, 10)); // 6
+        System.out.printf("LCA of node 1 & 11 = %s\n", lca.LCA(1, 11)); // 0
     }
 
 
