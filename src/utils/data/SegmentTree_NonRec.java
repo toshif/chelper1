@@ -4,15 +4,16 @@ package utils.data;
  * Segment Tree の 再帰を使わない実装。
  * <p>
  * 再帰より定数倍早い。
- *
+ * <p>
  * References:
  * http://d.hatena.ne.jp/komiyam/20131202/1385992406
  * http://proc-cpuinfo.fixstars.com/2017/07/optimize-segment-tree/
- *
  */
 public class SegmentTree_NonRec {
 
     private int N;
+
+    private long[] A;
 
     private long[] tree;
 
@@ -22,6 +23,8 @@ public class SegmentTree_NonRec {
      * A is the leaf array to be initialized with.
      */
     public SegmentTree_NonRec(long[] A) {
+        this.A = A;
+
         // A 以上の最小の2のべき乗の数 15 -> 16, 16 -> 16, 17 -> 32
         // 計算を簡単にするために、N を 2 のべき乗にしておく
         N = Integer.highestOneBit(A.length);
@@ -31,6 +34,13 @@ public class SegmentTree_NonRec {
 
         int treeSize = 2 * N;
         tree = new long[treeSize];
+
+        init();
+    }
+
+    private void init() {
+        for (int i = 0; i < A.length; ++i) tree[i + N] = A[i];
+        for (int i = N - 1; i > 0; --i) tree[i] = Math.min(tree[i * 2], tree[i * 2 + 1]);
     }
 
     /**

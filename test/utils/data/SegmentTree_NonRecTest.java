@@ -42,6 +42,16 @@ public class SegmentTree_NonRecTest {
     }
 
     @Test
+    public void test_init() {
+        SegmentTree_NonRec segTree = new SegmentTree_NonRec(new long[]{2, 1, -3});
+        Assert.assertEquals(2, segTree.query(0, 0));
+        Assert.assertEquals(1, segTree.query(1, 1));
+        Assert.assertEquals(1, segTree.query(0, 1));
+        Assert.assertEquals(-3, segTree.query(0, 2));
+        Assert.assertEquals(-3, segTree.query(2, 2));
+    }
+
+    @Test
     public void test_compare() {
         Random rand = new Random(123);
         for (int i = 1; i < 100; i++) {
