@@ -1,8 +1,13 @@
 package utils.big_num;
 
 /**
+ * F(0) = 0
+ * F(1) = 1
+ * F(2) = 1
+ * F(n) = F(n-1) + F(n-2)
+ * <p>
  * Time Complexity : O(log n)
- *
+ * <p>
  * Reference : https://www.nayuki.io/page/fast-fibonacci-algorithms
  */
 public class FastFibonacci_Mod {
