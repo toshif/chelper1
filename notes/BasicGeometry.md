@@ -18,5 +18,14 @@ Cross Product
 * AxB の絶対値は、A B が作る平衡四辺形の面積に等しい = |AxB|/2 は、A B が作る三角形の面積に等しい
 * AxB の符号は、B が A に対して左回りにあると正、右回りにあると負になる
 
+```java
+    long dot(long x1, long y1, long x2, long y2) {
+        return x1 * x2 + y1 * y2;
+    }
+    
+    long cross(long x1, long y1, long x2, long y2) {
+        return x1 * y2 - y1 * x2;
+    }
+```
  
  
