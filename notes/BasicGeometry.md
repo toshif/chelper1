@@ -9,6 +9,7 @@ Dot Product
 * A.B = x1 * x2 + y1 * y2 = |A| |B| cos(|θ|)
 * A B が直行している場合にゼロになる
 * A B が平行している場合に最大になる
+* A B が平行の時、同じ方向を向いているとき正、逆向きのとき負になる
  
 Cross Product
 * AxB = x1 * y2 - y1 * x2 = |A| |B| sin(θ)
