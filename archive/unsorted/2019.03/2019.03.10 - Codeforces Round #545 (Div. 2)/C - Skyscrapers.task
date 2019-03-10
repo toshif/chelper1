@@ -1,0 +1,43 @@
+15 C - Skyscrapers
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+2
+0
+17 
+2 3
+1 2 1
+2 1 2
+
+15 
+2 2 2 
+2 2 2 
+
+1
+1
+13 
+2 2
+1 2
+3 4
+
+11 
+2 3 
+3 2 
+
+1
+8 src/fuku
+8 -Xmx512M
+4 Main
+10 fuku.TaskC
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2019.03.10
+30 Codeforces Round #545 (Div. 2)
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0
