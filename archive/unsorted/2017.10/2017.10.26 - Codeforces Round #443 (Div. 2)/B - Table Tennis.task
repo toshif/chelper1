@@ -1,0 +1,46 @@
+16 B - Table Tennis
+6 SINGLE
+8 STANDARD
+-1
+8 STANDARD
+-1
+4
+0
+8 2 2
+1 2
+
+2 2 
+1
+1
+12 4 2
+3 1 2 4
+
+2 3 
+1
+2
+16 6 2
+6 5 3 1 2 4
+
+2 6 
+1
+3
+18 2 10000000000
+2 1
+
+2 2
+
+1
+8 src/fuku
+8 -Xmx256M
+4 Main
+10 fuku.TaskB
+39 net.egork.chelper.checkers.TokenChecker
+0 
+0
+10 2017.10.26
+30 Codeforces Round #443 (Div. 2)
+1
+17 utils.io.MyReader
+19 java.io.PrintWriter
+0
+0
