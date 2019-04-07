@@ -1,0 +1,42 @@
+{
+  "name" : "Qualification Round 2019 - D",
+  "testType" : "MULTI_NUMBER",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "1\n5 2 10\n101\n110\n111\n111\n111\n1\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "2\n5 2 10\n101\n110\n111\n111\n111\n1\n5 2 10\n110\n100\n111\n111\n111\n1\n",
+    "output" : "",
+    "index" : 1,
+    "active" : true
+  }, {
+    "input" : "1\n5 2 10\n110\n100\n111\n111\n111\n1",
+    "index" : 2,
+    "active" : true
+  } ],
+  "location" : "src/fuku",
+  "vmArgs" : "-Xmx1024M",
+  "mainClass" : "Solution",
+  "taskClass" : "fuku.QualificationRound2019D",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.04.06",
+  "contestName" : "Dat Bae",
+  "truncate" : true,
+  "inputClass" : "utils.io.MyReader",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
