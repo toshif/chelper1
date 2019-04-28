@@ -1,0 +1,48 @@
+{
+  "name" : "Round 1B 2019 - B",
+  "testType" : "SINGLE",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "1 6\n2\n4\n8\n16\n32\n64\n1",
+    "output" : "1\n2\n3\n4\n5\n6\n1 0 0 0 0 0",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "2 6\n2\n4\n8\n16\n32\n64\n1\n\n2\n4\n8\n16\n32\n64\n1\n",
+    "index" : 1,
+    "active" : false
+  }, {
+    "input" : "1 6\n4\n8\n16\n32\n64\n128\n1",
+    "output" : "1\n2\n3\n4\n5\n6\n2 0 0 0 0 0",
+    "index" : 2,
+    "active" : true
+  }, {
+    "input" : "1 6\n2\n4\n8\n16\n32\n64\n1",
+    "output" : "",
+    "index" : 3,
+    "active" : true
+  } ],
+  "location" : "src/fuku",
+  "vmArgs" : "-Xmx1024M",
+  "mainClass" : "Solution",
+  "taskClass" : "fuku.Round1B2019TaskB",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.04.28",
+  "contestName" : "Draupnir",
+  "truncate" : true,
+  "inputClass" : "utils.io.MyReader",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

@@ -1,0 +1,58 @@
+{
+  "name" : "Round 1A 2019 - Google Code Jam 2019",
+  "testType" : "MULTI_NUMBER",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "2\n2 2\n2 5\n",
+    "output" : "Case #1: IMPOSSIBLE\nCase #2: POSSIBLE\n2 3\n1 1\n2 4\n1 2\n2 5\n1 3\n2 1\n1 5\n2 2\n1 4\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "1\n5 2",
+    "index" : 1,
+    "active" : true
+  }, {
+    "input" : "1\n3 4",
+    "index" : 2,
+    "active" : true
+  }, {
+    "input" : "1\n4 3",
+    "index" : 3,
+    "active" : true
+  }, {
+    "input" : "4\n2 2\n2 3\n3 2\n3 3",
+    "index" : 4,
+    "active" : true
+  }, {
+    "input" : "1\n4 5",
+    "index" : 5,
+    "active" : true
+  }, {
+    "input" : "1\n5 5",
+    "index" : 6,
+    "active" : true
+  } ],
+  "location" : "src/fuku",
+  "vmArgs" : "-Xmx1024M",
+  "mainClass" : "Solution",
+  "taskClass" : "fuku.Round1A2019GoogleCodeJam2019",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.04.13",
+  "contestName" : "Pylons",
+  "truncate" : true,
+  "inputClass" : "utils.io.MyReader",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

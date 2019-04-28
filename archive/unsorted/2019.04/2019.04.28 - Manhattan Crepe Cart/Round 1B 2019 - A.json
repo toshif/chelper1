@@ -1,0 +1,38 @@
+{
+  "name" : "Round 1B 2019 - A",
+  "testType" : "MULTI_NUMBER",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "3\n1 10\n5 5 N\n4 10\n2 4 N\n2 6 S\n1 5 E\n3 5 W\n8 10\n0 2 S\n0 3 N\n0 3 N\n0 4 N\n0 5 S\n0 5 S\n0 8 S\n1 5 W\n",
+    "output" : "Case #1: 0 6\nCase #2: 2 5\nCase #3: 0 4\n",
+    "index" : 0,
+    "active" : false
+  }, {
+    "input" : "1\n8 10\n0 2 S\n0 3 N\n0 3 N\n0 4 N\n0 5 S\n0 5 S\n0 8 S\n1 5 W\n",
+    "index" : 1,
+    "active" : true
+  } ],
+  "location" : "src/fuku",
+  "vmArgs" : "-Xmx1024M",
+  "mainClass" : "Solution",
+  "taskClass" : "fuku.Round1B2019GoogleCodeJam2019",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.04.28",
+  "contestName" : "Manhattan Crepe Cart",
+  "truncate" : true,
+  "inputClass" : "utils.io.MyReader",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

@@ -13,9 +13,11 @@ import java.util.Arrays;
  */
 public class GaussJordanElimination {
 
-    final double EPS = 1E-8;
+    public boolean shouldPrintDebug = true;
 
-    int N = 3;
+    public final double EPS = 1E-8;
+
+    private int N;
 
     /**
      * A x = b を解く(ベクトル x を求める)。
@@ -23,18 +25,32 @@ public class GaussJordanElimination {
      * (Aは正方行列、b はベクトル)
      * の A と b をつなげたものを B とする。
      */
-    double[][] B = new double[N][N+1];
+    public double[][] B;
 
-    // 解が一意
-    // 一意でないとき false をセット
-    boolean isUnique = true;
+    public GaussJordanElimination(int N) {
+        this.N = N;
+        this.B = new double[N][N+1];
+    }
 
-    double[] gaussJordan(){
-        // i 番目の column の係数を 1 にし、それ以外の式から引いて係数をゼロにする
+
+    /**
+    解が一意
+    一意でないとき false をセット
+    */
+    public boolean isUnique = true;
+
+    public double[] gaussJordan(){
+        /*
+        i 番目の column の係数を 1 にし、それ以外の式から引いて係数をゼロにする
+         */
         for (int i = 0; i < N; i++) {
-            printB();
+            if (shouldPrintDebug) {
+                printB();
+            }
 
-            // 誤差を小さくするため、絶対値の大きいものを選ぶ
+            /*
+            誤差を小さくするため、絶対値の大きいものを選ぶ
+             */
             int pivot = i;
             for (int j = i; j < N; j++) {
                 if (Math.abs(B[j][i]) > Math.abs(B[pivot][i])) pivot = j;
@@ -42,18 +58,21 @@ public class GaussJordanElimination {
 
             swap(pivot, i);
 
-            // row i 以降の全ての row で column i = 0
-            // 解なし / 一意でない
+            /* row i 以降の全ての row で column i = 0
+            解なし / 一意でない
+            */
             if (Math.abs(B[i][i]) < EPS){
                 isUnique = false;
                 continue;
             }
 
-            // 係数を1にする
+            /* 係数を1にする
+             */
             for (int j = i + 1; j < N + 1; j++) B[i][j] /= B[i][i];
             B[i][i] = 1.0;
 
-            // column i を row i 以外 係数ゼロにする
+            /* column i を row i 以外 係数ゼロにする
+             */
             for (int j = 0; j < N; j++) {
                 double c = B[j][i];
                 if (i != j) {
@@ -65,9 +84,13 @@ public class GaussJordanElimination {
         }
 
         // done
-        printB();
+        if (shouldPrintDebug) {
+            printB();
+        }
 
-        // 解なし / 一意でない
+        /*
+        解なし / 一意でない
+         */
         if (!isUnique) return null;
 
         double[] ans = new double[N];
@@ -80,20 +103,20 @@ public class GaussJordanElimination {
 
     /** swap the row i and row j
      */
-    void swap(int i, int j){
+    private void swap(int i, int j){
         double[] tmp = B[i];
         B[i] = B[j];
         B[j] = tmp;
     }
 
-    void printB(){
+    private void printB(){
         for (int j = 0; j < N; j++) {
             System.out.printf("B[%d] = %s\n", j, Arrays.toString(B[j]));
         }
         System.out.println("----");
     }
 
-    void init1(){
+    private void init1(){
         /**
          * <code>
          *   x  - 2y + 3z  = 6
@@ -106,9 +129,9 @@ public class GaussJordanElimination {
         B[2] = new double[]{7, -8, 10, 21};
     }
 
-    void init2(){
-        // 解が一意でない
+    private void init2(){
         /**
+         * 解が一意でない
          * <code>
          *   x  - 2y + 3z  = 6
          *   4x - 5y + 6z  = 12
@@ -120,7 +143,7 @@ public class GaussJordanElimination {
         B[2] = new double[]{4, -5, 6, 12};
     }
 
-    static int[] getIntArray(double[] darray){
+    public static int[] getIntArray(double[] darray){
         int[] ret = new int[darray.length];
         for (int i = 0; i < darray.length; i++) {
             // by default, it rounds to the closest long
@@ -132,7 +155,7 @@ public class GaussJordanElimination {
     public static void main(String[] args){
         System.out.println("---------- init1 -----------");
 
-        GaussJordanElimination gj = new GaussJordanElimination();
+        GaussJordanElimination gj = new GaussJordanElimination(3);
         gj.init1();
         double[] ans = gj.gaussJordan();
 
