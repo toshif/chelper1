@@ -1,0 +1,38 @@
+{
+  "name" : "Robot Programming Strategy",
+  "testType" : "MULTI_NUMBER",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "3\n1\nRS\n3\nR\nP\nS\n7\nRS\nRS\nRS\nRS\nRS\nRS\nRS\n",
+    "output" : "Case #1: RSRSRSP\nCase #2: IMPOSSIBLE\nCase #3: P\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "1\n3\nRS\nRP\nSS",
+    "index" : 1,
+    "active" : true
+  } ],
+  "location" : "src/fuku",
+  "vmArgs" : "-Xmx1024M",
+  "mainClass" : "Solution",
+  "taskClass" : "fuku.RobotProgrammingStrategy",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.05.04",
+  "contestName" : "Round 1C 2019 - TaskA",
+  "truncate" : true,
+  "inputClass" : "utils.io.MyReader",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

@@ -1,0 +1,39 @@
+{
+  "name" : "Bacterial Tactics",
+  "testType" : "MULTI_NUMBER",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "5\n2 2\n..\n.#\n4 4\n.#..\n..#.\n#...\n...#\n3 4\n#.##\n....\n#.##\n1 1\n.\n1 2\n##\n",
+    "output" : "Case #1: 0\nCase #2: 0\nCase #3: 7\nCase #4: 2\nCase #5: 0\n",
+    "index" : 0,
+    "active" : true
+  }, {
+    "input" : "1\n3 4\n#.##\n....\n#.##\n",
+    "output" : "7",
+    "index" : 1,
+    "active" : true
+  } ],
+  "location" : "src/fuku",
+  "vmArgs" : "-Xmx1024M",
+  "mainClass" : "Solution",
+  "taskClass" : "fuku.BacterialTactics",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.05.04",
+  "contestName" : "Round 1C 2019 - TaskC",
+  "truncate" : true,
+  "inputClass" : "utils.io.MyReader",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}

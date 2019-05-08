@@ -1,0 +1,34 @@
+{
+  "name" : "A Whole New Word",
+  "testType" : "MULTI_NUMBER",
+  "input" : {
+    "type" : "STANDARD",
+    "fileName" : "input.txt"
+  },
+  "output" : {
+    "type" : "STANDARD",
+    "fileName" : "output.txt"
+  },
+  "tests" : [ {
+    "input" : "5\n4 1\nA\nB\nC\nD\n4 2\nWW\nAA\nSS\nDD\n4 2\nAA\nAB\nBA\nBB\n3 4\nCAKE\nTORN\nSHOW\n5 7\nHELPIAM\nTRAPPED\nINSIDEA\nCODEJAM\nFACTORY\n",
+    "output" : "Case #1: -\nCase #2: WA\nCase #3: -\nCase #4: CORN\nCase #5: HOLIDAY\n",
+    "index" : 0,
+    "active" : true
+  } ],
+  "location" : "src/fuku",
+  "vmArgs" : "-Xmx1024M",
+  "mainClass" : "Solution",
+  "taskClass" : "fuku.AWholeNewWord",
+  "checkerClass" : "net.egork.chelper.checkers.TokenChecker",
+  "checkerParameters" : "",
+  "testClasses" : [ ],
+  "date" : "2019.05.02",
+  "contestName" : "Round 1C 2018 - Google Code Jam 2018",
+  "truncate" : true,
+  "inputClass" : "utils.io.MyReader",
+  "outputClass" : "java.io.PrintWriter",
+  "includeLocale" : false,
+  "failOnOverflow" : false,
+  "interactive" : false,
+  "interactor" : "net.egork.chelper.tester.Interactor"
+}
